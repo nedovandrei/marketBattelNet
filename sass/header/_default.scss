@@ -1,0 +1,17 @@
+.header_block{
+  padding:0 5px;
+  width: 760px;
+  margin: 0 auto;
+  .h_link{
+    padding: 20px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover, &.active{
+      color:white;
+    }
+  }
+}
+
+

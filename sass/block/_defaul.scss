@@ -1,0 +1,189 @@
+
+.products{
+  @include pie-clearfix;
+  .product{
+    div{
+      text-align: center;
+      font-size: 18px;
+    }
+    .p_name{
+      padding: 7px;
+      background-color: rgba(0, 130, 92, 0.4);
+    }
+    .p_image{
+      img {
+        width: 100%;
+      }
+    }
+    &.games{
+      .p_image{
+        img{
+          width: 147px;
+          height: 147px;
+          margin:0 auto;
+
+        }
+      }
+    }
+    box-shadow: 0 0 12px rgba(0,0,0, 1);
+    border:1px solid white;
+    opacity: 0.8;
+    float: left;
+    width: calc((100% - 15px*3) / 3);
+    margin-left: 15px;
+    margin-top: 15px;
+    &:hover{
+      opacity: 1;
+      cursor: pointer;
+    }
+    &:nth-of-type(-n+3){
+      margin-top: 0;
+    }
+  }
+}
+.m_page{
+  background-image: image-url('bnet-background-1920-4369eed45c.jpg');
+  width: 100%;
+  &.dota2{
+    background-image: image-url('dota_2_art_2014_logotip_97476_1920x1080.jpg');
+  }
+}
+.middle_block{
+  @include pie-clearfix;
+  padding: 25px;
+}
+.m_b_item{
+  float: left;
+}
+.m_b_left{
+  width: 20%;
+  ul{
+    border:1px solid white;
+    @include border-radius(3px);
+    ul{
+      display: none;
+      margin-top:5px;
+      padding-left: 15px;
+      @include border-radius(0);
+      border-width:0;
+      border-top-width:1px;
+      clear: both;
+    }
+    > li{
+      @include pie-clearfix;
+      &.active{
+        ul{
+          display: block;
+        }
+      }
+      > span{
+        padding: 5px;
+      }
+      &.l{
+        &:before{
+          background-position: -25px 0;
+        }
+      }
+      &.h{
+        &:before {
+          background-position: -50px 0;
+        }
+      }
+      &.w_o_w{
+        &:before {
+          background-position: -75px 0;
+        }
+      }
+      &.d{
+        &:before {
+          background-position: -100px 0;
+        }
+      }
+      &.l_o_l{
+        &:before{
+          background-position: -125px 0;
+        }
+      }
+      &:hover{
+        opacity: 1;
+      }
+      &.games {
+        align-items: center;
+        display: flex;
+        &:before {
+          display: block;
+          float: left;
+          content: "";
+          background-image: image-url("Logo/sprite.png");
+          width: 25px;
+          height: 25px;
+          margin-right: 5px;
+        }
+      }
+      opacity: 0.8;
+      cursor:pointer;
+
+      @include pie-clearfix;
+      font-size:16px;
+      border-bottom: 1px solid white;
+      padding: 5px;
+      &:last-of-type{
+        border-bottom-width: 0;
+      }
+    }
+  }
+}
+.m_b_right{
+  width: 80%;
+  @include pie-clearfix;
+}
+
+#slider{
+  margin:0 auto;
+  min-height: 300px;
+  width: 100%;
+  position: relative;
+  article {
+    background-color: black;
+    img {
+      display: block;
+      width: 943px;
+      margin-left: calc((100% - 943px) / 2);
+    }
+  }
+  &:hover{
+    #slide1:checked ~ #controls label:nth-child(2),
+    #slide2:checked ~ #controls label:nth-child(3),
+    #slide3:checked ~ #controls label:nth-child(4),
+    #slide4:checked ~ #controls label:nth-child(5),
+    #slide5:checked ~ #controls label:nth-child(1) {
+      background-position: -50px -26px;
+      float: right;
+      display: block;
+    }
+    #slide1:checked ~ #controls label:nth-child(5),
+    #slide2:checked ~ #controls label:nth-child(1),
+    #slide3:checked ~ #controls label:nth-child(2),
+    #slide4:checked ~ #controls label:nth-child(3),
+    #slide5:checked ~ #controls label:nth-child(4) {
+      background-position: -10px -26px;
+      float: left;
+      display: block;
+    }
+
+  }
+}
+#controls{
+  @include pie-clearfix;
+  width: 100%;
+  max-width: 943px;
+  margin:-162px auto 0;
+  label {
+    background-image: image-url('imageControl.png');
+    display: none;
+    width: 16px;
+    height: 24px;
+    opacity: 0.3;
+  }
+}
+
