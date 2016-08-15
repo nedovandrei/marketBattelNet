@@ -4,20 +4,23 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /* line 1, ../sass/header/_default.scss */
 .header_block {
-  padding: 0 5px;
-  width: 760px;
-  margin: 0 auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
-/* line 5, ../sass/header/_default.scss */
-.header_block .h_link {
+
+/* line 4, ../sass/header/_default.scss */
+.header_content {
+  padding: 0 5px;
+}
+/* line 6, ../sass/header/_default.scss */
+.header_content .h_link {
   padding: 20px;
   display: inline-block;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
 }
-/* line 11, ../sass/header/_default.scss */
-.header_block .h_link:hover, .header_block .h_link.active {
+/* line 12, ../sass/header/_default.scss */
+.header_content .h_link:hover, .header_content .h_link.active {
   color: white;
 }
 
@@ -93,12 +96,12 @@ img {
 
 /* line 44, ../sass/block/_defaul.scss */
 .m_page {
-  background-image: url('../images/bnet-background-1920-4369eed45c.jpg?1470637011');
+  background-image: url('../images/bnet-background-1920-4369eed45c.jpg?1471248499');
   width: 100%;
 }
 /* line 47, ../sass/block/_defaul.scss */
 .m_page.dota2 {
-  background-image: url('../images/dota_2_art_2014_logotip_97476_1920x1080.jpg?1470637011');
+  background-image: url('../images/dota_2_art_2014_logotip_97476_1920x1080.jpg?1471248499');
 }
 
 /* line 51, ../sass/block/_defaul.scss */
@@ -122,11 +125,51 @@ img {
 .m_b_left {
   width: 20%;
 }
-/* line 60, ../sass/block/_defaul.scss */
-.m_b_left ul {
+/* line 61, ../sass/block/_defaul.scss */
+.m_b_left .menu .menu_item {
   border: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom-width: 0;
 }
-/* line 62, ../sass/block/_defaul.scss */
+/* line 64, ../sass/block/_defaul.scss */
+.m_b_left .menu .menu_item:last-of-type {
+  border-bottom-width: 1px;
+}
+/* line 67, ../sass/block/_defaul.scss */
+.m_b_left .menu .menu_item:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+/* line 69, ../sass/block/_defaul.scss */
+.m_b_left .menu .menu_item:hover + .menu_item {
+  border-top-color: rgba(255, 255, 255, 0.4);
+}
+/* line 75, ../sass/block/_defaul.scss */
+.m_b_left .menu.menu_lvl_1 input {
+  display: none;
+}
+/* line 77, ../sass/block/_defaul.scss */
+.m_b_left .menu.menu_lvl_1 input:checked ~ .menu_lvl_2 {
+  display: block;
+}
+/* line 82, ../sass/block/_defaul.scss */
+.m_b_left .menu.menu_lvl_2 {
+  border-top: 1px solid white;
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  display: none;
+}
+/* line 89, ../sass/block/_defaul.scss */
+.m_b_left .menu.menu_lvl_2 .menu_item {
+  border-color: transparent;
+  border-width: 0;
+  border-bottom-width: 1px;
+}
+/* line 93, ../sass/block/_defaul.scss */
+.m_b_left .menu.menu_lvl_2 .menu_item:hover, .m_b_left .menu.menu_lvl_2 .menu_item.active {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+/* line 106, ../sass/block/_defaul.scss */
 .m_b_left ul ul {
   display: none;
   margin-top: 5px;
@@ -137,8 +180,9 @@ img {
   border-width: 0;
   border-top-width: 1px;
   clear: both;
+  padding-bottom: 0;
 }
-/* line 71, ../sass/block/_defaul.scss */
+/* line 116, ../sass/block/_defaul.scss */
 .m_b_left ul > li {
   *zoom: 1;
   cursor: pointer;
@@ -153,49 +197,45 @@ img {
   display: table;
   clear: both;
 }
-/* line 74, ../sass/block/_defaul.scss */
+/* line 119, ../sass/block/_defaul.scss */
 .m_b_left ul > li.active ul {
   display: block;
 }
-/* line 78, ../sass/block/_defaul.scss */
+/* line 123, ../sass/block/_defaul.scss */
 .m_b_left ul > li > span {
   padding: 5px;
 }
-/* line 82, ../sass/block/_defaul.scss */
+/* line 127, ../sass/block/_defaul.scss */
 .m_b_left ul > li.l:before {
   background-position: -25px 0;
 }
-/* line 87, ../sass/block/_defaul.scss */
+/* line 132, ../sass/block/_defaul.scss */
 .m_b_left ul > li.h:before {
   background-position: -50px 0;
 }
-/* line 92, ../sass/block/_defaul.scss */
+/* line 137, ../sass/block/_defaul.scss */
 .m_b_left ul > li.w_o_w:before {
   background-position: -75px 0;
 }
-/* line 97, ../sass/block/_defaul.scss */
+/* line 142, ../sass/block/_defaul.scss */
 .m_b_left ul > li.d:before {
   background-position: -100px 0;
 }
-/* line 102, ../sass/block/_defaul.scss */
+/* line 147, ../sass/block/_defaul.scss */
 .m_b_left ul > li.l_o_l:before {
   background-position: -125px 0;
 }
-/* line 106, ../sass/block/_defaul.scss */
-.m_b_left ul > li:hover {
-  background-color: rgba(0, 174, 255, 0.7);
-}
-/* line 109, ../sass/block/_defaul.scss */
+/* line 151, ../sass/block/_defaul.scss */
 .m_b_left ul > li.games {
   align-items: center;
   display: flex;
 }
-/* line 112, ../sass/block/_defaul.scss */
+/* line 154, ../sass/block/_defaul.scss */
 .m_b_left ul > li.games:before {
   display: block;
   float: left;
   content: "";
-  background-image: url('../images/Logo/sprite.png?1470637011');
+  background-image: url('../images/Logo/sprite.png?1471248499');
   width: 25px;
   height: 25px;
   margin-right: 5px;
@@ -206,12 +246,12 @@ img {
   display: table;
   clear: both;
 }
-/* line 127, ../sass/block/_defaul.scss */
+/* line 169, ../sass/block/_defaul.scss */
 .m_b_left ul > li:last-of-type {
   border-bottom-width: 0;
 }
 
-/* line 133, ../sass/block/_defaul.scss */
+/* line 175, ../sass/block/_defaul.scss */
 .m_b_right {
   width: 80%;
   *zoom: 1;
@@ -223,24 +263,24 @@ img {
   clear: both;
 }
 
-/* line 138, ../sass/block/_defaul.scss */
+/* line 180, ../sass/block/_defaul.scss */
 #slider {
   margin: 0 auto;
   min-height: 300px;
   width: 100%;
   position: relative;
 }
-/* line 143, ../sass/block/_defaul.scss */
+/* line 185, ../sass/block/_defaul.scss */
 #slider article {
   background-color: black;
 }
-/* line 145, ../sass/block/_defaul.scss */
+/* line 187, ../sass/block/_defaul.scss */
 #slider article img {
   display: block;
   width: 943px;
   margin-left: calc((100% - 943px) / 2);
 }
-/* line 152, ../sass/block/_defaul.scss */
+/* line 194, ../sass/block/_defaul.scss */
 #slider:hover #slide1:checked ~ #controls label:nth-child(2),
 #slider:hover #slide2:checked ~ #controls label:nth-child(3),
 #slider:hover #slide3:checked ~ #controls label:nth-child(4),
@@ -249,7 +289,7 @@ img {
   float: right;
   display: block;
 }
-/* line 157, ../sass/block/_defaul.scss */
+/* line 199, ../sass/block/_defaul.scss */
 #slider:hover #slide1:checked ~ #controls label:nth-child(2) span,
 #slider:hover #slide2:checked ~ #controls label:nth-child(3) span,
 #slider:hover #slide3:checked ~ #controls label:nth-child(4) span,
@@ -257,7 +297,7 @@ img {
 #slider:hover #slide5:checked ~ #controls label:nth-child(1) span {
   background-position: -50px -26px;
 }
-/* line 163, ../sass/block/_defaul.scss */
+/* line 205, ../sass/block/_defaul.scss */
 #slider:hover #slide1:checked ~ #controls label:nth-child(5),
 #slider:hover #slide2:checked ~ #controls label:nth-child(1),
 #slider:hover #slide3:checked ~ #controls label:nth-child(2),
@@ -266,7 +306,7 @@ img {
   float: left;
   display: block;
 }
-/* line 168, ../sass/block/_defaul.scss */
+/* line 210, ../sass/block/_defaul.scss */
 #slider:hover #slide1:checked ~ #controls label:nth-child(5) span,
 #slider:hover #slide2:checked ~ #controls label:nth-child(1) span,
 #slider:hover #slide3:checked ~ #controls label:nth-child(2) span,
@@ -275,7 +315,7 @@ img {
   background-position: -10px -26px;
 }
 
-/* line 176, ../sass/block/_defaul.scss */
+/* line 218, ../sass/block/_defaul.scss */
 #controls {
   *zoom: 1;
   width: 100%;
@@ -288,7 +328,7 @@ img {
   display: table;
   clear: both;
 }
-/* line 181, ../sass/block/_defaul.scss */
+/* line 223, ../sass/block/_defaul.scss */
 #controls label {
   padding: 23px 12px;
   -moz-border-radius: 2px;
@@ -297,17 +337,36 @@ img {
   display: none;
   background-color: rgba(0, 0, 0, 0.7);
 }
-/* line 182, ../sass/block/_defaul.scss */
+/* line 224, ../sass/block/_defaul.scss */
 #controls label span {
-  background-image: url('../images/imageControl.png?1470637011');
+  background-image: url('../images/imageControl.png?1471248499');
   display: block;
   width: 16px;
   height: 24px;
   opacity: 0.3;
 }
 
+/* line 241, ../sass/block/_defaul.scss */
+.menu_lvl_1 > div {
+  cursor: pointer;
+  *zoom: 1;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 10px 5px;
+}
+/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.menu_lvl_1 > div:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 247, ../sass/block/_defaul.scss */
+.menu_lvl_1 > div:last-of-type {
+  border-bottom-width: 0;
+}
+
 /* line 12, ../sass/screen.scss */
-.main_page > div:not(#slider) {
+.main_page .middle_block, .main_page .header_content {
   width: 943px;
   margin: 0 auto;
 }

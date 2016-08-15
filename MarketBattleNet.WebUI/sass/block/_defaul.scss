@@ -57,8 +57,52 @@
 }
 .m_b_left{
   width: 20%;
+  .menu{
+    .menu_item {
+      border:1px solid hsla(0, 0%, 100%, 0.07);
+      border-bottom-width: 0;
+      &:last-of-type{
+        border-bottom-width: 1px;
+      }
+      &:hover {
+        border-color: hsla(0, 0%, 100%, 0.4);
+        + .menu_item{
+          border-top-color: hsla(0, 0%, 100%, 0.4);
+        }
+      }
+    }
+    &.menu_lvl_1{
+      input{
+        display: none;
+        &:checked ~ .menu_lvl_2{
+          display: block;
+        }
+      }
+    }
+    &.menu_lvl_2{
+      border-top: 1px solid white;
+      margin-top: 10px;
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+      display: none;
+      .menu_item {
+        border-color: transparent;
+        border-width: 0;
+        border-bottom-width: 1px;
+        &:hover, &.active{
+          border-color: hsla(0, 0%, 100%, 0.4);
+        }
+
+      }
+    }
+  }
   ul{
-    border:1px solid hsla(0, 0%, 100%, 0.07);
+    //li{
+    //  &:hover, &.active{
+    //    background-color: rgba(0, 174, 255, 0.7);
+    //  }
+    //}
     ul{
       display: none;
       margin-top:5px;
@@ -67,6 +111,7 @@
       border-width:0;
       border-top-width:1px;
       clear: both;
+      padding-bottom: 0;
     }
     > li{
       @include pie-clearfix;
@@ -102,9 +147,6 @@
         &:before{
           background-position: -125px 0;
         }
-      }
-      &:hover{
-        background-color: rgba(0, 174, 255, 0.7);
       }
       &.games {
         align-items: center;
@@ -194,3 +236,16 @@
   }
 }
 
+
+.menu_lvl_1{
+  > div {
+    cursor:pointer;
+    @include pie-clearfix;
+    font-size:16px;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.07);
+    padding: 10px 5px;
+    &:last-of-type{
+      border-bottom-width: 0;
+    }
+  }
+}
