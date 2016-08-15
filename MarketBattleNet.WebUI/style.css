@@ -2,16 +2,8 @@
 
 
 label, a {
-	color: teal;
 	cursor: pointer;
-	text-decoration: none;
 }
-label:hover, a:hover {
-	color: #000 !important;
-}
-* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-label, #active, img { -moz-user-select:none;-webkit-user-select:none; }
-.catch { display: block; height: 0; overflow: hidden; }
 
 /* NEW EXPERIMENT */
 /* Slider Setup */

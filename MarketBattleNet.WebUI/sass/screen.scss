@@ -9,7 +9,7 @@
 @import "block/defaul";
 
 .main_page{
-  > div:not(#slider){
+  .middle_block, .header_content{
     width:943px;
     margin: 0 auto;
   }
