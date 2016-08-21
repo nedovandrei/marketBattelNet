@@ -1,3 +1,4 @@
+@import "../include/variable";
 
 .products{
   @include pie-clearfix;
@@ -48,14 +49,14 @@
     background-image: image-url('dota_2_art_2014_logotip_97476_1920x1080.jpg');
   }
 }
-.middle_block{
+.middle_content{
   @include pie-clearfix;
   padding: 25px;
 }
-.m_b_item{
+.m_c_item{
   float: left;
 }
-.m_b_left{
+.m_c_left{
   width: 20%;
   .menu{
     .menu_item {
@@ -172,13 +173,13 @@
     }
   }
 }
-.m_b_right{
+.m_c_right{
   width: 80%;
   @include pie-clearfix;
 }
 
-#slider{
-  margin:0 auto;
+#slider {
+  margin: 0 auto;
   min-height: 300px;
   width: 100%;
   position: relative;
@@ -227,7 +228,6 @@
       width: 16px;
       height: 24px;
       opacity: 0.3;
-
     }
     padding: 23px 12px;
     @include border-radius(2px);

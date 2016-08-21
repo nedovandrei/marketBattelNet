@@ -4,12 +4,14 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass";
+@import "include/variable";
 @import "header/default";
 @import "include/reset";
 @import "block/defaul";
+@import "include/animation";
 
 .main_page{
-  .middle_block, .header_content{
+  .middle_content, .header_content{
     width:943px;
     margin: 0 auto;
   }
