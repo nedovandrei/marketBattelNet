@@ -3,23 +3,23 @@
 
     angular.module("app")
         .config(["$urlRouterProvider", "$stateProvider", function ($urlRouterProvider, $stateProvider) {
-            $urlRouterProvider.otherwise("/");
+            $urlRouterProvider.otherwise("/shop");
             $stateProvider
-                .state("Shop", {
-                    url: "/",
-                    templateUrl: "app/shop/game.html",
+                .state("shop", {
+                    url: "/shop",
+                    templateUrl: "app/shop/shop.html",
                     controller: "ShopController"
                 })
-                .state("Game", {
-                    url: "/",
+                .state("game", {
+                    url: "/game",
                     templateUrl: "app/game/game.html",
                     controller: "GameController"
-                })
-                .state("Art", {
-                    url: "/",
-                    templateUrl: "app/art/art.html",
-                    controller: "ArtController"
-                })
-            ;
+                });
+                //.state("art", {
+                //    url: "/",
+                //    templateUrl: "app/art/art.html",
+                //    controller: "ArtController"
+                //});
+            
         }]);
 }());

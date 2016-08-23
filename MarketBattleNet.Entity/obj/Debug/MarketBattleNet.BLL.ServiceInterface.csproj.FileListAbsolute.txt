@@ -1,0 +1,5 @@
+D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.Entity\bin\Debug\MarketBattleNet.Entity.dll
+D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.Entity\bin\Debug\MarketBattleNet.Entity.pdb
+D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.Entity\obj\Debug\MarketBattleNet.BLL.ServiceInterface.csprojResolveAssemblyReference.cache
+D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.Entity\obj\Debug\MarketBattleNet.Entity.dll
+D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.Entity\obj\Debug\MarketBattleNet.Entity.pdb

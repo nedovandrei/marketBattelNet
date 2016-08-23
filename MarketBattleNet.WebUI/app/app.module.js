@@ -3,6 +3,8 @@
 
     angular.module("app", [
         "ui.router",
-        "ngResource"
+        "ngResource",
+        "ngAnimate",
+        "anim-in-out"
     ]);
 }());
