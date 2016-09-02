@@ -14,12 +14,12 @@
                     url: "/game",
                     templateUrl: "app/game/game.html",
                     controller: "GameController"
+                })
+                .state("art", {
+                    url: "/art",
+                    templateUrl: "app/art/art.html",
+                    controller: "ArtController"
                 });
-                //.state("art", {
-                //    url: "/",
-                //    templateUrl: "app/art/art.html",
-                //    controller: "ArtController"
-                //});
             
         }]);
 }());

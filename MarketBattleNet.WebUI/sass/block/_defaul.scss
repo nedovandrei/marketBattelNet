@@ -43,7 +43,7 @@
   }
 }
 .m_page{
-  background-image: image-url('bnet-background-1920-4369eed45c.jpg');
+  background-image: image-url('41101825-game-wallpapers.jpg');
   width: 100%;
   &.dota2{
     background-image: image-url('dota_2_art_2014_logotip_97476_1920x1080.jpg');
@@ -187,7 +187,7 @@
     background-color: black;
     img {
       display: block;
-      width: 943px;
+      width: 960px;
       margin-left: calc((100% - 943px) / 2);
     }
   }
@@ -219,7 +219,7 @@
 #controls{
   @include pie-clearfix;
   width: 100%;
-  max-width: 943px;
+  max-width: 960px;
   margin:-185px auto 0;
   label {
     span {

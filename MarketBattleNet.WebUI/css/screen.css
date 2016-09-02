@@ -48,7 +48,7 @@ img {
 .products {
   *zoom: 1;
 }
-/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .products:after {
   content: "";
   display: table;
@@ -96,12 +96,12 @@ img {
 
 /* line 45, ../sass/block/_defaul.scss */
 .m_page {
-  background-image: url('../images/bnet-background-1920-4369eed45c.jpg?1471200688');
+  background-image: url('../images/41101825-game-wallpapers.jpg?1472624671');
   width: 100%;
 }
 /* line 48, ../sass/block/_defaul.scss */
 .m_page.dota2 {
-  background-image: url('../images/dota_2_art_2014_logotip_97476_1920x1080.jpg?1471200688');
+  background-image: url('../images/dota_2_art_2014_logotip_97476_1920x1080.jpg?1472625437');
 }
 
 /* line 52, ../sass/block/_defaul.scss */
@@ -109,7 +109,7 @@ img {
   *zoom: 1;
   padding: 25px;
 }
-/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .middle_content:after {
   content: "";
   display: table;
@@ -191,7 +191,7 @@ img {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   padding: 10px 5px;
 }
-/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .m_c_left ul > li:after {
   content: "";
   display: table;
@@ -235,12 +235,12 @@ img {
   display: block;
   float: left;
   content: "";
-  background-image: url('../images/Logo/sprite.png?1471200688');
+  background-image: url('../images/Logo/sprite.png?1472625437');
   width: 25px;
   height: 25px;
   margin-right: 5px;
 }
-/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .m_c_left ul > li:after {
   content: "";
   display: table;
@@ -256,7 +256,7 @@ img {
   width: 80%;
   *zoom: 1;
 }
-/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .m_c_right:after {
   content: "";
   display: table;
@@ -277,7 +277,7 @@ img {
 /* line 188, ../sass/block/_defaul.scss */
 #slider article img {
   display: block;
-  width: 943px;
+  width: 960px;
   margin-left: calc((100% - 943px) / 2);
 }
 /* line 195, ../sass/block/_defaul.scss */
@@ -319,10 +319,10 @@ img {
 #controls {
   *zoom: 1;
   width: 100%;
-  max-width: 943px;
+  max-width: 960px;
   margin: -185px auto 0;
 }
-/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 #controls:after {
   content: "";
   display: table;
@@ -339,7 +339,7 @@ img {
 }
 /* line 225, ../sass/block/_defaul.scss */
 #controls label span {
-  background-image: url('../images/imageControl.png?1471200688');
+  background-image: url('../images/imageControl.png?1472625437');
   display: block;
   width: 16px;
   height: 24px;
@@ -354,7 +354,7 @@ img {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   padding: 10px 5px;
 }
-/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .menu_lvl_1 > div:after {
   content: "";
   display: table;
@@ -384,6 +384,6 @@ img {
 }
 /* line 14, ../sass/screen.scss */
 .main_page .middle_content, .main_page .header_content {
-  width: 943px;
+  width: 960px;
   margin: 0 auto;
 }
