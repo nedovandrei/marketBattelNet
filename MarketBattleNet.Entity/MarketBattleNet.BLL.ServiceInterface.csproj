@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="DTO\ArtDTO.cs" />
     <Compile Include="DTO\RequestDTO.cs" />
-    <Compile Include="DTO\ServiceDTO.cs" />
+    <Compile Include="DTO\GameDTO.cs" />
     <Compile Include="DTO\UserProfileDTO.cs" />
     <Compile Include="IArtService.cs" />
     <Compile Include="IRequestService.cs" />

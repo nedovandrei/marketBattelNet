@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace MarketBattleNet.BLL.ServiceInterface
 {
-    public interface IServiceService
+    public interface IGameService
     {
-        IEnumerable<ServiceDTO> GetAll();
-        ServiceDTO FindById(int id);
-        void Add(ServiceDTO obj);
-        void Update(ServiceDTO obj);
+        IEnumerable<GameDTO> GetAll();
+        GameDTO FindById(int id);
+        void Add(GameDTO obj);
+        void Update(GameDTO obj);
         void Delete(int id);
 
     }

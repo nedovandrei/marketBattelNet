@@ -1,4 +1,5 @@
-﻿using MarketBattleNet.BLL.ServiceInterface.DTO;
+﻿using MarketBattleNet.BLL.ServiceInterface;
+using MarketBattleNet.BLL.ServiceInterface.DTO;
 using MarketBattleNet.DAL.Models;
 using MarketBattleNet.DAL.RepositoryInterface;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 
 namespace MarketBattleNet.BLL.Service
 {
-    public class ArtService
+    public class ArtService : IArtService
     {
         private IUnitOfWork _unitOfWork;
         private IRepository<ArtModel> _repository;
@@ -27,7 +28,7 @@ namespace MarketBattleNet.BLL.Service
                 {
                     Id = request.Id,
                     Description = request.Description,
-                    GameName = request.GameName,
+                    GameName = request.GameId,
                     FileName = request.FileName
                 });
             }
@@ -41,7 +42,7 @@ namespace MarketBattleNet.BLL.Service
             {
                 Id = data.Id,
                 Description = data.Description,
-                GameName = data.GameName,
+                GameName = data.GameId,
                 FileName = data.FileName
             };
             return dtoToSend;
@@ -53,7 +54,7 @@ namespace MarketBattleNet.BLL.Service
             {
                 Id = obj.Id,
                 Description = obj.Description,
-                GameName = obj.GameName,
+                GameId = obj.GameName,
                 FileName = obj.FileName
             };
             _repository.Create(data);
@@ -65,7 +66,7 @@ namespace MarketBattleNet.BLL.Service
             {
                 Id = obj.Id,
                 Description = obj.Description,
-                GameName = obj.GameName,
+                GameId = obj.GameName,
                 FileName = obj.FileName
             };
             _repository.Update(data);
@@ -78,7 +79,7 @@ namespace MarketBattleNet.BLL.Service
             {
                 Id = dataToDelete.Id,
                 Description = dataToDelete.Description,
-                GameName = dataToDelete.GameName,
+                GameId = dataToDelete.GameName,
                 FileName = dataToDelete.FileName
             };
             _repository.Delete(data);

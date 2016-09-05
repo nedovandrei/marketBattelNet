@@ -9,7 +9,7 @@ namespace MarketBattleNet.DAL.DbContext
 
         public DbSet<RequestModel> Requests { get; set; }
         public DbSet<UserProfileModel> UserProfiles { get; set; }
-        public DbSet<ServiceModel> Services { get; set; }
+        public DbSet<GameModel> Games { get; set; }
         public DbSet<ArtModel> Arts { get; set; }
     }
 }

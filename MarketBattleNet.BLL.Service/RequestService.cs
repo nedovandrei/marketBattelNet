@@ -28,7 +28,7 @@ namespace MarketBattleNet.BLL.Service
                                     {
                                         Id = request.Id,
                                         UserId = request.UserId,
-                                        ServiceId = request.ServiceId,
+
                                         ArtId = request.ArtId
                                     });
             }
@@ -42,7 +42,6 @@ namespace MarketBattleNet.BLL.Service
             {
                 Id = data.Id,
                 UserId = data.Id,
-                ServiceId = data.ServiceId,
                 ArtId = data.ArtId
             };
             return dtoToSend;
@@ -54,7 +53,6 @@ namespace MarketBattleNet.BLL.Service
             {
                 Id = obj.Id,
                 UserId = obj.Id,
-                ServiceId = obj.ServiceId,
                 ArtId = obj.ArtId
             };
             _repository.Create(data);
@@ -66,7 +64,6 @@ namespace MarketBattleNet.BLL.Service
             {
                 Id = obj.Id,
                 UserId = obj.Id,
-                ServiceId = obj.ServiceId,
                 ArtId = obj.ArtId
             };
             _repository.Update(data);
@@ -78,8 +75,7 @@ namespace MarketBattleNet.BLL.Service
             var data = new RequestModel()
             {
                 Id = dataToDelete.Id,
-                UserId = dataToDelete.Id,
-                ServiceId = dataToDelete.ServiceId,
+                UserId = dataToDelete.Id,                
                 ArtId = dataToDelete.ArtId
             };
             _repository.Delete(data);

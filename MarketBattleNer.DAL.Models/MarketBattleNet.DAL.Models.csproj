@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="ArtModel.cs" />
     <Compile Include="RequestModel.cs" />
-    <Compile Include="ServiceModel.cs" />
+    <Compile Include="GameModel.cs" />
     <Compile Include="UserProfileModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

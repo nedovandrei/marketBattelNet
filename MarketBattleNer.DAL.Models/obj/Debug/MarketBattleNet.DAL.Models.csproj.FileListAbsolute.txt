@@ -2,3 +2,4 @@ D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNer.DAL.Models\
 D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNer.DAL.Models\bin\Debug\MarketBattleNer.DAL.Models.pdb
 D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNer.DAL.Models\obj\Debug\MarketBattleNer.DAL.Models.dll
 D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNer.DAL.Models\obj\Debug\MarketBattleNer.DAL.Models.pdb
+D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNer.DAL.Models\obj\Debug\MarketBattleNet.DAL.Models.csprojResolveAssemblyReference.cache

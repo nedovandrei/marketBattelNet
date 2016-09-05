@@ -50,6 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MarketBattleNetDbContext.cs" />
+    <Compile Include="Migrations\201609050727158_DroppedServiceAddedGame.cs" />
+    <Compile Include="Migrations\201609050727158_DroppedServiceAddedGame.Designer.cs">
+      <DependentUpon>201609050727158_DroppedServiceAddedGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +66,11 @@
       <Project>{1D508B85-E8A8-4D3C-830A-8C0A253276D0}</Project>
       <Name>MarketBattleNet.DAL.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609050727158_DroppedServiceAddedGame.resx">
+      <DependentUpon>201609050727158_DroppedServiceAddedGame.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
