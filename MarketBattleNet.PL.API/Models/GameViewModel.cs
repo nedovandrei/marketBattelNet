@@ -1,6 +1,6 @@
-﻿namespace MarketBattleNet.BLL.ServiceInterface.DTO
+﻿namespace MarketBattleNet.PL.API.Models
 {
-    public class GameDTO
+    public class GameViewModel
     {
         public int Id { get; set; }
         public int Name { get; set; }
