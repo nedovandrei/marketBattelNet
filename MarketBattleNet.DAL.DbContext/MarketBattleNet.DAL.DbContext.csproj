@@ -54,6 +54,10 @@
     <Compile Include="Migrations\201609050727158_DroppedServiceAddedGame.Designer.cs">
       <DependentUpon>201609050727158_DroppedServiceAddedGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609050809497_ChangedGameNametoGameIDInDTO.cs" />
+    <Compile Include="Migrations\201609050809497_ChangedGameNametoGameIDInDTO.Designer.cs">
+      <DependentUpon>201609050809497_ChangedGameNametoGameIDInDTO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609050727158_DroppedServiceAddedGame.resx">
       <DependentUpon>201609050727158_DroppedServiceAddedGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609050809497_ChangedGameNametoGameIDInDTO.resx">
+      <DependentUpon>201609050809497_ChangedGameNametoGameIDInDTO.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

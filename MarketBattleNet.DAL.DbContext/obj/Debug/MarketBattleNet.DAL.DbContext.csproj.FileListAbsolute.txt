@@ -12,3 +12,4 @@ D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.DAL.DbConte
 D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.DAL.DbContext\obj\Debug\MarketBattleNet.DAL.DbContext.pdb
 D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.DAL.DbContext\obj\Debug\MarketBattleNet.DAL.DbContext.Migrations.DroppedServiceAddedGame.resources
 D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.DAL.DbContext\obj\Debug\MarketBattleNet.DAL.DbContext.csproj.GenerateResource.Cache
+D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.DAL.DbContext\obj\Debug\MarketBattleNet.DAL.DbContext.Migrations.ChangedGameNametoGameIDInDTO.resources
