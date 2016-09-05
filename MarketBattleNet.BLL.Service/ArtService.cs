@@ -28,7 +28,7 @@ namespace MarketBattleNet.BLL.Service
                 {
                     Id = request.Id,
                     Description = request.Description,
-                    GameName = request.GameId,
+                    GameId = request.GameId,
                     FileName = request.FileName
                 });
             }
@@ -42,7 +42,7 @@ namespace MarketBattleNet.BLL.Service
             {
                 Id = data.Id,
                 Description = data.Description,
-                GameName = data.GameId,
+                GameId = data.GameId,
                 FileName = data.FileName
             };
             return dtoToSend;
@@ -54,7 +54,7 @@ namespace MarketBattleNet.BLL.Service
             {
                 Id = obj.Id,
                 Description = obj.Description,
-                GameId = obj.GameName,
+                GameId = obj.GameId,
                 FileName = obj.FileName
             };
             _repository.Create(data);
@@ -66,7 +66,7 @@ namespace MarketBattleNet.BLL.Service
             {
                 Id = obj.Id,
                 Description = obj.Description,
-                GameId = obj.GameName,
+                GameId = obj.GameId,
                 FileName = obj.FileName
             };
             _repository.Update(data);
@@ -79,7 +79,7 @@ namespace MarketBattleNet.BLL.Service
             {
                 Id = dataToDelete.Id,
                 Description = dataToDelete.Description,
-                GameId = dataToDelete.GameName,
+                GameId = dataToDelete.GameId,
                 FileName = dataToDelete.FileName
             };
             _repository.Delete(data);

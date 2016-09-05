@@ -28,10 +28,15 @@ namespace MarketBattleNet.PL.API.Controllers
         [HttpGet]
         public HttpResponseMessage FindById(int id)
         {
+            if (id == 0)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Request Controller > FindById(); : No ID was specified");
+            }
+
             var data = _requestService.FindById(id);
             if(data == null)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, $"Not Found Anything With This Id: {id}");
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, $"Request Controller > FindById(); : Not Found Anything With This Id: {id}");
             }
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
@@ -41,10 +46,31 @@ namespace MarketBattleNet.PL.API.Controllers
         {
             var modelDTO = new RequestDTO()
             {
-                //object copy logic
+                ArtId = model.ArtId,
+                UserId = model.UserId
             };
             _requestService.Add(modelDTO);
             return Request.CreateResponse(HttpStatusCode.Created);
+        }
+
+        [HttpPut]
+        public HttpResponseMessage Update(RequestViewModel model)
+        {
+            var modelDTO = new RequestDTO()
+            {
+                Id = model.Id,
+                UserId = model.UserId,
+                ArtId = model.ArtId
+            };
+            _requestService.Update(modelDTO);
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        [HttpDelete]
+        public HttpResponseMessage Delete(int id)
+        {
+            _requestService.Delete(id);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

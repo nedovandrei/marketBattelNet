@@ -104,7 +104,9 @@
     <Compile Include="App_Start\IOC.cs" />
     <Compile Include="App_Start\IOC_Run.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ArtController.cs" />
     <Compile Include="Controllers\RequestController.cs" />
+    <Compile Include="Models\ArtViewModel.cs" />
     <Compile Include="Models\RequestViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
