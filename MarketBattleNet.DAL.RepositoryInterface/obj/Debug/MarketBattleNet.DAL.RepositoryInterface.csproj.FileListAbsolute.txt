@@ -2,3 +2,4 @@ D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.DAL.Reposit
 D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.DAL.RepositoryInterface\bin\Debug\MarketBattleNet.DAL.RepositoryInterface.pdb
 D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.DAL.RepositoryInterface\obj\Debug\MarketBattleNet.DAL.RepositoryInterface.dll
 D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.DAL.RepositoryInterface\obj\Debug\MarketBattleNet.DAL.RepositoryInterface.pdb
+D:\Projects.Personal\MarketBattleNet\marketBattelNet\MarketBattleNet.DAL.RepositoryInterface\obj\Debug\MarketBattleNet.DAL.RepositoryInterface.csprojResolveAssemblyReference.cache

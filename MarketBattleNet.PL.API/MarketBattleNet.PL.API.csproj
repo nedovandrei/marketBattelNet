@@ -107,12 +107,14 @@
     <Compile Include="Controllers\ArtController.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\RequestController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Models\ArtViewModel.cs" />
     <Compile Include="Models\GameViewModel.cs" />
     <Compile Include="Models\RequestViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserProfileViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
