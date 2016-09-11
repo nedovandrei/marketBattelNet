@@ -15,7 +15,7 @@ namespace MarketBattleNet.BLL.Service
         public UserProfileService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _repository = unitOfWork.Repository<UserProfileModel>();
+            _repository = _unitOfWork.Repository<UserProfileModel>();
         }
 
         public IEnumerable<UserProfileDTO> GetAll()

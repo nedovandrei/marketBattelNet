@@ -15,7 +15,7 @@ namespace MarketBattleNet.BLL.Service
         public ArtService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _repository = unitOfWork.Repository<ArtModel>();
+            _repository = _unitOfWork.Repository<ArtModel>();
         }
 
         public IEnumerable<ArtDTO> GetAll()

@@ -5,14 +5,14 @@ namespace MarketBattleNet.DAL.DbContext.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MarketBattleNet.DAL.DbContext.MarketBattleNerDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MarketBattleNet.DAL.DbContext.MarketBattleNetDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(MarketBattleNet.DAL.DbContext.MarketBattleNerDbContext context)
+        protected override void Seed(MarketBattleNet.DAL.DbContext.MarketBattleNetDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

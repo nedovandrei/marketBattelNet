@@ -15,7 +15,7 @@ namespace MarketBattleNet.BLL.Service
         public RequestService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _repository = unitOfWork.Repository<RequestModel>();
+            _repository = _unitOfWork.Repository<RequestModel>();
         }
 
         public IEnumerable<RequestDTO> GetAll()

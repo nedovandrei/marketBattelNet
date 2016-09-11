@@ -15,7 +15,7 @@ namespace MarketBattleNet.BLL.Service
         public GameService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _repository = unitOfWork.Repository<GameModel>();
+            _repository = _unitOfWork.Repository<GameModel>();
         }
 
         public IEnumerable<GameDTO> GetAll()

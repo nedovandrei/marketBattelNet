@@ -2,6 +2,7 @@
 using MarketBattleNet.DAL.RepositoryInterface;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,10 @@ namespace MarketBattleNet.BLL.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
-        internal MarketBattleNerDbContext Context;
+        private DbContext Context;
         //private DbContextTransaction _transaction;
 
-        public UnitOfWork(MarketBattleNerDbContext context)
+        public UnitOfWork(DbContext context)
         {
             Context = context;
         }

@@ -12,7 +12,7 @@ using System.Web.Http.Controllers;
 
 namespace MarketBattleNet.PL.API.App_Start
 {
-    public class IOC
+    public static class IOC
     {
         public static AutofacWebApiDependencyResolver AutofacWebApiDependencyResolver()
         {
@@ -25,7 +25,7 @@ namespace MarketBattleNet.PL.API.App_Start
 
             //Db connection
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
-            builder.Register<DbContext>(c => new MarketBattleNerDbContext());
+            builder.Register<DbContext>(c => new MarketBattleNetDbContext());
 
             builder.RegisterType<ArtService>().As<IArtService>().InstancePerRequest();
             builder.RegisterType<RequestService>().As<IRequestService>().InstancePerRequest();
