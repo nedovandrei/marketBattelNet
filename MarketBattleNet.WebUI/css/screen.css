@@ -26,20 +26,24 @@
 
 /* line 1, ../sass/include/_reset.scss */
 * {
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* line 6, ../sass/include/_reset.scss */
+body {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1;
 }
 
-/* line 9, ../sass/include/_reset.scss */
+/* line 11, ../sass/include/_reset.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 12, ../sass/include/_reset.scss */
+/* line 14, ../sass/include/_reset.scss */
 img {
   display: block;
 }
@@ -48,7 +52,7 @@ img {
 .products {
   *zoom: 1;
 }
-/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .products:after {
   content: "";
   display: table;
@@ -56,23 +60,20 @@ img {
 }
 /* line 5, ../sass/block/_defaul.scss */
 .products .product {
-  box-shadow: 0 0 12px black;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  opacity: 0.8;
-  float: left;
-  width: calc((100% - 15px*3) / 3);
-  margin-left: 15px;
   margin-top: 15px;
 }
 /* line 6, ../sass/block/_defaul.scss */
 .products .product div {
-  text-align: center;
   font-size: 18px;
 }
-/* line 10, ../sass/block/_defaul.scss */
+/* line 9, ../sass/block/_defaul.scss */
 .products .product .p_name {
-  padding: 7px;
-  background-color: rgba(0, 130, 92, 0.4);
+  width: 50%;
+}
+/* line 12, ../sass/block/_defaul.scss */
+.products .product .p_image {
+  float: right;
+  width: 50%;
 }
 /* line 15, ../sass/block/_defaul.scss */
 .products .product .p_image img {
@@ -84,73 +85,99 @@ img {
   height: 147px;
   margin: 0 auto;
 }
-/* line 36, ../sass/block/_defaul.scss */
-.products .product:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-/* line 40, ../sass/block/_defaul.scss */
+/* line 30, ../sass/block/_defaul.scss */
 .products .product:nth-of-type(-n+3) {
   margin-top: 0;
 }
 
-/* line 45, ../sass/block/_defaul.scss */
+/* line 35, ../sass/block/_defaul.scss */
 .m_page {
-  background-image: url('../images/41101825-game-wallpapers.jpg?1472624671');
+  background-image: url('../images/41101825-game-wallpapers.jpg?1473094632');
   width: 100%;
 }
-/* line 48, ../sass/block/_defaul.scss */
+/* line 38, ../sass/block/_defaul.scss */
 .m_page.dota2 {
-  background-image: url('../images/dota_2_art_2014_logotip_97476_1920x1080.jpg?1472625437');
+  background-image: url('../images/dota_2_art_2014_logotip_97476_1920x1080.jpg?1471200688');
 }
 
-/* line 52, ../sass/block/_defaul.scss */
+/* line 42, ../sass/block/_defaul.scss */
 .middle_content {
   *zoom: 1;
   padding: 25px;
 }
-/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .middle_content:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 56, ../sass/block/_defaul.scss */
+/* line 46, ../sass/block/_defaul.scss */
 .m_c_item {
   float: left;
 }
 
-/* line 59, ../sass/block/_defaul.scss */
+/* line 49, ../sass/block/_defaul.scss */
 .m_c_left {
   width: 20%;
 }
-/* line 62, ../sass/block/_defaul.scss */
+/* line 51, ../sass/block/_defaul.scss */
+.m_c_left + .m_c_right {
+  width: 80%;
+}
+/* line 53, ../sass/block/_defaul.scss */
+.m_c_left + .m_c_right .product {
+  box-shadow: 0 0 12px black;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  opacity: 0.8;
+  float: left;
+  width: calc((100% - 15px*3) / 3);
+  margin-left: 15px;
+}
+/* line 60, ../sass/block/_defaul.scss */
+.m_c_left + .m_c_right .product > div {
+  width: 100%;
+}
+/* line 63, ../sass/block/_defaul.scss */
+.m_c_left + .m_c_right .product .p_name {
+  padding: 7px;
+  background-color: rgba(0, 130, 92, 0.4);
+}
+/* line 67, ../sass/block/_defaul.scss */
+.m_c_left + .m_c_right .product .p_image {
+  float: none;
+}
+/* line 70, ../sass/block/_defaul.scss */
+.m_c_left + .m_c_right .product:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+/* line 77, ../sass/block/_defaul.scss */
 .m_c_left .menu .menu_item {
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-bottom-width: 0;
 }
-/* line 65, ../sass/block/_defaul.scss */
+/* line 80, ../sass/block/_defaul.scss */
 .m_c_left .menu .menu_item:last-of-type {
   border-bottom-width: 1px;
 }
-/* line 68, ../sass/block/_defaul.scss */
+/* line 83, ../sass/block/_defaul.scss */
 .m_c_left .menu .menu_item:hover {
   border-color: rgba(255, 255, 255, 0.4);
 }
-/* line 70, ../sass/block/_defaul.scss */
+/* line 85, ../sass/block/_defaul.scss */
 .m_c_left .menu .menu_item:hover + .menu_item {
   border-top-color: rgba(255, 255, 255, 0.4);
 }
-/* line 76, ../sass/block/_defaul.scss */
+/* line 91, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_1 input {
   display: none;
 }
-/* line 78, ../sass/block/_defaul.scss */
+/* line 93, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_1 input:checked ~ .menu_lvl_2 {
   display: block;
 }
-/* line 83, ../sass/block/_defaul.scss */
+/* line 98, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_2 {
   border-top: 1px solid white;
   margin-top: 10px;
@@ -159,17 +186,17 @@ img {
   z-index: 10;
   display: none;
 }
-/* line 90, ../sass/block/_defaul.scss */
+/* line 105, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_2 .menu_item {
   border-color: transparent;
   border-width: 0;
   border-bottom-width: 1px;
 }
-/* line 94, ../sass/block/_defaul.scss */
+/* line 109, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_2 .menu_item:hover, .m_c_left .menu.menu_lvl_2 .menu_item.active {
   border-color: rgba(255, 255, 255, 0.4);
 }
-/* line 107, ../sass/block/_defaul.scss */
+/* line 122, ../sass/block/_defaul.scss */
 .m_c_left ul ul {
   display: none;
   margin-top: 5px;
@@ -182,7 +209,7 @@ img {
   clear: both;
   padding-bottom: 0;
 }
-/* line 117, ../sass/block/_defaul.scss */
+/* line 132, ../sass/block/_defaul.scss */
 .m_c_left ul > li {
   *zoom: 1;
   cursor: pointer;
@@ -191,96 +218,96 @@ img {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   padding: 10px 5px;
 }
-/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .m_c_left ul > li:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 120, ../sass/block/_defaul.scss */
+/* line 135, ../sass/block/_defaul.scss */
 .m_c_left ul > li.active ul {
   display: block;
 }
-/* line 124, ../sass/block/_defaul.scss */
+/* line 139, ../sass/block/_defaul.scss */
 .m_c_left ul > li > span {
   padding: 5px;
 }
-/* line 128, ../sass/block/_defaul.scss */
+/* line 143, ../sass/block/_defaul.scss */
 .m_c_left ul > li.l:before {
   background-position: -25px 0;
 }
-/* line 133, ../sass/block/_defaul.scss */
+/* line 148, ../sass/block/_defaul.scss */
 .m_c_left ul > li.h:before {
   background-position: -50px 0;
 }
-/* line 138, ../sass/block/_defaul.scss */
+/* line 153, ../sass/block/_defaul.scss */
 .m_c_left ul > li.w_o_w:before {
   background-position: -75px 0;
 }
-/* line 143, ../sass/block/_defaul.scss */
+/* line 158, ../sass/block/_defaul.scss */
 .m_c_left ul > li.d:before {
   background-position: -100px 0;
 }
-/* line 148, ../sass/block/_defaul.scss */
+/* line 163, ../sass/block/_defaul.scss */
 .m_c_left ul > li.l_o_l:before {
   background-position: -125px 0;
 }
-/* line 152, ../sass/block/_defaul.scss */
+/* line 167, ../sass/block/_defaul.scss */
 .m_c_left ul > li.games {
   align-items: center;
   display: flex;
 }
-/* line 155, ../sass/block/_defaul.scss */
+/* line 170, ../sass/block/_defaul.scss */
 .m_c_left ul > li.games:before {
   display: block;
   float: left;
   content: "";
-  background-image: url('../images/Logo/sprite.png?1472625437');
+  background-image: url('../images/Logo/sprite.png?1471200688');
   width: 25px;
   height: 25px;
   margin-right: 5px;
 }
-/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .m_c_left ul > li:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 170, ../sass/block/_defaul.scss */
+/* line 185, ../sass/block/_defaul.scss */
 .m_c_left ul > li:last-of-type {
   border-bottom-width: 0;
 }
 
-/* line 176, ../sass/block/_defaul.scss */
+/* line 191, ../sass/block/_defaul.scss */
 .m_c_right {
-  width: 80%;
   *zoom: 1;
+  width: 100%;
 }
-/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .m_c_right:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 181, ../sass/block/_defaul.scss */
+/* line 196, ../sass/block/_defaul.scss */
 #slider {
   margin: 0 auto;
   min-height: 300px;
   width: 100%;
   position: relative;
 }
-/* line 186, ../sass/block/_defaul.scss */
+/* line 201, ../sass/block/_defaul.scss */
 #slider article {
   background-color: black;
 }
-/* line 188, ../sass/block/_defaul.scss */
+/* line 203, ../sass/block/_defaul.scss */
 #slider article img {
   display: block;
   width: 960px;
   margin-left: calc((100% - 943px) / 2);
 }
-/* line 195, ../sass/block/_defaul.scss */
+/* line 210, ../sass/block/_defaul.scss */
 #slider:hover #slide1:checked ~ #controls label:nth-child(2),
 #slider:hover #slide2:checked ~ #controls label:nth-child(3),
 #slider:hover #slide3:checked ~ #controls label:nth-child(4),
@@ -289,7 +316,7 @@ img {
   float: right;
   display: block;
 }
-/* line 200, ../sass/block/_defaul.scss */
+/* line 215, ../sass/block/_defaul.scss */
 #slider:hover #slide1:checked ~ #controls label:nth-child(2) span,
 #slider:hover #slide2:checked ~ #controls label:nth-child(3) span,
 #slider:hover #slide3:checked ~ #controls label:nth-child(4) span,
@@ -297,7 +324,7 @@ img {
 #slider:hover #slide5:checked ~ #controls label:nth-child(1) span {
   background-position: -50px -26px;
 }
-/* line 206, ../sass/block/_defaul.scss */
+/* line 221, ../sass/block/_defaul.scss */
 #slider:hover #slide1:checked ~ #controls label:nth-child(5),
 #slider:hover #slide2:checked ~ #controls label:nth-child(1),
 #slider:hover #slide3:checked ~ #controls label:nth-child(2),
@@ -306,7 +333,7 @@ img {
   float: left;
   display: block;
 }
-/* line 211, ../sass/block/_defaul.scss */
+/* line 226, ../sass/block/_defaul.scss */
 #slider:hover #slide1:checked ~ #controls label:nth-child(5) span,
 #slider:hover #slide2:checked ~ #controls label:nth-child(1) span,
 #slider:hover #slide3:checked ~ #controls label:nth-child(2) span,
@@ -315,20 +342,20 @@ img {
   background-position: -10px -26px;
 }
 
-/* line 219, ../sass/block/_defaul.scss */
+/* line 234, ../sass/block/_defaul.scss */
 #controls {
   *zoom: 1;
   width: 100%;
   max-width: 960px;
   margin: -185px auto 0;
 }
-/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
 #controls:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 224, ../sass/block/_defaul.scss */
+/* line 239, ../sass/block/_defaul.scss */
 #controls label {
   padding: 23px 12px;
   -moz-border-radius: 2px;
@@ -337,16 +364,16 @@ img {
   display: none;
   background-color: rgba(0, 0, 0, 0.7);
 }
-/* line 225, ../sass/block/_defaul.scss */
+/* line 240, ../sass/block/_defaul.scss */
 #controls label span {
-  background-image: url('../images/imageControl.png?1472625437');
+  background-image: url('../images/imageControl.png?1471200688');
   display: block;
   width: 16px;
   height: 24px;
   opacity: 0.3;
 }
 
-/* line 241, ../sass/block/_defaul.scss */
+/* line 256, ../sass/block/_defaul.scss */
 .menu_lvl_1 > div {
   cursor: pointer;
   *zoom: 1;
@@ -354,13 +381,13 @@ img {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   padding: 10px 5px;
 }
-/* line 38, c:/Ruby22/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, C:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .menu_lvl_1 > div:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 247, ../sass/block/_defaul.scss */
+/* line 262, ../sass/block/_defaul.scss */
 .menu_lvl_1 > div:last-of-type {
   border-bottom-width: 0;
 }
