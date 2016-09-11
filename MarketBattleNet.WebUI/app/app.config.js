@@ -2,6 +2,9 @@
     "use strict";
 
     angular.module("app")
+        .constant("appSettings", {
+            "apiPath": "http://localhost:7378/api/"
+        })
         .config(["$urlRouterProvider", "$stateProvider", function ($urlRouterProvider, $stateProvider) {
             $urlRouterProvider.otherwise("/shop");
             $stateProvider

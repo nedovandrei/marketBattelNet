@@ -68,6 +68,14 @@
   <ItemGroup>
     <Content Include="app\app.config.js" />
     <Content Include="app\app.module.js" />
+    <Content Include="app\resource\art.resource.js" />
+    <Content Include="app\resource\game.resource.js" />
+    <Content Include="app\resource\request.resource.js" />
+    <Content Include="app\resource\userProfile.resource.js" />
+    <Content Include="app\service\art.service.js" />
+    <Content Include="app\service\game.service.js" />
+    <Content Include="app\service\request.service.js" />
+    <Content Include="app\service\userProfile.service.js" />
     <Content Include="app\shop\shop.html" />
     <Content Include="app\shop\ShopController.js" />
     <Content Include="app\game\game.html" />
