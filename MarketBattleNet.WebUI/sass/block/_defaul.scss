@@ -28,16 +28,6 @@
     div{
       font-size: 18px;
     }
-    .p_name{
-      width: 50%;
-    }
-    .p_image{
-      float: right;
-      width: 50%;
-      img {
-        width: 100%;
-      }
-    }
     &.games{
       .p_image{
         img{
@@ -218,6 +208,18 @@
 .m_c_right{
   @include pie-clearfix;
   width: 100%;
+  .product{
+    .p_name{
+      width: 50%;
+    }
+    .p_image{
+      float: right;
+      width: 50%;
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 
 #slider {
