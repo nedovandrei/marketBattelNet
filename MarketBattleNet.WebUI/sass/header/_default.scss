@@ -4,6 +4,13 @@
 .header_content{
   padding:0 5px;
   .h_link{
+    &.games{
+      width: 120px;
+      height: 20px;
+      padding: 0;
+
+    }
+    vertical-align: middle;
     padding: 20px;
     display: inline-block;
     font-size: 20px;
