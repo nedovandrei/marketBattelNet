@@ -15,8 +15,13 @@
                 })
                 .state("game", {
                     url: "/game",
-                    templateUrl: "app/game/game.html",
+                    templateUrl: "app/game/market.html",
                     controller: "GameController"
+                })
+                .state("market", {
+                    url: "/market",
+                    templateUrl: "app/market/market.html",
+                    controller: "MarketController"
                 })
                 .state("art", {
                     url: "/art",

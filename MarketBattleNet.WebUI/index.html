@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/demo.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css"/>
+    <link rel="stylesheet" href="orbit.css">
     <meta charset="UTF-8">
 
     <!--Scripts section-->
@@ -27,6 +28,20 @@
     <script src="app/game/GameController.js"></script>
     <script src="app/shop/ShopController.js"></script>
     <script src="app/art/ArtController.js"></script>
+    <script src="app/market/MarketController.js"></script>
+    <script type="text/javascript" src="jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="jquery.orbit.min.js"></script>
+
+    <!-- Run the plugin -->
+    <script type="text/javascript">
+        $(window).load(function() {
+            $('#featured').orbit({
+                'bullets': true,
+                'timer' : true,
+                'animation' : 'horizontal-slide'
+            });
+        });
+    </script>
 
     <title>Market</title>
 </head>
@@ -36,7 +51,7 @@
         <div class="header_content">
             <img src="images/ROGUE.png" class="h_link games active" ui-sref="game" alt="">
             <div class="h_link market" ui-sref="shop">Магазин</div>
-            <div class="h_link shop">
+            <div class="h_link shop ui-sref="market">
                 <div class="products">
                     <div class="product pot" ui-sref="art">
                         <div class="p_image">
