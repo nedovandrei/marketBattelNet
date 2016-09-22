@@ -15,7 +15,7 @@
                 })
                 .state("game", {
                     url: "/game",
-                    templateUrl: "app/game/market.html",
+                    templateUrl: "app/game/game.html",
                     controller: "GameController"
                 })
                 .state("market", {

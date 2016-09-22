@@ -68,6 +68,11 @@
   <ItemGroup>
     <Content Include="app\app.config.js" />
     <Content Include="app\app.module.js" />
+    <Content Include="app\art\art.html" />
+    <Content Include="app\art\ArtController.js" />
+    <Content Include="app\game\GameController.js" />
+    <Content Include="app\market\market.html" />
+    <Content Include="app\market\MarketController.js" />
     <Content Include="app\resource\art.resource.js" />
     <Content Include="app\resource\game.resource.js" />
     <Content Include="app\resource\request.resource.js" />
@@ -79,7 +84,6 @@
     <Content Include="app\shop\shop.html" />
     <Content Include="app\shop\ShopController.js" />
     <Content Include="app\game\game.html" />
-    <Content Include="app\game\MarketController.js" />
     <Content Include="bower_components\angular-animate\angular-animate.js" />
     <Content Include="bower_components\angular-animate\angular-animate.min.js" />
     <Content Include="bower_components\angular-animate\index.js" />
