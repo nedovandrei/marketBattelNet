@@ -47,6 +47,58 @@
         display:block;
       }
     }
+    .p_cost{
+      margin-top: 20px;
+    }
+    .p_description{
+      margin-top: 20px;
+    }
+    .p_buy{
+      margin-top: 50px;
+      cursor: pointer;
+    }
+  }
+
+  &.buy{
+    .product{
+      padding: 10px 5px;
+      border:1px solid hsla(0, 0%, 100%, 0.1);
+      border-bottom-width: 0;
+      &:last-of-type{
+        border-bottom-width: 1px;
+      }
+      &:hover {
+        border-color: hsla(0, 0%, 100%, 0.4);
+        + .product{
+          border-top-color: hsla(0, 0%, 100%, 0.4);
+        }
+      }
+      @include pie-clearfix;
+      > div{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .p_disabled{
+        float: right;
+        background-image: image-url('iconmonstr-recycling-6-24.png');
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+      }
+      .p_name{
+        width: auto;
+      }
+      .p_image {
+        margin-right: 5px;
+        float:left;
+        width: auto;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
   }
 }
 .m_page{
