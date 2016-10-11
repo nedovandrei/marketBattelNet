@@ -3,6 +3,14 @@
 
     angular.module("app")
         .controller("ArtController", ["$scope", function ($scope) {
-            //пока нифига
+            
+
+            function changeBackground(fileName) {
+                if (fileName) {
+                    $(".m_page").css("background-image", "url('../images/" + fileName + "')");
+                } else {
+                    $(".m_page").css("background-image", "url('" + appSettings.backgroundDefault + "')");
+                }
+            }
         }]);
 }());

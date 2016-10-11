@@ -88,5 +88,19 @@ namespace MarketBattleNet.PL.API.Controllers
             _artService.Delete(id);
             return Request.CreateResponse(HttpStatusCode.OK);
         }
+
+        [HttpGet]
+        [Route("api/art/findByGameId/{id}")]
+        public HttpResponseMessage FindByGameId(int id)
+        {
+            if (id == 0)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "ArtController > FindByGameId(); : No ID specified");
+            }
+
+           var data = _artService.GetAll().Where(x => x.GameId == id);
+
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
     }
 }

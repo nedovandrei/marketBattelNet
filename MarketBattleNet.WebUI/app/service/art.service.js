@@ -45,6 +45,14 @@
                 });
             };
 
+            _artService.findByGameId = function (id, callback) {
+                return artResource.findByGameId({ id: id }, function (result) {
+                    callback(result);
+                }, function () {
+                    console.log("artService -> findByGameId: error")
+                });
+            }
+
             return _artService;
         }]);
 })();

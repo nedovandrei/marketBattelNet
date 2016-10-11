@@ -58,6 +58,26 @@
     <Compile Include="Migrations\201609050809497_ChangedGameNametoGameIDInDTO.Designer.cs">
       <DependentUpon>201609050809497_ChangedGameNametoGameIDInDTO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610111728559_AddedLogoFileNameForGameModel.cs" />
+    <Compile Include="Migrations\201610111728559_AddedLogoFileNameForGameModel.Designer.cs">
+      <DependentUpon>201610111728559_AddedLogoFileNameForGameModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610111736527_MadeGameNameAsString.cs" />
+    <Compile Include="Migrations\201610111736527_MadeGameNameAsString.Designer.cs">
+      <DependentUpon>201610111736527_MadeGameNameAsString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610111808141_DropGame.cs" />
+    <Compile Include="Migrations\201610111808141_DropGame.Designer.cs">
+      <DependentUpon>201610111808141_DropGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610111809149_AddGameModel.cs" />
+    <Compile Include="Migrations\201610111809149_AddGameModel.Designer.cs">
+      <DependentUpon>201610111809149_AddGameModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610111911503_imAFuckingIdiot2.cs" />
+    <Compile Include="Migrations\201610111911503_imAFuckingIdiot2.Designer.cs">
+      <DependentUpon>201610111911503_imAFuckingIdiot2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +97,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609050809497_ChangedGameNametoGameIDInDTO.resx">
       <DependentUpon>201609050809497_ChangedGameNametoGameIDInDTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610111728559_AddedLogoFileNameForGameModel.resx">
+      <DependentUpon>201610111728559_AddedLogoFileNameForGameModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610111736527_MadeGameNameAsString.resx">
+      <DependentUpon>201610111736527_MadeGameNameAsString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610111808141_DropGame.resx">
+      <DependentUpon>201610111808141_DropGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610111809149_AddGameModel.resx">
+      <DependentUpon>201610111809149_AddGameModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610111911503_imAFuckingIdiot2.resx">
+      <DependentUpon>201610111911503_imAFuckingIdiot2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

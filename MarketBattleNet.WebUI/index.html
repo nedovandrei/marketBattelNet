@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css"/>
     <meta charset="UTF-8">
     <!--Scripts section-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -28,14 +29,15 @@
     <script src="app/art/ArtController.js"></script>
     <script src="app/market/MarketController.js"></script>
     <script>
+
         /* When the user clicks on the button,
-         toggle between hiding and showing the dropdown content */
+                 toggle between hiding and showing the dropdown content */
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");
         }
 
         // Close the dropdown menu if the user clicks outside of it
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (!event.target.matches('.dropbtn')) {
 
                 var dropdowns = document.getElementsByClassName("dropdown-content");

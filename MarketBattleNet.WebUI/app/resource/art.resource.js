@@ -8,7 +8,8 @@
                 'findById': { method: "GET" },
                 'add': { method: "POST" },
                 'update': { method: "UPDATE" },
-                'delete': { method: "DELETE" }
+                'delete': { method: "DELETE" },
+                'findByGameId': { method: "GET", url: appSettings.apiPath + "art/findByGameId/:id", isArray: true }
             });
         });
 })();

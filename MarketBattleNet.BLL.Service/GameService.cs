@@ -27,7 +27,9 @@ namespace MarketBattleNet.BLL.Service
                 dtoToSend.Add(new GameDTO()
                 {
                     Id = request.Id,
-                    Name = request.Name
+                    Name = request.Name,
+                    BackgroundFileName = request.BackgroundFileName,
+                    LogoFileName = request.LogoFileName
                 });
             }
             return dtoToSend;
@@ -39,7 +41,10 @@ namespace MarketBattleNet.BLL.Service
             var dtoToSend = new GameDTO()
             {
                 Id = data.Id,
-                Name = data.Name
+                Name = data.Name,
+                BackgroundFileName = data.BackgroundFileName,
+                LogoFileName = data.LogoFileName
+                
             };
             return dtoToSend;
         }
@@ -49,7 +54,10 @@ namespace MarketBattleNet.BLL.Service
             var data = new GameModel()
             {
                 Id = obj.Id,
-                Name = obj.Name
+                Name = obj.Name,
+                BackgroundFileName = obj.BackgroundFileName,
+                LogoFileName = obj.LogoFileName
+                
             };
             _repository.Create(data);
         }
@@ -59,7 +67,10 @@ namespace MarketBattleNet.BLL.Service
             var data = new GameModel()
             {
                 Id = obj.Id,
-                Name = obj.Name
+                Name = obj.Name,
+                BackgroundFileName = obj.BackgroundFileName,
+                LogoFileName = obj.LogoFileName
+                
             };
             _repository.Update(data);
         }
@@ -70,7 +81,9 @@ namespace MarketBattleNet.BLL.Service
             var data = new GameModel()
             {
                 Id = dataToDelete.Id,
-                Name = dataToDelete.Name
+                Name = dataToDelete.Name,
+                BackgroundFileName = dataToDelete.BackgroundFileName,
+                LogoFileName = dataToDelete.LogoFileName
             };
             _repository.Delete(data);
         }

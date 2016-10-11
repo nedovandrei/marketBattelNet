@@ -79,44 +79,14 @@
         </ul>
     </div>
     <div class="m_c_right m_c_item">
-        <div class="products">
-            <div class="product games">
-                <div class="p_image">
-                    <img src="images/Logo/HalfLife.png" alt="">
+        <div class="products" >
+            <div ng-repeat="game in gameList">
+                <div class="product games" ui-sref="shop({gameId: {{game.Id}}})">
+                    <div class="p_image">
+                        <img ng-src="images/Logo/{{game.LogoFileName}}" alt="">
+                    </div>
+                    <div class="p_name">{{game.Name}}</div>
                 </div>
-                <div class="p_name">Half Life</div>
-            </div>
-            <div class="product games">
-                <div class="p_image">
-                    <img src="images/Logo/3353761.png" alt="">
-                </div>
-
-                <div class="p_name">Lineage 2</div>
-            </div>
-            <div class="product games">
-                <div class="p_image">
-                    <img src="images/Logo/Hearthstone-Heroes-of-Warcraft-PC-Windows.png" alt="">
-                </div>
-                <div class="p_name">Hearthstone</div>
-            </div>
-            <div class="product games">
-                <div class="p_image">
-                    <img src="images/Logo/World_of_warcraft-icon.png" alt="">
-                </div>
-                <div class="p_name">World of Warcraft</div>
-
-            </div>
-            <div class="product games">
-                <div class="p_image">
-                    <img src="images/Logo/logo.png" alt="">
-                </div>
-                <div class="p_name">Dota 2</div>
-            </div>
-            <div class="product games">
-                <div class="p_image">
-                    <img src="images/Logo/league_of_legends_dock_icon_by_kaldrax-d53bbj5.png" alt="">
-                </div>
-                <div class="p_name">League of Legend</div>
             </div>
         </div>
     </div>

@@ -238,6 +238,10 @@ img {
 /* line 104, ../sass/block/_defaul.scss */
 .m_page {
   background-image: url('../images/41101825-game-wallpapers.jpg?1473094632');
+  transition: background-image ease-out 0.5s;
+  -webkit-transition: background-image ease-out 0.5s;
+  -o-transition: background-image ease-out 0.5s;
+  -moz-transition: background-image ease-out 0.5s;
   width: 100%;
 }
 /* line 107, ../sass/block/_defaul.scss */

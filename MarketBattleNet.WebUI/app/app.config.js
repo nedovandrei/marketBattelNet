@@ -3,15 +3,27 @@
 
     angular.module("app")
         .constant("appSettings", {
-            "apiPath": "http://localhost:7378/api/"
+            apiPath: "http://localhost:7378/api/",
+            loader: {
+                show: function () {
+                    //kinda like loader
+                    console.log("loader started");
+                },
+                hide: function () {
+                    //there will once be a hideLoader here
+                    console.log("loader ended");
+                }
+            },
+            backgroundDefault: "../images/41101825-game-wallpapers.jpg?1473094632"            
+            
         })
         .config(["$urlRouterProvider", "$stateProvider", function ($urlRouterProvider, $stateProvider) {
-            $urlRouterProvider.otherwise("/shop");
+            $urlRouterProvider.otherwise("/game");
             $stateProvider
                 .state("shop", {
-                    url: "/shop",
+                    url: "/shop/{gameId}",
                     templateUrl: "app/shop/shop.html",
-                    controller: "ShopController"
+                    controller: "ShopController",
                 })
                 .state("game", {
                     url: "/game",

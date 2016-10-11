@@ -1,9 +1,6 @@
 ﻿using MarketBattleNet.BLL.ServiceInterface;
 using MarketBattleNet.BLL.ServiceInterface.DTO;
 using MarketBattleNet.PL.API.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -52,7 +49,9 @@ namespace MarketBattleNet.PL.API.Controllers
             var modelDTO = new GameDTO()
             {
                 Name = model.Name,
-                BackgroundFileName = model.BackgroundFileName
+                BackgroundFileName = model.BackgroundFileName,
+                LogoFileName = model.LogoFileName
+                
             };
             _gameService.Add(modelDTO);
             return Request.CreateResponse(HttpStatusCode.Created);
@@ -69,7 +68,8 @@ namespace MarketBattleNet.PL.API.Controllers
             {
                 Id = model.Id,
                 Name = model.Name,
-                BackgroundFileName = model.BackgroundFileName
+                BackgroundFileName = model.BackgroundFileName,
+                LogoFileName = model.LogoFileName
             };
             _gameService.Update(modelDTO);
             return Request.CreateResponse(HttpStatusCode.OK);
