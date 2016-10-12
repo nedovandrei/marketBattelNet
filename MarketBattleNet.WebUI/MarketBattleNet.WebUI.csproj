@@ -327,6 +327,14 @@
     <Content Include="bower_components\jquery\external\sizzle\dist\sizzle.min.map" />
     <Content Include="bower_components\jquery\README.md" />
     <Content Include="bower_components\jquery\src\.eslintrc.json" />
+    <Content Include="sass\block\_defaul.scss" />
+    <Content Include="sass\header\_default.scss" />
+    <Content Include="sass\include\_animation.scss" />
+    <Content Include="sass\include\_extend.scss" />
+    <Content Include="sass\include\_reset.scss" />
+    <Content Include="sass\include\_slider.scss" />
+    <Content Include="sass\include\_variable.scss" />
+    <Content Include="sass\screen.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

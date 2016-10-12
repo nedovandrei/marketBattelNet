@@ -33,11 +33,11 @@
     <div class="m_c_right m_c_item">
         <div class="products ">
             <div ng-repeat="art in artList">
-                <div class="product pot" ui-sref="art(art.Id)">
+                <div class="product pot" ui-sref="art({artId: {{art.Id}}})">
                     <div class="p_image">
-                        <img ng-src="images/pot/dota2/{{art.FileName}}" alt="">
+                        <img ng-src="images/arts/{{art.ThumbnailFileName}}" alt="">
                     </div>
-                    <div class="p_name">Чашка Batrider</div>
+                    <div class="p_name">{{art.Name}}</div>
                 </div>
             </div>
             <!--<div class="product pot" ui-sref="art">

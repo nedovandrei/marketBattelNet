@@ -27,9 +27,11 @@ namespace MarketBattleNet.BLL.Service
                 dtoToSend.Add(new ArtDTO()
                 {
                     Id = request.Id,
+                    Name = request.Name,
                     Description = request.Description,
                     GameId = request.GameId,
-                    FileName = request.FileName
+                    ThumbnailFileName = request.ThumbnailFileName,
+                    LargeFileName = request.LargeFileName
                 });
             }
             return dtoToSend;
@@ -41,9 +43,11 @@ namespace MarketBattleNet.BLL.Service
             var dtoToSend = new ArtDTO()
             {
                 Id = data.Id,
+                Name = data.Name,
                 Description = data.Description,
                 GameId = data.GameId,
-                FileName = data.FileName
+                ThumbnailFileName = data.ThumbnailFileName,
+                LargeFileName = data.LargeFileName
             };
             return dtoToSend;
         }
@@ -53,9 +57,11 @@ namespace MarketBattleNet.BLL.Service
             var data = new ArtModel()
             {
                 Id = obj.Id,
+                Name = obj.Name,
                 Description = obj.Description,
                 GameId = obj.GameId,
-                FileName = obj.FileName
+                ThumbnailFileName = obj.ThumbnailFileName,
+                LargeFileName = obj.LargeFileName
             };
             _repository.Create(data);
         }
@@ -65,9 +71,11 @@ namespace MarketBattleNet.BLL.Service
             var data = new ArtModel()
             {
                 Id = obj.Id,
+                Name = obj.Name,
                 Description = obj.Description,
                 GameId = obj.GameId,
-                FileName = obj.FileName
+                ThumbnailFileName = obj.ThumbnailFileName,
+                LargeFileName = obj.LargeFileName
             };
             _repository.Update(data);
         }
@@ -78,9 +86,11 @@ namespace MarketBattleNet.BLL.Service
             var data = new ArtModel()
             {
                 Id = dataToDelete.Id,
+                Name = dataToDelete.Name,
                 Description = dataToDelete.Description,
                 GameId = dataToDelete.GameId,
-                FileName = dataToDelete.FileName
+                ThumbnailFileName = dataToDelete.ThumbnailFileName,
+                LargeFileName = dataToDelete.LargeFileName
             };
             _repository.Delete(data);
         }

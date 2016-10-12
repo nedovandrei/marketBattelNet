@@ -36,7 +36,7 @@
                     controller: "MarketController"
                 })
                 .state("art", {
-                    url: "/art",
+                    url: "/art?artId",
                     templateUrl: "app/art/art.html",
                     controller: "ArtController"
                 });

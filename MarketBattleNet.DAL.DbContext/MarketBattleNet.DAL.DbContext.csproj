@@ -78,6 +78,14 @@
     <Compile Include="Migrations\201610111911503_imAFuckingIdiot2.Designer.cs">
       <DependentUpon>201610111911503_imAFuckingIdiot2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610112317413_AddedThumbnailAndLargeFileName.cs" />
+    <Compile Include="Migrations\201610112317413_AddedThumbnailAndLargeFileName.Designer.cs">
+      <DependentUpon>201610112317413_AddedThumbnailAndLargeFileName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610112330396_ArtNameField.cs" />
+    <Compile Include="Migrations\201610112330396_ArtNameField.Designer.cs">
+      <DependentUpon>201610112330396_ArtNameField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -112,6 +120,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610111911503_imAFuckingIdiot2.resx">
       <DependentUpon>201610111911503_imAFuckingIdiot2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610112317413_AddedThumbnailAndLargeFileName.resx">
+      <DependentUpon>201610112317413_AddedThumbnailAndLargeFileName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610112330396_ArtNameField.resx">
+      <DependentUpon>201610112330396_ArtNameField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

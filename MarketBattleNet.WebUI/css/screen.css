@@ -238,6 +238,7 @@ img {
 /* line 104, ../sass/block/_defaul.scss */
 .m_page {
   background-image: url('../images/41101825-game-wallpapers.jpg?1473094632');
+  background-attachment: fixed;
   transition: background-image ease-out 0.5s;
   -webkit-transition: background-image ease-out 0.5s;
   -o-transition: background-image ease-out 0.5s;
@@ -658,8 +659,14 @@ img {
     opacity: 0;
   }
 }
+
+html, body, .main_page, .middle_block{
+    height: 100%;
+}
 /* line 14, ../sass/screen.scss */
 .main_page .middle_content, .main_page .header_content {
   width: 960px;
+  height:100%;
   margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.4)
 }

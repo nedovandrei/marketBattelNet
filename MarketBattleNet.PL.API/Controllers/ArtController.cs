@@ -51,8 +51,10 @@ namespace MarketBattleNet.PL.API.Controllers
             var modelDTO = new ArtDTO()
             {
                 GameId = model.GameId,
+                Name = model.Name,
                 Description = model.Description,
-                FileName = model.FileName
+                ThumbnailFileName = model.ThumbnailFileName,
+                LargeFileName = model.LargeFileName
             };
             _artService.Add(modelDTO);
             return Request.CreateResponse(HttpStatusCode.Created);
@@ -69,9 +71,11 @@ namespace MarketBattleNet.PL.API.Controllers
             var modelDTO = new ArtDTO()
             {
                 Id = model.Id,
+                Name = model.Name,
                 GameId = model.GameId,
                 Description = model.Description,
-                FileName = model.FileName
+                ThumbnailFileName = model.ThumbnailFileName,
+                LargeFileName = model.LargeFileName
             };
             _artService.Update(modelDTO);
             return Request.CreateResponse(HttpStatusCode.OK);
