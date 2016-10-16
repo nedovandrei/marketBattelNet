@@ -282,6 +282,7 @@
     <Content Include="packages.config" />
     <Content Include="config.rb" />
     <None Include=".bin\bower.cmd" />
+    <None Include=".bin\compass.bat" />
     <None Include=".bin\git.cmd" />
     <None Include=".bin\node.cmd" />
     <Content Include="css\fonts\BebasNeue-webfont.eot" />

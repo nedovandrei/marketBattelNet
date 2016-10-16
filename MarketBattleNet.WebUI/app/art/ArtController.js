@@ -12,9 +12,9 @@
 
             function changeBackground(fileName) {
                 if (fileName) {
-                    $(".m_page").css("background-image", "url('../images/" + fileName + "')");
+                    $("img.background_image").css("background-image", "url('../images/" + fileName + "')");
                 } else {
-                    $(".m_page").css("background-image", "url('" + appSettings.backgroundDefault + "')");
+                    $("img.background_image").css("background-image", "url('" + appSettings.backgroundDefault + "')");
                 }
             }
 

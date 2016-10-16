@@ -14,7 +14,7 @@
                     console.log("loader ended");
                 }
             },
-            backgroundDefault: "../images/41101825-game-wallpapers.jpg?1473094632"            
+            backgroundDefault: "../images/41101825-game-wallpapers.jpg"
             
         })
         .config(["$urlRouterProvider", "$stateProvider", function ($urlRouterProvider, $stateProvider) {
