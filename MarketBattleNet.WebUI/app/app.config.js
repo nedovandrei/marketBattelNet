@@ -35,6 +35,16 @@
                     templateUrl: "app/market/market.html",
                     controller: "MarketController"
                 })
+				 .state("login", {
+				 	url: "/login",
+				 	templateUrl: "app/login/login.html",
+				 	controller: "LoginController"
+				 })
+				 .state("admin", {
+				 	url: "/admin",
+				 	templateUrl: "app/admin/admin.html",
+				 	controller: "AdminController"
+				 })
                 .state("art", {
                     url: "/art?artId",
                     templateUrl: "app/art/art.html",

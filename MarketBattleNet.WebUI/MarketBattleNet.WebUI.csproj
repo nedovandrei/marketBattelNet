@@ -71,6 +71,10 @@
     <Content Include="app\art\art.html" />
     <Content Include="app\art\ArtController.js" />
     <Content Include="app\game\GameController.js" />
+    <Content Include="app\admin\admin.html" />
+    <Content Include="app\admin\AdminController.js" />
+    <Content Include="app\login\login.html" />
+    <Content Include="app\login\LoginController.js" />
     <Content Include="app\market\market.html" />
     <Content Include="app\market\MarketController.js" />
     <Content Include="app\resource\art.resource.js" />

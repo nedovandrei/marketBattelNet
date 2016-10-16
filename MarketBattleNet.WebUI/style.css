@@ -8,9 +8,9 @@ label, a {
 /* NEW EXPERIMENT */
 /* Slider Setup */
 
-input {
+/*input {
 	display: none;
-}
+}*/
 
 #slide1:checked ~ #slides .inner { margin-left:0; }
 #slide2:checked ~ #slides .inner { margin-left:-100%; }

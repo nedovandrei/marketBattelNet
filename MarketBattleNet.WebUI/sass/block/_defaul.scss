@@ -104,9 +104,10 @@
 .m_page{
   background-image: image-url('41101825-game-wallpapers.jpg');
   width: 100%;
-  &.dota2{
+
+  /*&.dota2{
     background-image: image-url('dota_2_art_2014_logotip_97476_1920x1080.jpg');
-  }
+  }*/
 }
 .middle_content{
   @include pie-clearfix;
