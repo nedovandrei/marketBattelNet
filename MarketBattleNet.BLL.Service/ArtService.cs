@@ -27,8 +27,13 @@ namespace MarketBattleNet.BLL.Service
                 dtoToSend.Add(new ArtDTO()
                 {
                     Id = request.Id,
-                    Name = request.Name,
-                    Description = request.Description,
+                    Type = request.Type,
+                    NameRus = request.NameRus,
+                    NameEng = request.NameEng,
+                    NameRom = request.NameRom,
+                    DescriptionRus = request.DescriptionRus,
+                    DescriptionEng = request.DescriptionEng,
+                    DescriptionRom = request.DescriptionRom,
                     GameId = request.GameId,
                     ThumbnailFileName = request.ThumbnailFileName,
                     LargeFileName = request.LargeFileName
@@ -43,8 +48,13 @@ namespace MarketBattleNet.BLL.Service
             var dtoToSend = new ArtDTO()
             {
                 Id = data.Id,
-                Name = data.Name,
-                Description = data.Description,
+                Type = data.Type,
+                NameRus = data.NameRus,
+                NameEng = data.NameEng,
+                NameRom = data.NameRom,
+                DescriptionRus = data.DescriptionRus,
+                DescriptionEng = data.DescriptionEng,
+                DescriptionRom = data.DescriptionRom,
                 GameId = data.GameId,
                 ThumbnailFileName = data.ThumbnailFileName,
                 LargeFileName = data.LargeFileName
@@ -57,8 +67,13 @@ namespace MarketBattleNet.BLL.Service
             var data = new ArtModel()
             {
                 Id = obj.Id,
-                Name = obj.Name,
-                Description = obj.Description,
+                NameRus = obj.NameRus,
+                NameEng = obj.NameEng,
+                NameRom = obj.NameRom,
+                Type = obj.Type,
+                DescriptionRus = obj.DescriptionRus,
+                DescriptionEng = obj.DescriptionEng,
+                DescriptionRom = obj.DescriptionRom,
                 GameId = obj.GameId,
                 ThumbnailFileName = obj.ThumbnailFileName,
                 LargeFileName = obj.LargeFileName
@@ -71,8 +86,13 @@ namespace MarketBattleNet.BLL.Service
             var data = new ArtModel()
             {
                 Id = obj.Id,
-                Name = obj.Name,
-                Description = obj.Description,
+                Type = obj.Type,
+                NameRus = obj.NameRus,
+                NameEng = obj.NameEng,
+                NameRom = obj.NameRom,
+                DescriptionEng = obj.DescriptionEng,
+                DescriptionRus = obj.DescriptionRus,
+                DescriptionRom = obj.DescriptionRom,
                 GameId = obj.GameId,
                 ThumbnailFileName = obj.ThumbnailFileName,
                 LargeFileName = obj.LargeFileName
@@ -86,8 +106,13 @@ namespace MarketBattleNet.BLL.Service
             var data = new ArtModel()
             {
                 Id = dataToDelete.Id,
-                Name = dataToDelete.Name,
-                Description = dataToDelete.Description,
+                Type = dataToDelete.Type,
+                NameRus = dataToDelete.NameRus,
+                NameEng = dataToDelete.NameEng,
+                NameRom = dataToDelete.NameRom,
+                DescriptionRus = dataToDelete.DescriptionRus,
+                DescriptionEng = dataToDelete.DescriptionEng,
+                DescriptionRom = dataToDelete.DescriptionRom,
                 GameId = dataToDelete.GameId,
                 ThumbnailFileName = dataToDelete.ThumbnailFileName,
                 LargeFileName = dataToDelete.LargeFileName

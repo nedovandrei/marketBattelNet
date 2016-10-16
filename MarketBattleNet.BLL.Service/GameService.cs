@@ -27,7 +27,9 @@ namespace MarketBattleNet.BLL.Service
                 dtoToSend.Add(new GameDTO()
                 {
                     Id = request.Id,
-                    Name = request.Name,
+                    NameRus = request.NameRus,
+                    NameEng = request.NameRus,
+                    NameRom = request.NameRom,
                     BackgroundFileName = request.BackgroundFileName,
                     LogoFileName = request.LogoFileName
                 });
@@ -41,7 +43,9 @@ namespace MarketBattleNet.BLL.Service
             var dtoToSend = new GameDTO()
             {
                 Id = data.Id,
-                Name = data.Name,
+                NameRus = data.NameRus,
+                NameEng = data.NameEng,
+                NameRom = data.NameRom,
                 BackgroundFileName = data.BackgroundFileName,
                 LogoFileName = data.LogoFileName
                 
@@ -54,7 +58,9 @@ namespace MarketBattleNet.BLL.Service
             var data = new GameModel()
             {
                 Id = obj.Id,
-                Name = obj.Name,
+                NameRus = obj.NameRus,
+                NameEng = obj.NameEng,
+                NameRom = obj.NameRom,
                 BackgroundFileName = obj.BackgroundFileName,
                 LogoFileName = obj.LogoFileName
                 
@@ -67,7 +73,7 @@ namespace MarketBattleNet.BLL.Service
             var data = new GameModel()
             {
                 Id = obj.Id,
-                Name = obj.Name,
+                NameRus = obj.NameRus,
                 BackgroundFileName = obj.BackgroundFileName,
                 LogoFileName = obj.LogoFileName
                 
@@ -81,7 +87,9 @@ namespace MarketBattleNet.BLL.Service
             var data = new GameModel()
             {
                 Id = dataToDelete.Id,
-                Name = dataToDelete.Name,
+                NameRus = dataToDelete.NameRus,
+                NameEng = dataToDelete.NameEng,
+                NameRom = dataToDelete.NameRom,
                 BackgroundFileName = dataToDelete.BackgroundFileName,
                 LogoFileName = dataToDelete.LogoFileName
             };

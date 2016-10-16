@@ -662,9 +662,11 @@ img {
 
 html, body, .main_page, .middle_block{
     height: 100%;
+    position: relative;
 }
 /* line 14, ../sass/screen.scss */
 .main_page .middle_content, .main_page .header_content {
+   
   width: 960px;
   height:100%;
   margin: 0 auto;

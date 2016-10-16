@@ -48,7 +48,9 @@ namespace MarketBattleNet.PL.API.Controllers
             }
             var modelDTO = new GameDTO()
             {
-                Name = model.Name,
+                NameRus = model.NameRus,
+                NameEng = model.NameEng,
+                NameRom = model.NameRom,
                 BackgroundFileName = model.BackgroundFileName,
                 LogoFileName = model.LogoFileName
                 
@@ -67,7 +69,9 @@ namespace MarketBattleNet.PL.API.Controllers
             var modelDTO = new GameDTO()
             {
                 Id = model.Id,
-                Name = model.Name,
+                NameRus = model.NameRus,
+                NameEng = model.NameEng,
+                NameRom = model.NameRom,
                 BackgroundFileName = model.BackgroundFileName,
                 LogoFileName = model.LogoFileName
             };

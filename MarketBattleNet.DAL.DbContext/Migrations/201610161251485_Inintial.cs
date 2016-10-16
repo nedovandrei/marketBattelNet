@@ -3,7 +3,7 @@ namespace MarketBattleNet.DAL.DbContext.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class DroppedServiceAddedGame : DbMigration
+    public partial class Inintial : DbMigration
     {
         public override void Up()
         {
@@ -12,9 +12,12 @@ namespace MarketBattleNet.DAL.DbContext.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        GameId = c.String(),
+                        GameId = c.Int(nullable: false),
+                        Type = c.String(),
+                        Name = c.String(),
                         Description = c.String(),
-                        FileName = c.String(),
+                        ThumbnailFileName = c.String(),
+                        LargeFileName = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -23,7 +26,9 @@ namespace MarketBattleNet.DAL.DbContext.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.Int(nullable: false),
+                        Name = c.String(),
+                        LogoFileName = c.String(),
+                        BackgroundFileName = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             

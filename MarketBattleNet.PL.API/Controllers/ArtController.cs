@@ -51,8 +51,13 @@ namespace MarketBattleNet.PL.API.Controllers
             var modelDTO = new ArtDTO()
             {
                 GameId = model.GameId,
-                Name = model.Name,
-                Description = model.Description,
+                Type = model.Type,
+                NameRus = model.NameRus,
+                NameEng = model.NameEng,
+                NameRom = model.NameRom,
+                DescriptionRus = model.DescriptionRus,
+                DescriptionEng = model.DescriptionEng,
+                DescriptionRom = model.DescriptionRom,
                 ThumbnailFileName = model.ThumbnailFileName,
                 LargeFileName = model.LargeFileName
             };
@@ -71,9 +76,14 @@ namespace MarketBattleNet.PL.API.Controllers
             var modelDTO = new ArtDTO()
             {
                 Id = model.Id,
-                Name = model.Name,
+                Type = model.Type,
+                NameRus = model.NameRus,
+                NameEng = model.NameEng,
+                NameRom = model.NameRom,
                 GameId = model.GameId,
-                Description = model.Description,
+                DescriptionRus = model.DescriptionRus,
+                DescriptionEng = model.DescriptionEng,
+                DescriptionRom = model.DescriptionRom,
                 ThumbnailFileName = model.ThumbnailFileName,
                 LargeFileName = model.LargeFileName
             };

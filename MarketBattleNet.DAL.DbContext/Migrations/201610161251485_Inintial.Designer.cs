@@ -7,13 +7,13 @@ namespace MarketBattleNet.DAL.DbContext.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class DropGame : IMigrationMetadata
+    public sealed partial class Inintial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DropGame));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Inintial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610111808141_DropGame"; }
+            get { return "201610161251485_Inintial"; }
         }
         
         string IMigrationMetadata.Source
