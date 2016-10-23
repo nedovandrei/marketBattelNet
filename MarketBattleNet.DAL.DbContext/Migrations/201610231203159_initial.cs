@@ -3,10 +3,15 @@ namespace MarketBattleNet.DAL.DbContext.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Inintial : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
+            DropTable("dbo.UserProfileModels");
+            DropTable("dbo.RequestModels");
+            DropTable("dbo.GameModels");
+            DropTable("dbo.ArtModels");
+
             CreateTable(
                 "dbo.ArtModels",
                 c => new
@@ -14,8 +19,12 @@ namespace MarketBattleNet.DAL.DbContext.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         GameId = c.Int(nullable: false),
                         Type = c.String(),
-                        Name = c.String(),
-                        Description = c.String(),
+                        NameRus = c.String(),
+                        NameEng = c.String(),
+                        NameRom = c.String(),
+                        DescriptionRus = c.String(),
+                        DescriptionEng = c.String(),
+                        DescriptionRom = c.String(),
                         ThumbnailFileName = c.String(),
                         LargeFileName = c.String(),
                     })
@@ -26,7 +35,9 @@ namespace MarketBattleNet.DAL.DbContext.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        NameRus = c.String(),
+                        NameEng = c.String(),
+                        NameRom = c.String(),
                         LogoFileName = c.String(),
                         BackgroundFileName = c.String(),
                     })
