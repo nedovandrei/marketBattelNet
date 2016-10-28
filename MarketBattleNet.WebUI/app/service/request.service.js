@@ -45,6 +45,6 @@
                 });
             };
 
-            return _gameService;
+            return _requestService;
         }]);
 })();

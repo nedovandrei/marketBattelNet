@@ -28,7 +28,7 @@ namespace MarketBattleNet.BLL.Service
                 {
                     Id = request.Id,
                     NameRus = request.NameRus,
-                    NameEng = request.NameRus,
+                    NameEng = request.NameEng,
                     NameRom = request.NameRom,
                     BackgroundFileName = request.BackgroundFileName,
                     LogoFileName = request.LogoFileName

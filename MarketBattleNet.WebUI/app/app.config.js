@@ -19,6 +19,7 @@
         })
         .config(["$urlRouterProvider", "$stateProvider", function ($urlRouterProvider, $stateProvider) {
             $urlRouterProvider.otherwise("/game");
+
             $stateProvider
                 .state("shop", {
                     url: "/shop/{gameId}",
@@ -30,16 +31,25 @@
                     templateUrl: "app/game/game.html",
                     controller: "GameController"
                 })
-                .state("market", {
-                    url: "/market",
-                    templateUrl: "app/market/market.html",
-                    controller: "MarketController"
+                .state("purchase", {
+                    url: "/purchase",
+                    templateUrl: "app/purchase/purchase.html",
+                    controller: "PurchaseController"
                 })
                 .state("art", {
-                    url: "/art?artId",
+                    url: "/art?artId&fromUrl",
                     templateUrl: "app/art/art.html",
                     controller: "ArtController"
-                });
-            
+                })
+                .state("login", {
+                    url: "/login",
+                    templateUrl: "app/login/login.html",
+                    controller: "LoginController"
+                })
+				.state("admin", {
+                    url: "/admin",
+				    templateUrl: "app/admin/admin.html",
+                    controller: "AdminController"
+				});            
         }]);
 }());

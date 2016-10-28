@@ -5,6 +5,7 @@
         "ui.router",
         "ngResource",
         "ngAnimate",
-        "anim-in-out"
+        "anim-in-out",
+        "ngCookies"
     ]);
 }());

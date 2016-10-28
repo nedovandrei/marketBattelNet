@@ -7,22 +7,25 @@
             "gameService",
             "$scope",
             "$stateParams",
+            "$location",
             "appSettings",
-            function (artService, gameService, $scope, $stateParams, appSettings) {
+            function (artService, gameService, $scope, $stateParams, $location, appSettings) {
                 
-                function changeBackground (fileName) {
+                function changeBackground(fileName) {
                     if (fileName) {
-                        $("img.background_image").attr("src", "../images/" + fileName);
+                        $(".m_page").css("background-image", "url('../images/" + fileName + "')");
                     } else {
-                        $("img.background_image").attr("src", "../images/" + appSettings.backgroundDefault);
-                    }                    
+                        $(".m_page").css("background-image", "url('../images/" + appSettings.backgroundDefault + "')");
+                    }
                 }
+
+                $scope.currentUrl = $location.path();
 
                 $scope.artList = [];
                 $scope.gameInFocus = {}
 
                 function loadArt() {
-                    if ($stateParams.gameId) {
+                    if (!!$stateParams.gameId) {
                         gameService.findById($stateParams.gameId, function (result) {
                             $scope.gameInFocus = result;
                             changeBackground($scope.gameInFocus.BackgroundFileName);
@@ -32,8 +35,9 @@
                         });
                         
                     } else {
-                        artService.getAll(function (result) {
+                        artService.getAll(function (result) {                            
                             $scope.artList = result;
+                            changeBackground();
                         })
                     }
                 };

@@ -34,6 +34,7 @@ namespace MarketBattleNet.BLL.Service
                     DescriptionRus = request.DescriptionRus,
                     DescriptionEng = request.DescriptionEng,
                     DescriptionRom = request.DescriptionRom,
+                    Price = request.Price,
                     GameId = request.GameId,
                     ThumbnailFileName = request.ThumbnailFileName,
                     LargeFileName = request.LargeFileName
@@ -55,6 +56,7 @@ namespace MarketBattleNet.BLL.Service
                 DescriptionRus = data.DescriptionRus,
                 DescriptionEng = data.DescriptionEng,
                 DescriptionRom = data.DescriptionRom,
+                Price = data.Price,
                 GameId = data.GameId,
                 ThumbnailFileName = data.ThumbnailFileName,
                 LargeFileName = data.LargeFileName
@@ -74,6 +76,7 @@ namespace MarketBattleNet.BLL.Service
                 DescriptionRus = obj.DescriptionRus,
                 DescriptionEng = obj.DescriptionEng,
                 DescriptionRom = obj.DescriptionRom,
+                Price = obj.Price,
                 GameId = obj.GameId,
                 ThumbnailFileName = obj.ThumbnailFileName,
                 LargeFileName = obj.LargeFileName
@@ -93,6 +96,7 @@ namespace MarketBattleNet.BLL.Service
                 DescriptionEng = obj.DescriptionEng,
                 DescriptionRus = obj.DescriptionRus,
                 DescriptionRom = obj.DescriptionRom,
+                Price = obj.Price,
                 GameId = obj.GameId,
                 ThumbnailFileName = obj.ThumbnailFileName,
                 LargeFileName = obj.LargeFileName
@@ -113,6 +117,7 @@ namespace MarketBattleNet.BLL.Service
                 DescriptionRus = dataToDelete.DescriptionRus,
                 DescriptionEng = dataToDelete.DescriptionEng,
                 DescriptionRom = dataToDelete.DescriptionRom,
+                Price = dataToDelete.Price,
                 GameId = dataToDelete.GameId,
                 ThumbnailFileName = dataToDelete.ThumbnailFileName,
                 LargeFileName = dataToDelete.LargeFileName

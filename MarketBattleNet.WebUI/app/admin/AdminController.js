@@ -18,7 +18,7 @@
                 if (fileName) {
                     $(".m_page").css("background-image", "url('../images/" + fileName + "')");
                 } else {
-                    $(".m_page").css("background-image", "url('../images/" + appSettings.backgroundDefault + "')");
+                    $("m_page").css("background-image", "url('../images/" + appSettings.backgroundDefault + "')");
                 }
             }
 

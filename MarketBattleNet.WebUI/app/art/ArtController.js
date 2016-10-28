@@ -2,32 +2,71 @@
     "use strict";
 
     angular.module("app")
-        .controller("ArtController", ["$stateParams", "$scope", "artService", function ($stateParams, $scope, artService) {
+        .controller("ArtController", [
+            "$stateParams",
+            "$scope",
+            "artService",
+            "shoppingCartService",
+            "gameService",
+            "$location",            
+            "appSettings",
+            function ($stateParams, $scope, artService, shoppingCartService, gameService, $location, appSettings) {
             
-            $scope.art = {};
-            $scope.backUrl = $stateParams.fromUrl;
-            $scope.back = function () {
-                window.history.back();
-            }
+                $scope.art = {};                
 
-            function changeBackground(fileName) {
-                if (fileName) {
-                    $("img.background_image").css("background-image", "url('../images/" + fileName + "')");
-                } else {
-                    $("img.background_image").css("background-image", "url('" + appSettings.backgroundDefault + "')");
+                $scope.isInCart = false;
+
+                $scope.back = function () {
+                    if (!!$stateParams.fromUrl) {
+                        $location.path($stateParams.fromUrl);
+                    } else {
+                        $location.path("#/shop");
+                    }
+                
                 }
-            }
 
-            function loadArt(){
-                artService.findById($stateParams.artId, function (result) {
-                    $scope.art = result;
-                });
-            }
+                $scope.putIntoCart = function () {
+                    shoppingCartService.addToCart($scope.art);
+                    isInCartCheck();
+                }
 
-            function init() {
-                loadArt();
-            }
+                function changeBackground(fileName) {
+                    if (fileName) {
+                        $(".m_page").css("background-image", "url('../images/" + fileName + "')");
+                    } else {
+                        $(".m_page").css("background-image", "url('../images/" + appSettings.backgroundDefault + "')");
+                    }
+                }
 
-            init();
-        }]);
+                function loadArt() {
+                    if (!!$stateParams.artId) {
+                        artService.findById($stateParams.artId, function (result) {
+                            $scope.art = result;
+                            isInCartCheck();
+                            gameService.findById($scope.art.GameId, function (result) {
+                                changeBackground(result.BackgroundFileName)
+                            });
+                        });
+                    }                
+                }
+
+                function isInCartCheck() {
+                    var shoppingCart = [];
+                    shoppingCartService.getAllPurchasedItems(function (result) {
+                        shoppingCart = result;
+                    });
+
+                    for (var i = 0; i < shoppingCart.length; i++) {
+                        if ($scope.art.Id == shoppingCart[i].Id) {
+                            $scope.isInCart = true;
+                        }
+                    }
+                }
+
+                function init() {
+                    loadArt();
+                }
+
+                init();
+            }]);
 }());

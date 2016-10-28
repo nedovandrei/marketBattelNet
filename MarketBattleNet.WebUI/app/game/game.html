@@ -1,65 +1,3 @@
-<!--
-<article id=slider>
-    <input checked type=radio name=slider id=slide1 />
-    <input type=radio name=slider id=slide2 />
-    <input type=radio name=slider id=slide3 />
-    <input type=radio name=slider id=slide4 />
-    <input type=radio name=slider id=slide5 />
-
-
-
-
-
-    <div id=slides>
-
-        <div id=overflow>
-
-            <div class=inner>
-
-                <article>
-                    <img src="images/dota2_load1-960x300.jpg" />
-                </article>
-
-
-                <article>
-                    <img src="images/halfLife2.jpg" />
-                </article>
-
-                <article>
-                    <img src="images/wow.jpg" />
-                </article>
-
-                <article>
-                    <img src="images/lol.jpg" />
-                </article>
-
-                <article>
-                    <img src="images/me3sehero.jpg" />
-                </article>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-
-
-    <div id=controls>
-
-        <label for=slide1><span></span></label>
-        <label for=slide2><span></span></label>
-        <label for=slide3><span></span></label>
-        <label for=slide4><span></span></label>
-        <label for=slide5><span></span></label>
-
-    </div>
-
-
-</article>
--->
 <div class="slider-wrap">
     <div class='slider'>
         <div class='slide1'></div>
@@ -70,12 +8,13 @@
 <div class="middle_content m_c_items">
     <div class="m_c_left m_c_item">
         <ul class="menu menu_lvl_1">
-            <li class="menu_item games h_l">Half Life</li>
+            <li class="menu_item games" ng-repeat="game in gameList" ui-sref="shop({gameId: {{game.Id}}})"><img width="30" style="padding-right:5px" ng-src="images/Logo/{{game.LogoFileName}}"/>{{game.NameEng}}</li>
+            <!--<li class="menu_item games h_l">Half Life</li>
             <li class="menu_item games l">Lineage 2</li>
             <li class="menu_item games h">Hearthstone</li>
             <li class="menu_item games w_o_w">World of Warcraft</li>
             <li class="menu_item games d">Dota 2</li>
-            <li class="menu_item games l_o_l">League of Legend</li>
+            <li class="menu_item games l_o_l">League of Legend</li>-->
         </ul>
     </div>
     <div class="m_c_right m_c_item">
@@ -85,7 +24,7 @@
                     <div class="p_image">
                         <img ng-src="images/Logo/{{game.LogoFileName}}" alt="">
                     </div>
-                    <div class="p_name">{{game.Name}}</div>
+                    <div class="p_name">{{game.NameEng}}</div>
                 </div>
             </div>
         </div>

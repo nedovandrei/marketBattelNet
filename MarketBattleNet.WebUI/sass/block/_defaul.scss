@@ -111,6 +111,26 @@
 .middle_content{
   @include pie-clearfix;
   padding: 25px;
+  .login{
+      max-width: 430px;
+      margin:0 auto;
+      input{
+          padding: 5px 10px;
+            min-height:40px;
+            width: 100%;
+            border: 1px solid rgba(255,255,255,0.3);
+            background-color: rgba(0,0,0,0.5);
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 10px;
+      }
+  }
+  .admin{
+      textarea{
+          width: calc(100% / 3);
+          max-width: calc(100% / 3);
+          float: left;
+      }
+  }
 }
 .m_c_item{
   float: left;

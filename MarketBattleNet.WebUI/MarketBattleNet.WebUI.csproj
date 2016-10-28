@@ -66,21 +66,28 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\admin\admin.html" />
+    <Content Include="app\admin\AdminController.js" />
     <Content Include="app\app.config.js" />
     <Content Include="app\app.module.js" />
     <Content Include="app\art\art.html" />
     <Content Include="app\art\ArtController.js" />
     <Content Include="app\game\GameController.js" />
-    <Content Include="app\market\market.html" />
-    <Content Include="app\market\MarketController.js" />
+    <Content Include="app\login\login.html" />
+    <Content Include="app\login\LoginController.js" />
+    <Content Include="app\purchase\purchase.html" />
+    <Content Include="app\purchase\PurchaseController.js" />
     <Content Include="app\resource\art.resource.js" />
     <Content Include="app\resource\game.resource.js" />
     <Content Include="app\resource\request.resource.js" />
     <Content Include="app\resource\userProfile.resource.js" />
     <Content Include="app\service\art.service.js" />
+    <Content Include="app\service\cookie.service.js" />
     <Content Include="app\service\game.service.js" />
     <Content Include="app\service\request.service.js" />
+    <Content Include="app\service\shoppingCart.service.js" />
     <Content Include="app\service\userProfile.service.js" />
+    <Content Include="app\ShoppingCartController.js" />
     <Content Include="app\shop\shop.html" />
     <Content Include="app\shop\ShopController.js" />
     <Content Include="app\game\game.html" />
@@ -117,6 +124,9 @@
     <Content Include="bower_components\angular\angular.js" />
     <Content Include="bower_components\angular\angular.min.js" />
     <Content Include="bower_components\angular\index.js" />
+    <Content Include="bower_components\bower-angular-cookies-master\angular-cookies.js" />
+    <Content Include="bower_components\bower-angular-cookies-master\angular-cookies.min.js" />
+    <Content Include="bower_components\bower-angular-cookies-master\index.js" />
     <Content Include="bower_components\jquery\AUTHORS.txt" />
     <Content Include="bower_components\jquery\dist\core.js" />
     <Content Include="bower_components\jquery\dist\jquery.js" />
@@ -336,6 +346,11 @@
     <Content Include="sass\include\_slider.scss" />
     <Content Include="sass\include\_variable.scss" />
     <Content Include="sass\screen.scss" />
+    <Content Include="bower_components\bower-angular-cookies-master\angular-cookies.min.js.map" />
+    <Content Include="bower_components\bower-angular-cookies-master\bower.json" />
+    <Content Include="bower_components\bower-angular-cookies-master\LICENSE.md" />
+    <Content Include="bower_components\bower-angular-cookies-master\package.json" />
+    <Content Include="bower_components\bower-angular-cookies-master\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

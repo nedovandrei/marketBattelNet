@@ -1,0 +1,33 @@
+
+<div class="middle_content m_c_items">
+    <div class="m_c_right m_c_item">
+        <div class="products buy">
+            <div class="product pot" ui-sref="art({artId: {{item.Id}}, fromUrl: '{{currentUrl}}'})" ng-repeat="item in purchases">
+                <div class="p_image">
+                    <img ng-src="images/arts/{{item.ThumbnailFileName}}" height="150" alt="">
+                </div>
+                <div class="p_name">{{item.NameRus}} - {{item.Price}}%</div>
+                <div class="p_disabled"></div>
+            </div>
+            <!--<div class="product pot" ui-sref="art">
+                <div class="p_image">
+                    <img src="images/pot/dota2/fRmMd4AryKk.jpg" alt="">
+                </div>
+                <div class="p_name">Чашка Batrider</div>
+                <div class="p_disabled"></div>
+            </div>
+            <div class="product pot" ui-sref="art">
+                <div class="p_image">
+                    <img src="images/pot/dota2/fRmMd4AryKk.jpg" alt="">
+                </div>
+                <div class="p_name">Чашка Batrider</div>
+                <div class="p_disabled"></div>
+            </div>-->
+        </div>
+        <div>
+            <span>
+                Total: {{totalPrice}}$
+            </span>
+        </div>
+    </div>
+</div>

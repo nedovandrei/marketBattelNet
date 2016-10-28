@@ -14,6 +14,7 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/angular-ui-router-anim-in-out/anim-in-out.js"></script>
+    <script src="bower_components/bower-angular-cookies-master/angular-cookies.min.js"></script>
     <script src="app/app.module.js"></script>
     <script src="app/app.config.js"></script>
     <script src="app/resource/art.resource.js"></script>
@@ -24,10 +25,13 @@
     <script src="app/service/game.service.js"></script>
     <script src="app/service/request.service.js"></script>
     <script src="app/service/userProfile.service.js"></script>
+    <script src="app/service/cookie.service.js"></script>
+    <script src="app/service/shoppingCart.service.js"></script>
+    <script src="app/ShoppingCartController.js"></script>
     <script src="app/game/GameController.js"></script>
     <script src="app/shop/ShopController.js"></script>
     <script src="app/art/ArtController.js"></script>
-    <script src="app/market/MarketController.js"></script>
+    <script src="app/purchase/PurchaseController.js"></script>
     <script>
 
         /* When the user clicks on the button,
@@ -54,16 +58,27 @@
     <title>Market</title>
 </head>
 <body class="m_page" ng-app="app">
-<img class="background_image" src="images/dota_2_background.jpg" alt="" style="width: 100%; min-height: 100%; position: fixed;">
+<!--<img class="background_image" src="images/dota_2_background.jpg" alt="" style="width: 100%; min-height: 100%; position: fixed;">-->
 <div class="main_page">
     <div class="header_block">
-        <div class="header_content">
+        <div class="header_content" ng-controller="ShoppingCartController">
             <img src="images/ROGUE.png" class="h_link games active"  ui-sref="game" alt="">
             <div class="h_link market" ui-sref="shop">Магазин</div>
             <div class="h_link shop dropdown">
-                <button onclick="myFunction()" class="dropbtn"></button>
+                <button ng-click="showDropdown()" class="dropbtn"></button>
                 <div id="myDropdown" class="products buy dropdown-content">
-                    <div class="product pot" ui-sref="market">
+                    <div ng-repeat="item in purchasedItems">
+                        <div class="product" >
+                            <div ui-sref="purchase">
+                                <div class="p_image">
+                                    <img ng-src="images/arts/{{item.ThumbnailFileName}}" alt="" height="70">
+                                </div>
+                                <div class="p_name">{{item.NameRus}}</div>
+                            </div>
+                            <div class="p_disabled" ng-click="removeItem(item)"></div>
+                        </div>
+                    </div>
+                    <!--<div class="product pot" ui-sref="market">
                         <div class="p_image">
                             <img src="images/pot/dota2/fRmMd4AryKk.jpg" alt="">
                         </div>
@@ -76,16 +91,11 @@
                         </div>
                         <div class="p_name">Чашка Batrider</div>
                         <div class="p_disabled"></div>
-                    </div>
-                    <div class="product pot" ui-sref="market">
-                        <div class="p_image">
-                            <img src="images/pot/dota2/fRmMd4AryKk.jpg" alt="">
-                        </div>
-                        <div class="p_name">Чашка Batrider</div>
-                        <div class="p_disabled"></div>
-                    </div>
+                    </div>-->
                 </div>
+                <span>{{purchasedItems.length}}</span>
             </div>
+
         </div>
     </div>
     <div class="middle_block " data-anim-speed="300" ui-view>

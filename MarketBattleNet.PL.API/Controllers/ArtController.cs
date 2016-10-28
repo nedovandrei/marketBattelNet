@@ -58,6 +58,7 @@ namespace MarketBattleNet.PL.API.Controllers
                 DescriptionRus = model.DescriptionRus,
                 DescriptionEng = model.DescriptionEng,
                 DescriptionRom = model.DescriptionRom,
+                Price = model.Price,
                 ThumbnailFileName = model.ThumbnailFileName,
                 LargeFileName = model.LargeFileName
             };
@@ -84,6 +85,7 @@ namespace MarketBattleNet.PL.API.Controllers
                 DescriptionRus = model.DescriptionRus,
                 DescriptionEng = model.DescriptionEng,
                 DescriptionRom = model.DescriptionRom,
+                Price = model.Price,
                 ThumbnailFileName = model.ThumbnailFileName,
                 LargeFileName = model.LargeFileName
             };

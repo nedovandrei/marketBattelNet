@@ -11,6 +11,7 @@
         public string DescriptionRus { get; set; }
         public string DescriptionEng { get; set; }
         public string DescriptionRom { get; set; }
+        public decimal Price { get; set; }
         public string ThumbnailFileName { get; set; }
         public string LargeFileName { get; set; }
     }

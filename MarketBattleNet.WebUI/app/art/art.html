@@ -6,12 +6,17 @@
                     <img ng-src="images/arts/{{art.LargeFileName}}" alt="">
                 </div>
                 <div class="p_name">
-                    <span>{{art.Name}}</span>
-                    <div class="p_cost">6,99$</div>
+                    <span>{{art.NameRus}}</span>
+                    <div class="p_cost">{{art.Price}}$</div>
                     <span class="p_description">
-                        {{art.Description}}
-                    </span>
-                    <div class="p_buy">Купить Сейчас</div>
+                        {{art.DescriptionRus}}
+                    </span>                    
+                </div>
+                <div>
+                    <button ng-disabled="isInCart" class="p_buy" ng-click="putIntoCart()">
+                        <span ng-hide="isInCart">Купить Сейчас</span>
+                        <span ng-show="isInCart">Уже в Корзине</span>
+                    </button>
                     <button class="p_buy" ng-click="back()">Назад</button>
                 </div>
             </div>
