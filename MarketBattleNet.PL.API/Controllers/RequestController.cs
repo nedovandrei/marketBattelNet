@@ -72,5 +72,19 @@ namespace MarketBattleNet.PL.API.Controllers
             _requestService.Delete(id);
             return Request.CreateResponse(HttpStatusCode.OK);
         }
+
+        [HttpPost]
+        [Route("api/request/AddRange")]
+        public HttpResponseMessage AddRange(IEnumerable<RequestViewModel> modelList)
+        {
+            var dtoList = modelList.Select(item => new RequestDTO()
+            {
+                UserId = item.UserId,
+                ArtId = item.ArtId
+            }).ToList();
+
+            _requestService.AddRange(dtoList);
+            return Request.CreateResponse(HttpStatusCode.Created);
+        }
     }
 }

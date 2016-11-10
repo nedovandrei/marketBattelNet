@@ -8,5 +8,6 @@
         public string NameRom { get; set; }
         public string LogoFileName { get; set; }
         public string BackgroundFileName { get; set; }
+        public int ArtCount { get; set; }
     }
 }

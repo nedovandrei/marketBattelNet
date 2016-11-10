@@ -11,7 +11,10 @@
                 cookieService.getObject("purchases", function (result) {
                     if (!!result) {
                         $rootScope.purchasedItems = result;
-                    }                    
+                    } else {
+                        cookieService.createObject('purchases', []);
+                        $rootScope.purchasedItems = [];
+                    }        
                 });
             }
 
@@ -40,12 +43,14 @@
             };
 
             _shoppingCartService.getAllPurchasedItems = function (callback) {               
-                callback($rootScope.purchasedItems);
+                cookieService.getObject("purchases", function (result) {                    
+                    callback($rootScope.purchasedItems);
+                });
             };
 
-            _shoppingCartService.removeAllPurchases = function (callback) {
+            _shoppingCartService.removeAllPurchases = function (callback) {               
+                cookieService.removeKey("purchases");
                 $rootScope.purchasedItems = [];
-                cookieService.removeKey('purchases');
             }
 
             return _shoppingCartService;

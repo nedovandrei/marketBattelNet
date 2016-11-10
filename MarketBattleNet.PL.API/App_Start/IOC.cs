@@ -31,6 +31,7 @@ namespace MarketBattleNet.PL.API.App_Start
             builder.RegisterType<RequestService>().As<IRequestService>().InstancePerRequest();
             builder.RegisterType<GameService>().As<IGameService>().InstancePerRequest();
             builder.RegisterType<UserProfileService>().As<IUserProfileService>().InstancePerRequest();
+            builder.RegisterType<LoginService>().As<ILoginService>().InstancePerRequest();
 
             var container = builder.Build();
 

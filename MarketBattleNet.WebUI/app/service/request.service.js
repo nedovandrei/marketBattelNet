@@ -45,6 +45,14 @@
                 });
             };
 
+            _requestService.addRange = function(requestModel, callback) {
+                return requestResource.addRange(requestModel, function(result) {
+                    callback(result);
+                }, function() {
+                    console.log("requestService -> addRange: error");
+                });
+            }
+
             return _requestService;
         }]);
 })();

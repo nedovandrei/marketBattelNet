@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace MarketBattleNet.DAL.RepositoryInterface
 {
@@ -8,6 +9,7 @@ namespace MarketBattleNet.DAL.RepositoryInterface
         void Create(T data);
         void Update(T data);
         void Delete(T data);
+        void AddRange(IEnumerable<T> data);
 
     }
 }

@@ -6,6 +6,7 @@
         "ngResource",
         "ngAnimate",
         "anim-in-out",
-        "ngCookies"
+        "ngCookies",
+        "toaster"
     ]);
 }());

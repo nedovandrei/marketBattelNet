@@ -1,0 +1,51 @@
+/* Dropdown button on hover & focus */
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+  .empty_field{
+      max-height: 44px;
+  }
+  .dropbtn{
+        background-image: image-url('iconmonstr-shopping-bag-17-24.png');
+        width: 24px;
+        height: 24px;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        opacity: 0.8;
+        + span{
+            opacity: 0.8;
+        }
+         &:hover, &:focus{
+             opacity: 1;
+             + span{
+                 opacity: 1;
+             }
+             /*background-image: image-url('iconmonstr-shopping-bag-17-24-hover.png');
+             + span{
+                 color: #FF6F00;
+             }*/
+         }
+      }
+  /*&:hover{
+     > .ng-binding{color: #FF6F00;}
+     .dropbtn{
+         background-image: image-url('iconmonstr-shopping-bag-17-24-hover.png');
+     }
+  }*/
+ .ng-binding{
+    line-height: 24px;
+ }
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+}
+/* Links inside the dropdown */
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+

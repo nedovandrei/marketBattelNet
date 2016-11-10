@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module("app")
-        .factory("gameService", ["$timeout", "gameResource", function ($timeout, gameResource) {
+        .factory("gameService", ["$timeout", "gameResource", "artResource", function ($timeout, gameResource, artResource) {
             var _gameService = {};
 
             _gameService.getAll = function (callback) {

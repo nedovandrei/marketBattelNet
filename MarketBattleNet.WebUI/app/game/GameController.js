@@ -14,6 +14,8 @@
                 });
             }
 
+
+
             function changeBackground(fileName) {
                 if (fileName) {
                     $(".m_page").css("background-image", "url('../images/" + fileName + "')");

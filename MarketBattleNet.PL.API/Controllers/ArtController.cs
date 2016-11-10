@@ -1,8 +1,8 @@
-﻿using MarketBattleNet.BLL.ServiceInterface;
+﻿using System;
+using System.Collections.Generic;
+using MarketBattleNet.BLL.ServiceInterface;
 using MarketBattleNet.BLL.ServiceInterface.DTO;
 using MarketBattleNet.PL.API.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -114,9 +114,56 @@ namespace MarketBattleNet.PL.API.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "ArtController > FindByGameId(); : No ID specified");
             }
 
-           var data = _artService.GetAll().Where(x => x.GameId == id);
+            var data = _artService.GetAll().Where(x => x.GameId == id);            
 
             return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
+
+        [HttpGet]
+        [Route("api/art/getCountByGameId/{id}")]
+        public HttpResponseMessage GetCountByGameId(int id)
+        {
+            if (id == 0)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest,
+                    "ArtController > GetCountByGameId(); : No ID specified");
+            }
+            var data = _artService.GetAll().Count();
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
+        
+
+        [HttpGet]
+        [Route("api/art/search")]
+        public HttpResponseMessage Search(string searchString)
+        {
+            const StringComparison comp = StringComparison.OrdinalIgnoreCase;
+
+            var data = _artService.GetAll().Where(x =>
+                x.NameRom.Contains(searchString, comp) ||
+                x.NameEng.Contains(searchString, comp) ||
+                x.NameRus.Contains(searchString, comp) ||
+                x.DescriptionEng.Contains(searchString, comp) ||
+                x.DescriptionRom.Contains(searchString, comp) ||
+                x.DescriptionRus.Contains(searchString, comp)).ToList();
+
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
+    }
+
+    public static class StringExtensions
+    {
+        public static bool Contains(this String str, String substring,
+                                    StringComparison comp)
+        {
+            if (substring == null)
+                throw new ArgumentNullException("substring",
+                                                "substring cannot be null.");
+            else if (!Enum.IsDefined(typeof(StringComparison), comp))
+                throw new ArgumentException("comp is not a member of StringComparison",
+                                            "comp");
+
+            return str.IndexOf(substring, comp) >= 0;
         }
     }
 }

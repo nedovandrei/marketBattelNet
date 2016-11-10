@@ -1,4 +1,4 @@
-
+﻿
 <div class="middle_content m_c_items">
     <div class="m_c_right m_c_item">
         <div class="products buy">
@@ -6,28 +6,54 @@
                 <div class="p_image">
                     <img ng-src="images/arts/{{item.ThumbnailFileName}}" height="150" alt="">
                 </div>
-                <div class="p_name">{{item.NameRus}} - {{item.Price}}%</div>
-                <div class="p_disabled"></div>
-            </div>
-            <!--<div class="product pot" ui-sref="art">
-                <div class="p_image">
-                    <img src="images/pot/dota2/fRmMd4AryKk.jpg" alt="">
+                <div class="p_name">
+                    <span ng-show="language === 'ru-RU'">{{item.NameRus}} - {{item.Price}}$</span>
+                    <span ng-show="language === 'en-US'">{{item.NameEng}} - {{item.Price}}$</span>
+                    <span ng-show="language === 'ro-MD'">{{item.NameRom}} - {{item.Price}}$</span>
                 </div>
-                <div class="p_name">Чашка Batrider</div>
-                <div class="p_disabled"></div>
+                <div class="p_disabled" ng-click="removeItem(item)"></div>
             </div>
-            <div class="product pot" ui-sref="art">
-                <div class="p_image">
-                    <img src="images/pot/dota2/fRmMd4AryKk.jpg" alt="">
-                </div>
-                <div class="p_name">Чашка Batrider</div>
-                <div class="p_disabled"></div>
-            </div>-->
         </div>
-        <div>
-            <span>
-                Total: {{totalPrice}}$
+        <div ng-hide="purchases.length > 0">
+            <span ng-show="language === 'ru-RU'">Пусто, перейдите в <a ui-sref="shop">магазин</a> и закажите что Вам понравится!</span>
+            <span ng-show="language === 'en-US'">Empty here, go to <a ui-sref="shop">marketplace</a> and order anything you like!</span>
+            <span ng-show="language === 'ro-MD'">Gol aici, сontinuați la <a ui-sref="shop">magazin</a> și alege ceea ce îți place!</span>
+        </div>
+        <div class="total_cost">
+            <span ng-show="language === 'ru-RU'">
+                Итого: {{totalPrice | number: 2}}$
+            </span>
+            <span ng-show="language === 'en-US'">
+                Total: {{totalPrice | number: 2}}$
+            </span>
+            <span ng-show="language === 'ro-MD'">
+                Total: {{totalPrice | number: 2}}$
             </span>
         </div>
     </div>
+    <form class="user" ng-submit="submitRequest()" ng-show="purchases.length > 0">
+        <div class="title">
+            <span ng-show="language === 'ru-RU'">Заявка</span>
+            <span ng-show="language === 'en-US'">Request</span>
+            <span ng-show="language === 'ro-MD'">Aplicare</span>
+        </div>
+        <div class="full_name">
+            <input required ng-show="language === 'ru-RU'" type="text" name="comment" ng-model="userData.FullName" placeholder="Ф.И.О.">
+            <input required ng-show="language === 'en-US'" type="text" name="comment" ng-model="userData.FullName" placeholder="Full Name">
+            <input required ng-show="language === 'ro-MD'" type="text" name="comment" ng-model="userData.FullName" placeholder="Numele complet">
+        </div>
+        <div class="phone">
+            <input required ng-show="language === 'ru-RU'" type="text" name="comment" ng-model="userData.PhoneNumber" placeholder="Контактный Номер Телефона">
+            <input required ng-show="language === 'en-US'" type="text" name="comment" ng-model="userData.PhoneNumber" placeholder="Contact Phone Number">
+            <input required ng-show="language === 'ro-MD'" type="text" name="comment" ng-model="userData.PhoneNumber" placeholder="Numar de Telefon de Contact">
+        </div>
+        <div class="adress">
+            <input required ng-show="language === 'ru-RU'" type="text" name="comment" ng-model="userData.Address" placeholder="Адрес Доставки">
+            <input required ng-show="language === 'en-US'" type="text" name="comment" ng-model="userData.Address" placeholder="Delivery Adress">
+            <input required ng-show="language === 'ro-MD'" type="text" name="comment" ng-model="userData.Address" placeholder="Adresă de Livrare">
+        </div>
+        <input type="submit" ng-show="language === 'ru-RU'" value="Отправить">
+        <input type="submit" ng-show="language === 'en-US'" value="Submit">
+        <input type="submit" ng-show="language === 'ro-MD'" value="A Inregistra">
+    </form>
 </div>

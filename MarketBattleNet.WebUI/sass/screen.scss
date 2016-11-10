@@ -10,12 +10,21 @@
 @import "block/defaul";
 @import "include/animation";
 @import "include/slider";
-.main_page{
-  .middle_content, .header_content{
-      position:relative;
-    background-color: rgba(0, 0, 0, 0.5);
-    width:960px;
-    margin: 0 auto;
-  }
-}
+@import "include/dropDownMenu";
+@import "include/products";
+@import "block/_admin";
+@import "include/_extend";
 
+.main_page {
+    position: relative;
+    min-height: calc(100% - 51px);
+}
+.middle_content, .header_content, .footer_content {
+        position: relative;
+        width: 960px;
+        margin: 0 auto;
+    }
+
+    .header_block, .footer_block {
+        background-color: rgba(0, 0, 0, 0.7);
+    }

@@ -1,65 +1,72 @@
-.header_block{
-  border-bottom: 1px solid hsla(0, 0%, 100%, 0.07);
+.header_block {
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.07);
 }
-.header_content{
-  padding:0 5px;
-  .h_link{
-    &.games{
-      width: 120px;
-      height: 20px;
-      padding: 0;
-
+.h_r_block{
+    float:right;
+    @include pie-clearfix;
+    margin-top: 15px;
+}
+.header_content {
+    padding: 12px 5px 0;
+    
+    ul.languages{
+        display: inline-block;
+        vertical-align:middle;
+        li{
+            display: inline-block;
+            cursor: pointer;
+            opacity: 0.8;
+            font-size: 20px;
+            &:hover, &.active{
+                opacity: 1;
+            }
+        }
     }
-    &.shop{
+    .logo {
+        display: block;
+            width: 250px;
+            height: 50px;
 
-      padding: 0;
-      float: right;
-      margin-top: 20px;
-      .dropbtn{
-        background-image: image-url('iconmonstr-checkout-1-24.png');
-        width: 24px;
-        height: 24px;
-        border: none;
+            &:hover, &.active{
+                opacity: 1;
+                /*background-image: image-url("ROGUE_hover.png");*/
+            }
+        }
+    .h_link {
+        
+
+        
+       &.shop{
+           padding: 0;
+       }
+        vertical-align: middle;
+        padding: 20px;
+        display: inline-block;
+        font-size: 20px;
+        font-weight: bold;
         cursor: pointer;
-        background-color: transparent;
-      }
-    }
-    vertical-align: middle;
-    padding: 20px;
-    display: inline-block;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    &:hover, &.active{
-      color:white;
-    }
-  }
-  .products{
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 200px;
-    margin-left: -176px;
-    z-index: 2;
-    position: absolute;
-    .product {
-      cursor: pointer;
+
+        &:not(.dropdown) {
+             opacity: 0.8;
+            &:hover, &.active {
+                opacity: 1;
+            }
+        }
     }
 
-  }
+    .products {
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 300px;
+        margin-left: -276px;
+        z-index: 2;
+        position: absolute;
+
+        .product {
+            cursor: pointer;
+        }
+    }
+
+    div[ui-sref=purchase] {
+        width: calc(100% - 35px);
+    }
 }
-
-/* Dropdown button on hover & focus */
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-}
-/* Links inside the dropdown */
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
-

@@ -1,0 +1,151 @@
+.products{
+  @include pie-clearfix;
+  
+  
+  .product{
+      button{
+          font-size: 18px;
+        padding: 9px 30px;
+        background-color: rgba(0, 130, 92, 0.4);
+        color: #fff;
+        border-color: transparent;
+        box-shadow: 0 0 transparent;
+        opacity: 0.8;
+        &[disabled=disabled]{
+           opacity: 1;
+        }
+        &:hover{
+            opacity: 1;
+        }
+      }
+    div{
+      font-size: 18px;
+    }
+    &.games{
+      .p_image{
+        img{
+          width: 147px;
+          height: 147px;
+          margin:0 auto;
+
+        }
+      }
+    }
+    /*margin-top: 15px;
+    &:nth-of-type(-n+3){
+      margin-top: 0;
+    }*/
+   
+    .p_cost{
+      margin-top: 20px;
+      font-weight: bold;
+      color: #FF6F00;
+    }
+    .p_description{
+      margin-top: 20px;
+    }
+    .p_buy{
+      margin-top: 50px;
+      cursor: pointer;
+    }
+  }
+
+  &.buy{
+      .p_name{
+
+        line-height: 24px;
+        width: auto;
+        white-space: nowrap; /* Запрещаем перенос строк */
+        overflow: hidden; /* Обрезаем все, что не помещается в область */
+        text-overflow: ellipsis; /* Добавляем многоточие */
+        opacity: 0.8;
+        &:hover {
+             opacity: 1
+        }
+      }
+      &.dropdown-content{
+          .product{
+              &:nth-last-of-type(2){
+                  border-bottom-width: 1px;
+              }
+          }
+      }
+    .product{
+      cursor: pointer;
+      > *{
+          padding: 10px 0;
+          &:first-of-type{
+              padding-left: 5px;
+          }
+          &:last-of-type{
+              padding-right: 5px;
+          }
+      }
+      border:1px solid hsla(0, 0%, 100%, 0.1);
+      border-bottom-width:0;
+      &.empty_field{
+          padding: 10px 5px;
+      }
+      &:last-of-type{
+          border-bottom-width: 1px;
+      }
+      &:hover {
+        border-color: hsla(0, 0%, 100%, 0.4);
+        + .product{
+          border-top-color: hsla(0, 0%, 100%, 0.4);
+        }
+      }
+      @include pie-clearfix;
+      > div{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .p_disabled{
+        display:inline-block;
+        vertical-align:middle;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: image-url('iconmonstr-recycling-6-24.png');
+        cursor: pointer;
+        width: 29px;
+        height: 44px;
+        float: right;
+        opacity: 0.8;
+        &:hover{
+            opacity: 1;
+        }
+      }
+      
+      .p_image {
+        margin-right: 5px;
+        float:left;
+        width: auto;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+  }
+}
+.page_droduct{
+    
+    /*@include pie-clearfix;
+    margin-top: 15px;
+    clear: both;
+    float: left;
+    width: 100%;*/
+    margin: 0 auto;
+    > div{
+       
+        display:inline;
+      cursor: pointer;
+      padding: 10px 5px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      &:hover {
+        border-color: hsla(0, 0%, 100%, 0.4);
+      }
+     
+    }
+  }

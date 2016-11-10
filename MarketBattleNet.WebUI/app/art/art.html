@@ -6,19 +6,38 @@
                     <img ng-src="images/arts/{{art.LargeFileName}}" alt="">
                 </div>
                 <div class="p_name">
-                    <span>{{art.NameRus}}</span>
+                    <span ng-show="language === 'ru-RU'">{{art.NameRus}}</span>
+                    <span ng-show="language === 'en-US'">{{art.NameEng}}</span>
+                    <span ng-show="language === 'ro-MD'">{{art.NameRom}}</span>
                     <div class="p_cost">{{art.Price}}$</div>
-                    <span class="p_description">
-                        {{art.DescriptionRus}}
-                    </span>                    
+                    <div class="p_description">
+                        <span ng-show="language === 'ru-RU'">{{art.DescriptionRus}}</span>
+                        <span ng-show="language === 'en-US'">{{art.DescriptionEng}}</span>
+                        <span ng-show="language === 'ro-MD'">{{art.DescriptionRom}}</span>
+                    </div>  
+                    <div class="p_buttons">
+                        <button ng-disabled="isInCart" class="p_buy" ng-click="putIntoCart()">
+                            <div ng-show="language === 'ru-RU'">
+                                <span ng-hide="isInCart">Купить Сейчас</span>
+                                <span ng-show="isInCart">Уже в Корзине</span>    
+                            </div>
+                            <div ng-show="language === 'en-US'">
+                                <span ng-hide="isInCart">Buy Now</span>
+                                <span ng-show="isInCart">Already in the Cart</span>
+                            </div>
+                            <div ng-show="language === 'ro-MD'">
+                                <span ng-hide="isInCart">Cumpăr Acum</span>
+                                <span ng-show="isInCart">Cumpărat</span>
+                            </div>                      
+                        </button>
+                        <button class="p_buy" ng-click="back()">
+                            <span ng-show="language === 'ru-RU'">Назад</span>
+                            <span ng-show="language === 'en-US'">Back</span>
+                            <span ng-show="language === 'ro-MD'">În urmă</span>
+                        </button>
+                    </div> 
                 </div>
-                <div>
-                    <button ng-disabled="isInCart" class="p_buy" ng-click="putIntoCart()">
-                        <span ng-hide="isInCart">Купить Сейчас</span>
-                        <span ng-show="isInCart">Уже в Корзине</span>
-                    </button>
-                    <button class="p_buy" ng-click="back()">Назад</button>
-                </div>
+               
             </div>
         </div>
     </div>

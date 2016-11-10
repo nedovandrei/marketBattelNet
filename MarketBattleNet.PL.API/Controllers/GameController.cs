@@ -1,4 +1,6 @@
-﻿using MarketBattleNet.BLL.ServiceInterface;
+﻿using System.Collections.Generic;
+using System.Linq;
+using MarketBattleNet.BLL.ServiceInterface;
 using MarketBattleNet.BLL.ServiceInterface.DTO;
 using MarketBattleNet.PL.API.Models;
 using System.Net;
@@ -10,17 +12,35 @@ namespace MarketBattleNet.PL.API.Controllers
     public class GameController : ApiController
     {
         private readonly IGameService _gameService;
+        private readonly IArtService _artService;
 
-        public GameController(IGameService gameService)
+        public GameController(IGameService gameService, IArtService artService)
         {
             _gameService = gameService;
+            _artService = artService;
         }
 
         [HttpGet]
         public HttpResponseMessage GetAll()
         {
-            var data = _gameService.GetAll();
-            return Request.CreateResponse(HttpStatusCode.OK, data);
+            var gameData = _gameService.GetAll();
+            var dataToSend = new List<GameViewModel>();
+            foreach (var game in gameData)
+            {
+                var artData = _artService.GetAll().Count(x => x.GameId == game.Id);
+                dataToSend.Add(new GameViewModel()
+                {
+                    Id = game.Id,
+                    NameRus = game.NameRus,
+                    NameEng = game.NameEng,
+                    NameRom = game.NameEng,
+                    LogoFileName = game.LogoFileName,
+                    BackgroundFileName = game.BackgroundFileName,
+                    ArtCount = artData
+                });
+
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, dataToSend);
         }
 
         [HttpGet]

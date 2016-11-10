@@ -66,6 +66,7 @@ namespace MarketBattleNet.BLL.Service
                 
             };
             _repository.Create(data);
+            _unitOfWork.SaveChanges();
         }
 
         public void Update(GameDTO obj)
@@ -79,6 +80,7 @@ namespace MarketBattleNet.BLL.Service
                 
             };
             _repository.Update(data);
+            _unitOfWork.SaveChanges();
         }
 
         public void Delete(int id)
@@ -94,6 +96,7 @@ namespace MarketBattleNet.BLL.Service
                 LogoFileName = dataToDelete.LogoFileName
             };
             _repository.Delete(data);
+            _unitOfWork.SaveChanges();
         }
     }
 }

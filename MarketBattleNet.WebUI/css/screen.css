@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -8,10 +9,50 @@
 }
 
 /* line 4, ../sass/header/_default.scss */
-.header_content {
-  padding: 0 5px;
+.h_r_block {
+  float: right;
+  *zoom: 1;
+  margin-top: 15px;
 }
-/* line 6, ../sass/header/_default.scss */
+/* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.h_r_block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 9, ../sass/header/_default.scss */
+.header_content {
+  padding: 12px 5px 0;
+}
+/* line 12, ../sass/header/_default.scss */
+.header_content ul.languages {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 15, ../sass/header/_default.scss */
+.header_content ul.languages li {
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0.8;
+  font-size: 20px;
+}
+/* line 20, ../sass/header/_default.scss */
+.header_content ul.languages li:hover, .header_content ul.languages li.active {
+  opacity: 1;
+}
+/* line 25, ../sass/header/_default.scss */
+.header_content .logo {
+  display: block;
+  width: 250px;
+  height: 50px;
+}
+/* line 30, ../sass/header/_default.scss */
+.header_content .logo:hover, .header_content .logo.active {
+  opacity: 1;
+  /*background-image: image-url("ROGUE_hover.png");*/
+}
+/* line 35, ../sass/header/_default.scss */
 .header_content .h_link {
   vertical-align: middle;
   padding: 20px;
@@ -20,61 +61,33 @@
   font-weight: bold;
   cursor: pointer;
 }
-/* line 7, ../sass/header/_default.scss */
-.header_content .h_link.games {
-  width: 120px;
-  height: 20px;
-  padding: 0;
-}
-/* line 13, ../sass/header/_default.scss */
+/* line 39, ../sass/header/_default.scss */
 .header_content .h_link.shop {
   padding: 0;
-  float: right;
-  margin-top: 20px;
 }
-/* line 18, ../sass/header/_default.scss */
-.header_content .h_link.shop .dropbtn {
-  background-image: url('../images/iconmonstr-checkout-1-24.png?1477225287');
-  width: 24px;
-  height: 24px;
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
+/* line 49, ../sass/header/_default.scss */
+.header_content .h_link:not(.dropdown) {
+  opacity: 0.8;
 }
-/* line 33, ../sass/header/_default.scss */
-.header_content .h_link:hover, .header_content .h_link.active {
-  color: white;
+/* line 51, ../sass/header/_default.scss */
+.header_content .h_link:not(.dropdown):hover, .header_content .h_link:not(.dropdown).active {
+  opacity: 1;
 }
-/* line 37, ../sass/header/_default.scss */
+/* line 57, ../sass/header/_default.scss */
 .header_content .products {
   background-color: rgba(0, 0, 0, 0.9);
-  width: 200px;
-  margin-left: -176px;
+  width: 300px;
+  margin-left: -276px;
   z-index: 2;
   position: absolute;
 }
-
-
-
-/* Dropdown button on hover & focus */
-/* The container <div> - needed to position the dropdown content */
-/* line 53, ../sass/header/_default.scss */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-/* line 59, ../sass/header/_default.scss */
-.dropdown-content {
-  display: none;
-}
-
-/* Links inside the dropdown */
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 /* line 64, ../sass/header/_default.scss */
-.show {
-  display: block;
+.header_content .products .product {
+  cursor: pointer;
+}
+/* line 69, ../sass/header/_default.scss */
+.header_content div[ui-sref=purchase] {
+  width: calc(100% - 35px);
 }
 
 /* line 1, ../sass/include/_reset.scss */
@@ -87,174 +100,59 @@
 /* line 6, ../sass/include/_reset.scss */
 body {
   color: #fff;
+  background-color: #000;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1;
 }
 
-/* line 11, ../sass/include/_reset.scss */
+/* line 12, ../sass/include/_reset.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 14, ../sass/include/_reset.scss */
+/* line 15, ../sass/include/_reset.scss */
 img {
   display: block;
 }
 
-/* line 3, ../sass/block/_defaul.scss */
-.products {
-  *zoom: 1;
-}
-/* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
-.products:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* line 5, ../sass/block/_defaul.scss */
-.products .page_droduct {
-  *zoom: 1;
+/* line 18, ../sass/include/_reset.scss */
+input[type=checkbox] {
   display: none;
-  margin-top: 15px;
-  clear: both;
-  float: left;
-  width: 100%;
-}
-/* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
-.products .page_droduct:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* line 12, ../sass/block/_defaul.scss */
-.products .page_droduct > div {
-  cursor: pointer;
-  padding: 10px 5px;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-}
-/* line 16, ../sass/block/_defaul.scss */
-.products .page_droduct > div:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-}
-/* line 19, ../sass/block/_defaul.scss */
-.products .page_droduct > div.button_next {
-  float: left;
-}
-/* line 22, ../sass/block/_defaul.scss */
-.products .page_droduct > div.button_back {
-  float: right;
-}
-/* line 27, ../sass/block/_defaul.scss */
-.products .product {
-  margin-top: 15px;
-}
-/* line 28, ../sass/block/_defaul.scss */
-.products .product div {
-  font-size: 18px;
-}
-/* line 33, ../sass/block/_defaul.scss */
-.products .product.games .p_image img {
-  width: 147px;
-  height: 147px;
-  margin: 0 auto;
-}
-/* line 42, ../sass/block/_defaul.scss */
-.products .product:nth-of-type(-n+3) {
-  margin-top: 0;
-}
-/* line 46, ../sass/block/_defaul.scss */
-.products .product:nth-of-type(9) + .page_droduct {
-  display: block;
-}
-/* line 50, ../sass/block/_defaul.scss */
-.products .product .p_cost {
-  margin-top: 20px;
-}
-/* line 53, ../sass/block/_defaul.scss */
-.products .product .p_description {
-  margin-top: 20px;
-}
-/* line 56, ../sass/block/_defaul.scss */
-.products .product .p_buy {
-  margin-top: 50px;
-  cursor: pointer;
-}
-/* line 63, ../sass/block/_defaul.scss */
-.products.buy .product {
-  padding: 10px 5px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom-width: 0;
-  *zoom: 1;
-}
-/* line 67, ../sass/block/_defaul.scss */
-.products.buy .product:last-of-type {
-  border-bottom-width: 1px;
-}
-/* line 70, ../sass/block/_defaul.scss */
-.products.buy .product:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-}
-/* line 72, ../sass/block/_defaul.scss */
-.products.buy .product:hover + .product {
-  border-top-color: rgba(255, 255, 255, 0.4);
-}
-/* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
-.products.buy .product:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* line 77, ../sass/block/_defaul.scss */
-.products.buy .product > div {
-  display: inline-block;
-  vertical-align: middle;
-}
-/* line 81, ../sass/block/_defaul.scss */
-.products.buy .product .p_disabled {
-  float: right;
-  background-image: url('../images/iconmonstr-recycling-6-24.png?1477225287');
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-}
-/* line 88, ../sass/block/_defaul.scss */
-.products.buy .product .p_name {
-  width: auto;
-}
-/* line 91, ../sass/block/_defaul.scss */
-.products.buy .product .p_image {
-  margin-right: 5px;
-  float: left;
-  width: auto;
-}
-/* line 95, ../sass/block/_defaul.scss */
-.products.buy .product .p_image img {
-  width: 24px;
-  height: 24px;
 }
 
-/* line 104, ../sass/block/_defaul.scss */
+/* line 21, ../sass/include/_reset.scss */
+.counter {
+  color: gray;
+}
+
+/* line 24, ../sass/include/_reset.scss */
+body, html {
+  height: 100%;
+}
+
+/* line 27, ../sass/include/_reset.scss */
+a, ins {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* line 3, ../sass/block/_defaul.scss */
 .m_page {
-  background-image: url('../images/41101825-game-wallpapers.jpg?1477225286');
+  background-image: url("../images/41101825-game-wallpapers.jpg?1477225286");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   transition: background-image ease-out 0.25s;
   -webkit-transition: background-image ease-out 0.25s;
   -o-transition: background-image ease-out 0.25s;
   -moz-transition: background-image ease-out 0.25s;
   width: 100%;
 }
-/* line 107, ../sass/block/_defaul.scss */
-.m_page.dota2 {
-  background-image: url('../images/dota_2_art_2014_logotip_97476_1920x1080.jpg');
-}
 
-/* line 111, ../sass/block/_defaul.scss */
+/* line 16, ../sass/block/_defaul.scss */
 .middle_content {
   *zoom: 1;
-  
   padding: 25px;
 }
 /* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -263,43 +161,46 @@ img {
   display: table;
   clear: both;
 }
-/* line 114, ../sass/block/_defaul.scss */
-.middle_content .login {
-  max-width: 430px;
-  margin: 0 auto;
+/* line 20, ../sass/block/_defaul.scss */
+.middle_content button {
+  padding: 9px 30px;
+  background-color: rgba(0, 130, 92, 0.4);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  opacity: 0.8;
 }
-/* line 117, ../sass/block/_defaul.scss */
-.middle_content .login input {
-  padding: 5px 10px;
-  min-height: 40px;
-  width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 10px;
+/* line 28, ../sass/block/_defaul.scss */
+.middle_content button[disabled=disabled] {
+  color: #FF6F00;
+  opacity: 1;
 }
-/* line 128, ../sass/block/_defaul.scss */
-.middle_content .admin textarea {
-  width: calc(100% / 3);
-  max-width: calc(100% / 3);
-  float: left;
+/* line 33, ../sass/block/_defaul.scss */
+.middle_content button:hover {
+  opacity: 1;
 }
 
-/* line 135, ../sass/block/_defaul.scss */
+/* line 42, ../sass/block/_defaul.scss */
 .m_c_item {
   float: left;
 }
 
-/* line 138, ../sass/block/_defaul.scss */
+/* line 46, ../sass/block/_defaul.scss */
 .m_c_left {
-  width: 20%;
+  width: 25%;
 }
-/* line 140, ../sass/block/_defaul.scss */
+/* line 49, ../sass/block/_defaul.scss */
+.m_c_left .counter {
+  color: rgba(120, 120, 120, 0.75);
+}
+/* line 53, ../sass/block/_defaul.scss */
 .m_c_left + .m_c_right {
-  width: 80%;
+  width: 75%;
+  padding-left: 30px;
 }
-/* line 142, ../sass/block/_defaul.scss */
+/* line 57, ../sass/block/_defaul.scss */
 .m_c_left + .m_c_right .product {
+  margin-top: 15px;
   box-shadow: 0 0 12px black;
   border: 1px solid rgba(255, 255, 255, 0.07);
   opacity: 0.8;
@@ -307,69 +208,131 @@ img {
   width: calc((100% - 15px*3) / 3);
   margin-left: 15px;
 }
-/* line 149, ../sass/block/_defaul.scss */
+/* line 59, ../sass/block/_defaul.scss */
+.m_c_left + .m_c_right .product.games .p_name {
+  min-height: auto;
+}
+/* line 64, ../sass/block/_defaul.scss */
+.m_c_left + .m_c_right .product:nth-of-type(-n+3) {
+  margin-top: 0;
+}
+/* line 68, ../sass/block/_defaul.scss */
+.m_c_left + .m_c_right .product:nth-of-type(3n + 1) {
+  clear: both;
+  margin-left: 0;
+}
+/* line 81, ../sass/block/_defaul.scss */
 .m_c_left + .m_c_right .product > div {
   width: 100%;
 }
-/* line 152, ../sass/block/_defaul.scss */
+/* line 85, ../sass/block/_defaul.scss */
 .m_c_left + .m_c_right .product .p_name {
+  position: relative;
+  min-height: 88px;
   padding: 7px;
   background-color: rgba(0, 130, 92, 0.4);
 }
-/* line 156, ../sass/block/_defaul.scss */
+/* line 92, ../sass/block/_defaul.scss */
+.m_c_left + .m_c_right .product .p_n_language {
+  margin-bottom: 10px;
+}
+/* line 96, ../sass/block/_defaul.scss */
+.m_c_left + .m_c_right .product .p_cost {
+  position: absolute;
+  bottom: 7px;
+}
+/* line 101, ../sass/block/_defaul.scss */
 .m_c_left + .m_c_right .product .p_image {
   float: none;
 }
-/* line 159, ../sass/block/_defaul.scss */
+/* line 105, ../sass/block/_defaul.scss */
 .m_c_left + .m_c_right .product:hover {
   opacity: 1;
   cursor: pointer;
 }
-/* line 166, ../sass/block/_defaul.scss */
+/* line 113, ../sass/block/_defaul.scss */
 .m_c_left .menu .menu_item {
+  cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-bottom-width: 0;
+  opacity: 0.8;
 }
-/* line 169, ../sass/block/_defaul.scss */
+/* line 119, ../sass/block/_defaul.scss */
+.m_c_left .menu .menu_item.games {
+  padding: 10px 5px;
+}
+/* line 123, ../sass/block/_defaul.scss */
 .m_c_left .menu .menu_item:last-of-type {
   border-bottom-width: 1px;
 }
-/* line 172, ../sass/block/_defaul.scss */
+/* line 128, ../sass/block/_defaul.scss */
+.m_c_left .menu .menu_item.search input[type=text] {
+  padding: 10px 5px;
+  width: 100%;
+  background-color: transparent;
+  border-width: 0;
+  display: block;
+  color: white;
+}
+/* line 61, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+.m_c_left .menu .menu_item.search input[type=text]:-moz-placeholder {
+  opacity: 1;
+}
+/* line 64, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+.m_c_left .menu .menu_item.search input[type=text]::-moz-placeholder {
+  opacity: 1;
+}
+/* line 67, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+.m_c_left .menu .menu_item.search input[type=text]:-ms-input-placeholder {
+  opacity: 1;
+}
+/* line 56, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+.m_c_left .menu .menu_item.search input[type=text]::-webkit-input-placeholder {
+  opacity: 1;
+}
+/* line 143, ../sass/block/_defaul.scss */
+.m_c_left .menu .menu_item input {
+  display: none;
+}
+/* line 147, ../sass/block/_defaul.scss */
 .m_c_left .menu .menu_item:hover {
   border-color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
 }
-/* line 174, ../sass/block/_defaul.scss */
+/* line 151, ../sass/block/_defaul.scss */
 .m_c_left .menu .menu_item:hover + .menu_item {
   border-top-color: rgba(255, 255, 255, 0.4);
 }
-/* line 180, ../sass/block/_defaul.scss */
-.m_c_left .menu.menu_lvl_1 input {
-  display: none;
-}
-/* line 182, ../sass/block/_defaul.scss */
+/* line 159, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_1 input:checked ~ .menu_lvl_2 {
   display: block;
 }
-/* line 187, ../sass/block/_defaul.scss */
+/* line 164, ../sass/block/_defaul.scss */
+.m_c_left .menu.menu_lvl_1 label {
+  display: block;
+  padding: 10px 5px;
+}
+/* line 170, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_2 {
   border-top: 1px solid white;
-  margin-top: 10px;
+  margin-bottom: 10px;
   overflow: hidden;
   position: relative;
   z-index: 10;
   display: none;
 }
-/* line 194, ../sass/block/_defaul.scss */
+/* line 178, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_2 .menu_item {
   border-color: transparent;
   border-width: 0;
   border-bottom-width: 1px;
+  padding: 10px 5px;
 }
-/* line 198, ../sass/block/_defaul.scss */
+/* line 184, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_2 .menu_item:hover, .m_c_left .menu.menu_lvl_2 .menu_item.active {
   border-color: rgba(255, 255, 255, 0.4);
 }
-/* line 211, ../sass/block/_defaul.scss */
+/* line 197, ../sass/block/_defaul.scss */
 .m_c_left ul ul {
   display: none;
   margin-top: 5px;
@@ -382,14 +345,40 @@ img {
   clear: both;
   padding-bottom: 0;
 }
-/* line 221, ../sass/block/_defaul.scss */
+/* line 208, ../sass/block/_defaul.scss */
 .m_c_left ul > li {
   *zoom: 1;
+      /*&.l{
+  &:before{
+    background-position: -25px 0;
+  }
+}
+&.h{
+  &:before {
+    background-position: -50px 0;
+  }
+}
+&.w_o_w{
+  &:before {
+    background-position: -75px 0;
+  }
+}
+&.d{
+  &:before {
+    background-position: -100px 0;
+  }
+}
+&.l_o_l{
+  &:before{
+    background-position: -125px 0;
+  }
+}
+    */
   cursor: pointer;
   *zoom: 1;
   font-size: 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 10px 5px;
+  /*padding: 10px 5px;*/
 }
 /* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .m_c_left ul > li:after {
@@ -397,61 +386,31 @@ img {
   display: table;
   clear: both;
 }
-/* line 224, ../sass/block/_defaul.scss */
+/* line 212, ../sass/block/_defaul.scss */
 .m_c_left ul > li.active ul {
   display: block;
 }
-/* line 228, ../sass/block/_defaul.scss */
+/* line 217, ../sass/block/_defaul.scss */
 .m_c_left ul > li > span {
   padding: 5px;
 }
-/* line 232, ../sass/block/_defaul.scss */
-.m_c_left ul > li.l:before {
-  background-position: -25px 0;
-}
-/* line 237, ../sass/block/_defaul.scss */
-.m_c_left ul > li.h:before {
-  background-position: -50px 0;
-}
-/* line 242, ../sass/block/_defaul.scss */
-.m_c_left ul > li.w_o_w:before {
-  background-position: -75px 0;
-}
-/* line 247, ../sass/block/_defaul.scss */
-.m_c_left ul > li.d:before {
-  background-position: -100px 0;
-}
-/* line 252, ../sass/block/_defaul.scss */
-.m_c_left ul > li.l_o_l:before {
-  background-position: -125px 0;
-}
-/* line 256, ../sass/block/_defaul.scss */
+/* line 246, ../sass/block/_defaul.scss */
 .m_c_left ul > li.games {
   align-items: center;
   display: flex;
 }
-/* line 259, ../sass/block/_defaul.scss */
-.m_c_left ul > li.games:before {
-  display: block;
-  float: left;
-  content: "";
-  /*background-image: url('../images/Logo/sprite.png?1476223935');*/
-  width: 25px;
-  height: 25px;
-  margin-right: 5px;
-}
 /* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .m_c_left ul > li:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 274, ../sass/block/_defaul.scss */
+/* line 256, ../sass/block/_defaul.scss */
 .m_c_left ul > li:last-of-type {
   border-bottom-width: 0;
 }
 
-/* line 280, ../sass/block/_defaul.scss */
+/* line 263, ../sass/block/_defaul.scss */
 .m_c_right {
   *zoom: 1;
   width: 100%;
@@ -462,110 +421,32 @@ img {
   display: table;
   clear: both;
 }
-/* line 284, ../sass/block/_defaul.scss */
+/* line 268, ../sass/block/_defaul.scss */
 .m_c_right .product .p_name {
-  width: 50%;
+  width: 70%;
+  padding-right: 10px;
 }
-/* line 287, ../sass/block/_defaul.scss */
+/* line 273, ../sass/block/_defaul.scss */
 .m_c_right .product .p_image {
   float: right;
-  width: 50%;
+  width: 30%;
 }
-/* line 290, ../sass/block/_defaul.scss */
+/* line 277, ../sass/block/_defaul.scss */
 .m_c_right .product .p_image img {
   width: 100%;
 }
-
-/* line 297, ../sass/block/_defaul.scss */
-#slider {
-  margin: 0 auto;
-  min-height: 300px;
-  width: 100%;
-  position: relative;
-}
-/* line 302, ../sass/block/_defaul.scss */
-#slider article {
-  background-color: black;
-}
-/* line 304, ../sass/block/_defaul.scss */
-#slider article img {
-  display: block;
-  width: 960px;
-  margin-left: calc((100% - 943px) / 2);
-}
-/* line 311, ../sass/block/_defaul.scss */
-#slider:hover #slide1:checked ~ #controls label:nth-child(2),
-#slider:hover #slide2:checked ~ #controls label:nth-child(3),
-#slider:hover #slide3:checked ~ #controls label:nth-child(4),
-#slider:hover #slide4:checked ~ #controls label:nth-child(5),
-#slider:hover #slide5:checked ~ #controls label:nth-child(1) {
-  float: right;
-  display: block;
-}
-/* line 316, ../sass/block/_defaul.scss */
-#slider:hover #slide1:checked ~ #controls label:nth-child(2) span,
-#slider:hover #slide2:checked ~ #controls label:nth-child(3) span,
-#slider:hover #slide3:checked ~ #controls label:nth-child(4) span,
-#slider:hover #slide4:checked ~ #controls label:nth-child(5) span,
-#slider:hover #slide5:checked ~ #controls label:nth-child(1) span {
-  background-position: -50px -26px;
-}
-/* line 322, ../sass/block/_defaul.scss */
-#slider:hover #slide1:checked ~ #controls label:nth-child(5),
-#slider:hover #slide2:checked ~ #controls label:nth-child(1),
-#slider:hover #slide3:checked ~ #controls label:nth-child(2),
-#slider:hover #slide4:checked ~ #controls label:nth-child(3),
-#slider:hover #slide5:checked ~ #controls label:nth-child(4) {
-  float: left;
-  display: block;
-}
-/* line 327, ../sass/block/_defaul.scss */
-#slider:hover #slide1:checked ~ #controls label:nth-child(5) span,
-#slider:hover #slide2:checked ~ #controls label:nth-child(1) span,
-#slider:hover #slide3:checked ~ #controls label:nth-child(2) span,
-#slider:hover #slide4:checked ~ #controls label:nth-child(3) span,
-#slider:hover #slide5:checked ~ #controls label:nth-child(4) span {
-  background-position: -10px -26px;
+/* line 283, ../sass/block/_defaul.scss */
+.m_c_right .total_cost {
+  margin-top: 50px;
 }
 
-/* line 335, ../sass/block/_defaul.scss */
-#controls {
-  *zoom: 1;
-  width: 100%;
-  max-width: 960px;
-  margin: -185px auto 0;
-}
-/* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
-#controls:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* line 340, ../sass/block/_defaul.scss */
-#controls label {
-  padding: 23px 12px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  display: none;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-/* line 341, ../sass/block/_defaul.scss */
-#controls label span {
-  background-image: url('../images/imageControl.png?1476223935');
-  display: block;
-  width: 16px;
-  height: 24px;
-  opacity: 0.3;
-}
-
-/* line 357, ../sass/block/_defaul.scss */
+/* line 291, ../sass/block/_defaul.scss */
 .menu_lvl_1 > div {
   cursor: pointer;
   *zoom: 1;
   font-size: 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 10px 5px;
+  /*padding: 10px 5px;*/
 }
 /* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .menu_lvl_1 > div:after {
@@ -573,9 +454,47 @@ img {
   display: table;
   clear: both;
 }
-/* line 363, ../sass/block/_defaul.scss */
+/* line 297, ../sass/block/_defaul.scss */
 .menu_lvl_1 > div:last-of-type {
   border-bottom-width: 0;
+}
+
+/* line 304, ../sass/block/_defaul.scss */
+.footer_block .footer_content {
+  padding: 0 5px;
+  *zoom: 1;
+}
+/* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.footer_block .footer_content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 310, ../sass/block/_defaul.scss */
+.social_links {
+  float: right;
+}
+/* line 313, ../sass/block/_defaul.scss */
+.social_links a {
+  display: inline-block;
+  background-image: url('../images/2013-04-25_164200.png?1478197695');
+  width: 47px;
+  height: 47px;
+  background-position: -68px -17px;
+}
+/* line 320, ../sass/block/_defaul.scss */
+.social_links a.fb {
+  background-position: -127px -17px;
+}
+/* line 324, ../sass/block/_defaul.scss */
+.social_links a.vk {
+  background-position: -68px -17px;
+}
+/* line 328, ../sass/block/_defaul.scss */
+.social_links a.in {
+  background-image: url('../images/instagram.png?1478632718');
+  background-position: center center;
 }
 
 @keyframes toggle {
@@ -603,38 +522,41 @@ img {
 
 /* line 6, ../sass/include/_slider.scss */
 .slider {
-  max-width: 960px;
+  max-width: 1920px;
   height: 300px;
   margin: 0 auto;
   position: relative;
 }
 
-/* line 12, ../sass/include/_slider.scss */
+/* line 13, ../sass/include/_slider.scss */
 .slide1, .slide2, .slide3, .slide4, .slide5 {
   position: absolute;
   width: 100%;
   height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-/* line 17, ../sass/include/_slider.scss */
+/* line 22, ../sass/include/_slider.scss */
 .slide1 {
-  background-image: url('../images/dota2_load1-960x300.jpg?1476223935');
+  background-image: url('../images/header_dota2.png?1478715812');
   background-size: cover;
   animation: fade 8s infinite;
   -webkit-animation: fade 8s infinite;
 }
 
-/* line 24, ../sass/include/_slider.scss */
+/* line 29, ../sass/include/_slider.scss */
 .slide2 {
-  background-image: url('../images/halfLife2.jpg?1476223935');
+  background-image: url('../images/header_hearthstone.png?1478715930');
   background-size: cover;
   animation: fade2 8s infinite;
   -webkit-animation: fade2 8s infinite;
 }
 
-/* line 30, ../sass/include/_slider.scss */
+/* line 35, ../sass/include/_slider.scss */
 .slide3 {
-  background-image: url('../images/wow.jpg?1476223935');
+  background-image: url('../images/header_lol.png?1478715998');
   background-size: cover;
   animation: fade3 8s infinite;
   -webkit-animation: fade3 8s infinite;
@@ -682,10 +604,336 @@ img {
     opacity: 0;
   }
 }
-/* line 14, ../sass/screen.scss */
-.main_page .middle_content, .main_page .header_content {
+/* Dropdown button on hover & focus */
+/* The container <div> - needed to position the dropdown content */
+/* line 4, ../sass/include/_dropDownMenu.scss */
+.dropdown {
   position: relative;
-  background-color: rgba(0, 0, 0, 0.7);
+  display: inline-block;
+  /*&:hover{
+     > .ng-binding{color: #FF6F00;}
+     .dropbtn{
+         background-image: image-url('iconmonstr-shopping-bag-17-24-hover.png');
+     }
+  }*/
+}
+/* line 8, ../sass/include/_dropDownMenu.scss */
+.dropdown .empty_field {
+  max-height: 44px;
+}
+/* line 11, ../sass/include/_dropDownMenu.scss */
+.dropdown .dropbtn {
+  background-image: url('../images/iconmonstr-shopping-bag-17-24.png?1477676668');
+  width: 24px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  opacity: 0.8;
+}
+/* line 19, ../sass/include/_dropDownMenu.scss */
+.dropdown .dropbtn + span {
+  opacity: 0.8;
+}
+/* line 22, ../sass/include/_dropDownMenu.scss */
+.dropdown .dropbtn:hover, .dropdown .dropbtn:focus {
+  opacity: 1;
+  /*background-image: image-url('iconmonstr-shopping-bag-17-24-hover.png');
+  + span{
+      color: #FF6F00;
+  }*/
+}
+/* line 24, ../sass/include/_dropDownMenu.scss */
+.dropdown .dropbtn:hover + span, .dropdown .dropbtn:focus + span {
+  opacity: 1;
+}
+/* line 39, ../sass/include/_dropDownMenu.scss */
+.dropdown .ng-binding {
+  line-height: 24px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+/* line 45, ../sass/include/_dropDownMenu.scss */
+.dropdown-content {
+  display: none;
+}
+
+/* Links inside the dropdown */
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+/* line 50, ../sass/include/_dropDownMenu.scss */
+.show {
+  display: block;
+}
+
+/* line 1, ../sass/include/_products.scss */
+.products {
+  *zoom: 1;
+}
+/* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.products:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 5, ../sass/include/_products.scss */
+.products .product {
+  /*margin-top: 15px;
+  &:nth-of-type(-n+3){
+    margin-top: 0;
+  }*/
+}
+/* line 6, ../sass/include/_products.scss */
+.products .product button {
+  font-size: 18px;
+  padding: 9px 30px;
+  background-color: rgba(0, 130, 92, 0.4);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  opacity: 0.8;
+}
+/* line 14, ../sass/include/_products.scss */
+.products .product button[disabled=disabled] {
+  opacity: 1;
+}
+/* line 17, ../sass/include/_products.scss */
+.products .product button:hover {
+  opacity: 1;
+}
+/* line 21, ../sass/include/_products.scss */
+.products .product div {
+  font-size: 18px;
+}
+/* line 26, ../sass/include/_products.scss */
+.products .product.games .p_image img {
+  width: 147px;
+  height: 147px;
+  margin: 0 auto;
+}
+/* line 39, ../sass/include/_products.scss */
+.products .product .p_cost {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #FF6F00;
+}
+/* line 44, ../sass/include/_products.scss */
+.products .product .p_description {
+  margin-top: 20px;
+}
+/* line 47, ../sass/include/_products.scss */
+.products .product .p_buy {
+  margin-top: 50px;
+  cursor: pointer;
+}
+/* line 54, ../sass/include/_products.scss */
+.products.buy .p_name {
+  line-height: 24px;
+  width: auto;
+  white-space: nowrap;
+  /* ╟ряЁх∙рхь яхЁхэюё ёЄЁюъ */
+  overflow: hidden;
+  /* ╬сЁхчрхь тёх, ўЄю эх яюьх∙рхЄё  т юсырёЄ№ */
+  text-overflow: ellipsis;
+  /* ─юсрты хь ьэюуюЄюўшх */
+  opacity: 0.8;
+}
+/* line 62, ../sass/include/_products.scss */
+.products.buy .p_name:hover {
+  opacity: 1;
+}
+/* line 68, ../sass/include/_products.scss */
+.products.buy.dropdown-content .product:nth-last-of-type(2) {
+  border-bottom-width: 1px;
+}
+/* line 73, ../sass/include/_products.scss */
+.products.buy .product {
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom-width: 0;
+  *zoom: 1;
+}
+/* line 75, ../sass/include/_products.scss */
+.products.buy .product > * {
+  padding: 10px 0;
+}
+/* line 77, ../sass/include/_products.scss */
+.products.buy .product > *:first-of-type {
+  padding-left: 5px;
+}
+/* line 80, ../sass/include/_products.scss */
+.products.buy .product > *:last-of-type {
+  padding-right: 5px;
+}
+/* line 86, ../sass/include/_products.scss */
+.products.buy .product.empty_field {
+  padding: 10px 5px;
+}
+/* line 89, ../sass/include/_products.scss */
+.products.buy .product:last-of-type {
+  border-bottom-width: 1px;
+}
+/* line 92, ../sass/include/_products.scss */
+.products.buy .product:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+/* line 94, ../sass/include/_products.scss */
+.products.buy .product:hover + .product {
+  border-top-color: rgba(255, 255, 255, 0.4);
+}
+/* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.products.buy .product:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 99, ../sass/include/_products.scss */
+.products.buy .product > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 103, ../sass/include/_products.scss */
+.products.buy .product .p_disabled {
+  display: inline-block;
+  vertical-align: middle;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url('../images/iconmonstr-recycling-6-24.png?1477225287');
+  cursor: pointer;
+  width: 29px;
+  height: 44px;
+  float: right;
+  opacity: 0.8;
+}
+/* line 114, ../sass/include/_products.scss */
+.products.buy .product .p_disabled:hover {
+  opacity: 1;
+}
+/* line 119, ../sass/include/_products.scss */
+.products.buy .product .p_image {
+  margin-right: 5px;
+  float: left;
+  width: auto;
+}
+/* line 123, ../sass/include/_products.scss */
+.products.buy .product .p_image img {
+  width: 24px;
+  height: 24px;
+}
+
+/* line 132, ../sass/include/_products.scss */
+.page_droduct {
+  /*@include pie-clearfix;
+  margin-top: 15px;
+  clear: both;
+  float: left;
+  width: 100%;*/
+  margin: 0 auto;
+}
+/* line 140, ../sass/include/_products.scss */
+.page_droduct > div {
+  display: inline;
+  cursor: pointer;
+  padding: 10px 5px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+/* line 146, ../sass/include/_products.scss */
+.page_droduct > div:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* line 5, ../sass/block/_admin.scss */
+.admin .description, .admin .description + * {
+  clear: both;
+}
+
+/* line 11, ../sass/block/_admin.scss */
+.login {
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+/* line 15, ../sass/block/_admin.scss */
+.user {
+  clear: both;
+  max-width: 600px;
+  margin: 50px auto 0;
+  /*.full_name, .phone{
+      width: calc(50% - 3px);
+      display: inline-block;
+  }*/
+}
+
+/* line 26, ../sass/block/_admin.scss */
+form .mesh {
+  padding: 0 10px 10px 10px;
+}
+/* line 29, ../sass/block/_admin.scss */
+form textarea {
+  padding: 5px 10px;
+  width: calc((100% - 20px)/ 3);
+  margin-right: 10px;
+  max-width: calc(100% / 3);
+  min-height: 100px;
+  float: left;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.7);
+}
+/* line 33, ../sass/block/_admin.scss */
+form textarea:last-of-type {
+  margin-right: 0;
+}
+/* line 44, ../sass/block/_admin.scss */
+form input[type=text], form input[type=submit] {
+  padding: 5px 10px;
+  min-height: 40px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+/* line 61, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+form input[type=text]:-moz-placeholder, form input[type=submit]:-moz-placeholder {
+  opacity: 1;
+}
+/* line 64, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+form input[type=text]::-moz-placeholder, form input[type=submit]::-moz-placeholder {
+  opacity: 1;
+}
+/* line 67, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+form input[type=text]:-ms-input-placeholder, form input[type=submit]:-ms-input-placeholder {
+  opacity: 1;
+}
+/* line 56, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+form input[type=text]::-webkit-input-placeholder, form input[type=submit]::-webkit-input-placeholder {
+  opacity: 1;
+}
+/* line 48, ../sass/block/_admin.scss */
+form input[type=text]:hover, form input[type=text]:focus, form input[type=submit]:hover, form input[type=submit]:focus {
+  color: white;
+}
+/* line 61, ../sass/block/_admin.scss */
+form .title {
+  padding: 5px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* line 18, ../sass/screen.scss */
+.main_page {
+  position: relative;
+  min-height: calc(100% - 51px);
+}
+
+/* line 22, ../sass/screen.scss */
+.middle_content, .header_content, .footer_content {
+  position: relative;
   width: 960px;
   margin: 0 auto;
+}
+
+/* line 28, ../sass/screen.scss */
+.header_block, .footer_block {
+  background-color: rgba(0, 0, 0, 0.7);
 }

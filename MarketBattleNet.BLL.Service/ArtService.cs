@@ -82,6 +82,7 @@ namespace MarketBattleNet.BLL.Service
                 LargeFileName = obj.LargeFileName
             };
             _repository.Create(data);
+            _unitOfWork.SaveChanges();
         }
 
         public void Update(ArtDTO obj)
@@ -102,6 +103,7 @@ namespace MarketBattleNet.BLL.Service
                 LargeFileName = obj.LargeFileName
             };
             _repository.Update(data);
+            _unitOfWork.SaveChanges();
         }
 
         public void Delete(int id)
@@ -123,6 +125,7 @@ namespace MarketBattleNet.BLL.Service
                 LargeFileName = dataToDelete.LargeFileName
             };
             _repository.Delete(data);
+            _unitOfWork.SaveChanges();
         }
     }
 }

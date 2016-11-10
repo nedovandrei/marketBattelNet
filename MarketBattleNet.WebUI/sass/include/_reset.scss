@@ -5,6 +5,7 @@
 }
 body{
   color:#fff;
+  background-color: #000;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1;
 }
@@ -14,3 +15,16 @@ ol, ul {
 img{
   display: block;
 }
+input[type=checkbox] {
+    display: none;
+}
+.counter{
+    color: gray;
+}
+body, html{
+    height: 100%;
+}
+a, ins { 
+  text-decoration: none; 
+  color: inherit;
+  } 

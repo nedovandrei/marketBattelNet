@@ -4,7 +4,8 @@
 }
 
 .slider {
-  max-width: 960px;
+  max-width: 1920px;
+ 
   height: 300px;
   margin: 0 auto;
   position: relative;
@@ -13,22 +14,26 @@
   position: absolute;
   width: 100%;
   height: 100%;
+ 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .slide1 {
-  background-image: image-url("dota2_load1-960x300.jpg");
+  background-image: image-url("header_dota2.png");
   background-size: cover;
   animation:fade 8s infinite;
   -webkit-animation:fade 8s infinite;
 
 }
 .slide2 {
-  background-image: image-url("halfLife2.jpg");
+  background-image: image-url("header_hearthstone.png");
   background-size: cover;
   animation:fade2 8s infinite;
   -webkit-animation:fade2 8s infinite;
 }
 .slide3 {
-  background-image: image-url("wow.jpg");
+  background-image: image-url("header_lol.png");
   background-size: cover;
   animation:fade3 8s infinite;
   -webkit-animation:fade3 8s infinite;

@@ -55,7 +55,8 @@ namespace MarketBattleNet.PL.API.Controllers
                 PhoneNumber = model.PhoneNumber
             };
             _userProfileService.Add(modelDTO);
-            return Request.CreateResponse(HttpStatusCode.Created);
+            var data = _userProfileService.FindByPhoneNumber(model.PhoneNumber);
+            return Request.CreateResponse(HttpStatusCode.Created, data);
         }
 
         [HttpPut]

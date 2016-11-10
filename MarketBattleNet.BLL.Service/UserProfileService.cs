@@ -48,6 +48,19 @@ namespace MarketBattleNet.BLL.Service
             return dtoToSend;
         }
 
+        public UserProfileDTO FindByPhoneNumber(string phoneNumber)
+        {
+            var data = _repository.GetAll().FirstOrDefault(x => x.PhoneNumber == phoneNumber);
+            var dtoToSend = new UserProfileDTO()
+            {
+                Id = data.Id,
+                FullName = data.FullName,
+                Address = data.Address,
+                PhoneNumber = data.PhoneNumber
+            };
+            return dtoToSend;
+        }
+
         public void Add(UserProfileDTO obj)
         {
             var data = new UserProfileModel()
@@ -58,6 +71,7 @@ namespace MarketBattleNet.BLL.Service
                 PhoneNumber = obj.PhoneNumber
             };
             _repository.Create(data);
+            _unitOfWork.SaveChanges();
         }
 
         public void Update(UserProfileDTO obj)
@@ -70,6 +84,7 @@ namespace MarketBattleNet.BLL.Service
                 PhoneNumber = obj.PhoneNumber
             };
             _repository.Update(data);
+            _unitOfWork.SaveChanges();
         }
 
         public void Delete(int id)
@@ -83,6 +98,7 @@ namespace MarketBattleNet.BLL.Service
                 PhoneNumber = dataToDelete.PhoneNumber
             };
             _repository.Delete(data);
+            _unitOfWork.SaveChanges();
         }
     }
 }

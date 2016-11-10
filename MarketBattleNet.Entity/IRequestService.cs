@@ -10,5 +10,6 @@ namespace MarketBattleNet.BLL.ServiceInterface
         void Add(RequestDTO obj);
         void Update(RequestDTO obj);
         void Delete(int id);
+        void AddRange(IEnumerable<RequestDTO> data);
     }
 }

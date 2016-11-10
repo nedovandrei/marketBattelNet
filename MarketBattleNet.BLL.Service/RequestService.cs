@@ -28,7 +28,6 @@ namespace MarketBattleNet.BLL.Service
                                     {
                                         Id = request.Id,
                                         UserId = request.UserId,
-
                                         ArtId = request.ArtId
                                     });
             }
@@ -41,7 +40,7 @@ namespace MarketBattleNet.BLL.Service
             var dtoToSend = new RequestDTO()
             {
                 Id = data.Id,
-                UserId = data.Id,
+                UserId = data.UserId,
                 ArtId = data.ArtId
             };
             return dtoToSend;
@@ -52,10 +51,11 @@ namespace MarketBattleNet.BLL.Service
             var data = new RequestModel()
             {
                 Id = obj.Id,
-                UserId = obj.Id,
+                UserId = obj.UserId,
                 ArtId = obj.ArtId
             };
             _repository.Create(data);
+            _unitOfWork.SaveChanges();
         }
 
         public void Update(RequestDTO obj)
@@ -63,10 +63,11 @@ namespace MarketBattleNet.BLL.Service
             var data = new RequestModel()
             {
                 Id = obj.Id,
-                UserId = obj.Id,
+                UserId = obj.UserId,
                 ArtId = obj.ArtId
             };
             _repository.Update(data);
+            _unitOfWork.SaveChanges();
         }
 
         public void Delete(int id)
@@ -75,10 +76,21 @@ namespace MarketBattleNet.BLL.Service
             var data = new RequestModel()
             {
                 Id = dataToDelete.Id,
-                UserId = dataToDelete.Id,                
+                UserId = dataToDelete.UserId,                
                 ArtId = dataToDelete.ArtId
             };
             _repository.Delete(data);
+            _unitOfWork.SaveChanges();
+        }
+
+        public void AddRange(IEnumerable<RequestDTO> data)
+        {
+            var modelList = data.Select(item => new RequestModel()
+            {
+                UserId = item.UserId, ArtId = item.ArtId
+            }).ToList();
+            _repository.AddRange(modelList);
+            _unitOfWork.SaveChanges();
         }
     }
 }

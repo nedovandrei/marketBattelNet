@@ -1,37 +1,56 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css" type="text/css"/>
-    <link  rel="stylesheet" href="css/screen.css" type="text/css"/>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="css/screen.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/demo.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css"/>
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/AngularJS-Toaster/toaster.min.css" />
+    <link rel="stylesheet" href="bower_components/mimiz-jquery-loader-plugin-200d6e6/jquery.loader.css" />
     <meta charset="UTF-8">
     <!--Scripts section-->
+    <!--main libraries-->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/mimiz-jquery-loader-plugin-200d6e6/jquery.loader.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/angular-ui-router-anim-in-out/anim-in-out.js"></script>
     <script src="bower_components/bower-angular-cookies-master/angular-cookies.min.js"></script>
+    <script src="bower_components/AngularJS-Toaster/toaster.min.js"></script>
+
+
+    <!--configuration-->
     <script src="app/app.module.js"></script>
     <script src="app/app.config.js"></script>
+
+    <!--resource-->
     <script src="app/resource/art.resource.js"></script>
     <script src="app/resource/game.resource.js"></script>
     <script src="app/resource/request.resource.js"></script>
     <script src="app/resource/userProfile.resource.js"></script>
+    <script src="app/resource/login.resource.js"></script>
+
+    <!--service-->
     <script src="app/service/art.service.js"></script>
     <script src="app/service/game.service.js"></script>
     <script src="app/service/request.service.js"></script>
     <script src="app/service/userProfile.service.js"></script>
     <script src="app/service/cookie.service.js"></script>
     <script src="app/service/shoppingCart.service.js"></script>
+    <script src="app/service/toaster.service.js"></script>
+    <script src="app/service/login.service.js"></script>
+
+    <!--controllers-->
     <script src="app/ShoppingCartController.js"></script>
     <script src="app/game/GameController.js"></script>
     <script src="app/shop/ShopController.js"></script>
     <script src="app/art/ArtController.js"></script>
     <script src="app/purchase/PurchaseController.js"></script>
+    <script src="app/admin/AdminController.js"></script>
+    <script src="app/login/LoginController.js"></script>
     <script>
 
         /* When the user clicks on the button,
@@ -42,7 +61,7 @@
 
         // Close the dropdown menu if the user clicks outside of it
         window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
+            if (!event.target.matches('.dropbtn') && !event.target.matches('.dropdown-content')) {
 
                 var dropdowns = document.getElementsByClassName("dropdown-content");
                 var i;
@@ -58,52 +77,78 @@
     <title>Market</title>
 </head>
 <body class="m_page" ng-app="app">
-<!--<img class="background_image" src="images/dota_2_background.jpg" alt="" style="width: 100%; min-height: 100%; position: fixed;">-->
-<div class="main_page">
-    <div class="header_block">
-        <div class="header_content" ng-controller="ShoppingCartController">
-            <img src="images/ROGUE.png" class="h_link games active"  ui-sref="game" alt="">
-            <div class="h_link market" ui-sref="shop">Магазин</div>
-            <div class="h_link shop dropdown">
-                <button ng-click="showDropdown()" class="dropbtn"></button>
-                <div id="myDropdown" class="products buy dropdown-content">
-                    <div ng-repeat="item in purchasedItems">
-                        <div class="product" >
-                            <div ui-sref="purchase">
-                                <div class="p_image">
-                                    <img ng-src="images/arts/{{item.ThumbnailFileName}}" alt="" height="70">
+    <!--<img class="background_image" src="images/dota_2_background.jpg" alt="" style="width: 100%; min-height: 100%; position: fixed;">-->
+    <div class="main_page">
+        <div class="header_block">
+            <div class="header_content" ng-controller="ShoppingCartController">
+                <img src="images/ROGUE.png" class="logo" />
+                <div class="h_links"></div>
+                <a class="h_link games active" ui-sref-active="active" ui-sref="game">
+                    <span ng-show="language === 'ru-RU'">Игры</span>
+                    <span ng-show="language === 'en-US'">Games</span>
+                    <span ng-show="language === 'ro-MD'">Jucarii</span>
+                </a>
+                <a class="h_link market" ui-sref-active="active" ui-sref="shop">
+                    <span ng-show="language === 'ru-RU'">Магазин</span>
+                    <span ng-show="language === 'en-US'">Marketplace</span>
+                    <span ng-show="language === 'ro-MD'">Magazin</span>
+                </a>
+                <a class="h_r_block">
+                    <ul class="languages">
+
+                        <li ng-click="changeLanguage('ru-RU')" class="ru">ru</li>
+                        <li ng-click="changeLanguage('ro-MD')" class="ro">ro</li>
+                        <li ng-click="changeLanguage('en-US')" class="en">en</li>
+                    </ul>
+                    <div class="h_link shop dropdown">
+                        <button ng-click="showDropdown()" class="dropbtn"></button>
+                        <span>{{purchasedItemsLocal.length}}</span>
+                        <div id="myDropdown" class="products buy dropdown-content">
+                            <div class="dropdown_container">
+                                <div class="product" ng-repeat="item in purchasedItems">
+                                    <div ui-sref="purchase">
+                                        <div class="p_image">
+                                            <img ng-src="images/arts/{{item.ThumbnailFileName}}" alt="" height="70">
+                                        </div>
+                                        <div class="p_name">
+                                            <span ng-show="language === 'ru-RU'">{{item.NameRus}}</span>
+                                            <span ng-show="language === 'en-US'">{{item.NameEng}}</span>
+                                            <span ng-show="language === 'ro-MD'">{{item.NameRom}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="p_disabled" ng-click="removeItem(item)"></div>
                                 </div>
-                                <div class="p_name">{{item.NameRus}}</div>
+                                <div ng-hide="purchasedItems.length > 0" class="product empty_field">
+                                    <span ng-show="language === 'ru-RU'">Пустая корзина</span>
+                                    <span ng-show="language === 'en-US'">Empty Cart</span>
+                                    <span ng-show="language === 'ro-MD'">Coșul de cumpărături gol</span>
+                                </div>
                             </div>
-                            <div class="p_disabled" ng-click="removeItem(item)"></div>
+
                         </div>
+
                     </div>
-                    <!--<div class="product pot" ui-sref="market">
-                        <div class="p_image">
-                            <img src="images/pot/dota2/fRmMd4AryKk.jpg" alt="">
-                        </div>
-                        <div class="p_name">Чашка Batrider</div>
-                        <div class="p_disabled"></div>
-                    </div>
-                    <div class="product pot" ui-sref="market">
-                        <div class="p_image">
-                            <img src="images/pot/dota2/fRmMd4AryKk.jpg" alt="">
-                        </div>
-                        <div class="p_name">Чашка Batrider</div>
-                        <div class="p_disabled"></div>
-                    </div>-->
-                </div>
-                <span>{{purchasedItems.length}}</span>
+                </a>
             </div>
+
+
+        </div>
+
+        <div class="middle_block " data-anim-speed="300" ui-view>
 
         </div>
     </div>
-    <div class="middle_block " data-anim-speed="300" ui-view>
-       
-    </div>
     <div class="footer_block">
-
+        <div class="footer_content">
+            <div class="social_links">
+                <a href="https://www.facebook.com/Roguemd/" class="fb"></a>
+                <a href="https://vk.com/roguemd" class="vk"></a>
+                <a href="https://www.instagram.com/rogue.md/" class="in"></a>
+            </div>
+        </div>
     </div>
-</div>
+    <toaster-container toaster-options="{ 'toaster-id': 1, 'position-class': 'toast-bottom-right', 'close-button': {'toast-error': true, 'toast-warning': true, 'toast-success': false}}"></toaster-container>
+    <toaster-container toaster-options="{ 'toaster-id': 2, 'position-class': 'toast-top-right', 'close-button': {'toast-error': true, 'toast-warning': true, 'toast-success': false}}"></toaster-container>
+    <toaster-container toaster-options="{ 'toaster-id': 3, 'position-class': 'toast-top-full-width'}"></toaster-container>
 </body>
 </html>

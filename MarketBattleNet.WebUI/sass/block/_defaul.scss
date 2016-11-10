@@ -1,234 +1,223 @@
 @import "../include/variable";
 
-.products{
-  @include pie-clearfix;
-  .page_droduct{
-    @include pie-clearfix;
-    display:none;
-    margin-top: 15px;
-    clear: both;
-    float: left;
+.m_page {
+    background-image: url('../images/41101825-game-wallpapers.jpg?1477225286');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image ease-out 0.25s;
+    -webkit-transition: background-image ease-out 0.25s;
+    -o-transition: background-image ease-out 0.25s;
+    -moz-transition: background-image ease-out 0.25s;
     width: 100%;
-    > div{
-      cursor: pointer;
-      padding: 10px 5px;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      &:hover {
-        border-color: hsla(0, 0%, 100%, 0.4);
-      }
-      &.button_next{
-        float:left;
-      }
-      &.button_back{
-        float:right;
-      }
-    }
-  }
-  .product{
-    div{
-      font-size: 18px;
-    }
-    &.games{
-      .p_image{
-        img{
-          width: 147px;
-          height: 147px;
-          margin:0 auto;
+}
 
-        }
-      }
-    }
-    margin-top: 15px;
-    &:nth-of-type(-n+3){
-      margin-top: 0;
-    }
-    &:nth-of-type(9){
-      & + .page_droduct{
-        display:block;
-      }
-    }
-    .p_cost{
-      margin-top: 20px;
-    }
-    .p_description{
-      margin-top: 20px;
-    }
-    .p_buy{
-      margin-top: 50px;
-      cursor: pointer;
-    }
-  }
+.middle_content {
+    @include pie-clearfix;
+    padding: 25px;
 
-  &.buy{
-    .product{
-      padding: 10px 5px;
-      border:1px solid hsla(0, 0%, 100%, 0.1);
-      border-bottom-width: 0;
-      &:last-of-type{
-        border-bottom-width: 1px;
-      }
-      &:hover {
-        border-color: hsla(0, 0%, 100%, 0.4);
-        + .product{
-          border-top-color: hsla(0, 0%, 100%, 0.4);
-        }
-      }
-      @include pie-clearfix;
-      > div{
-        display: inline-block;
-        vertical-align: middle;
-      }
-      .p_disabled{
-        float: right;
-        background-image: image-url('iconmonstr-recycling-6-24.png');
-        cursor: pointer;
-        width: 24px;
-        height: 24px;
-      }
-      .p_name{
-        width: auto;
-      }
-      .p_image {
-        margin-right: 5px;
-        float:left;
-        width: auto;
-        img {
-          width: 24px;
-          height: 24px;
-        }
-      }
-    }
-
-  }
-}
-.m_page{
-  background-image: image-url('41101825-game-wallpapers.jpg');
-  width: 100%;
-  &.dota2{
-    background-image: image-url('dota_2_art_2014_logotip_97476_1920x1080.jpg');
-  }
-}
-.middle_content{
-  @include pie-clearfix;
-  padding: 25px;
-  .login{
-      max-width: 430px;
-      margin:0 auto;
-      input{
-          padding: 5px 10px;
-            min-height:40px;
-            width: 100%;
-            border: 1px solid rgba(255,255,255,0.3);
-            background-color: rgba(0,0,0,0.5);
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 10px;
-      }
-  }
-  .admin{
-      textarea{
-          width: calc(100% / 3);
-          max-width: calc(100% / 3);
-          float: left;
-      }
-  }
-}
-.m_c_item{
-  float: left;
-}
-.m_c_left{
-  width: 20%;
-  & + .m_c_right{
-    width: 80%;
-    .product{
-      box-shadow: 0 0 12px rgba(0,0,0, 1);
-      border:1px solid hsla(0, 0%, 100%, 0.07);
-      opacity: 0.8;
-      float: left;
-      width: calc((100% - 15px*3) / 3);
-      margin-left: 15px;
-      > div{
-        width: 100%;
-      }
-      .p_name{
-        padding: 7px;
+    button {
+        padding: 9px 30px;
         background-color: rgba(0, 130, 92, 0.4);
-      }
-      .p_image{
-        float: none;
-      }
-      &:hover{
-        opacity: 1;
-        cursor: pointer;
-      }
-    }
-  }
-  .menu{
-    .menu_item {
-      border:1px solid hsla(0, 0%, 100%, 0.07);
-      border-bottom-width: 0;
-      &:last-of-type{
-        border-bottom-width: 1px;
-      }
-      &:hover {
-        border-color: hsla(0, 0%, 100%, 0.4);
-        + .menu_item{
-          border-top-color: hsla(0, 0%, 100%, 0.4);
-        }
-      }
-    }
-    &.menu_lvl_1{
-      input{
-        display: none;
-        &:checked ~ .menu_lvl_2{
-          display: block;
-        }
-      }
-    }
-    &.menu_lvl_2{
-      border-top: 1px solid white;
-      margin-top: 10px;
-      overflow: hidden;
-      position: relative;
-      z-index: 10;
-      display: none;
-      .menu_item {
+        color: #fff;
         border-color: transparent;
-        border-width: 0;
-        border-bottom-width: 1px;
-        &:hover, &.active{
-          border-color: hsla(0, 0%, 100%, 0.4);
+        box-shadow: 0 0 transparent;
+        opacity: 0.8;
+
+        &[disabled=disabled] {
+            color: #FF6F00;
+            opacity: 1;
         }
 
-      }
-    }
-  }
-  ul{
-    //li{
-    //  &:hover, &.active{
-    //    background-color: rgba(0, 174, 255, 0.7);
-    //  }
-    //}
-    ul{
-      display: none;
-      margin-top:5px;
-      padding-left: 15px;
-      @include border-radius(0);
-      border-width:0;
-      border-top-width:1px;
-      clear: both;
-      padding-bottom: 0;
-    }
-    > li{
-      @include pie-clearfix;
-      &.active{
-        ul{
-          display: block;
+        &:hover {
+            opacity: 1;
         }
-      }
-      > span{
-        padding: 5px;
-      }
-      &.l{
+    }
+
+    .default_border {
+    }
+}
+
+.m_c_item {
+    float: left;
+}
+
+.m_c_left {
+    width: 25%;
+
+    .counter {
+        color: rgba(120, 120, 120, 0.75);
+    }
+
+    & + .m_c_right {
+        width: 75%;
+        padding-left: 30px;
+
+        .product {
+            &.games {
+                .p_name {
+                    min-height: auto;
+                }
+            }
+
+            &:nth-of-type(-n+3) {
+                margin-top: 0;
+            }
+
+            &:nth-of-type(3n + 1) {
+                clear: both;
+                margin-left: 0;
+            }
+
+            margin-top: 15px;
+            box-shadow: 0 0 12px rgba(0,0,0, 1);
+            border: 1px solid hsla(0, 0%, 100%, 0.07);
+            opacity: 0.8;
+            float: left;
+            width: calc((100% - 15px*3) / 3);
+            margin-left: 15px;
+
+            > div {
+                width: 100%;
+            }
+
+            .p_name {
+                position: relative;
+                min-height: 88px;
+                padding: 7px;
+                background-color: rgba(0, 130, 92, 0.4);
+            }
+
+            .p_n_language {
+                margin-bottom: 10px;
+            }
+
+            .p_cost {
+                position: absolute;
+                bottom: 7px;
+            }
+
+            .p_image {
+                float: none;
+            }
+
+            &:hover {
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .menu {
+        .menu_item {
+            cursor: pointer;
+            border: 1px solid hsla(0, 0%, 100%, 0.07);
+            border-bottom-width: 0;
+            opacity: 0.8;
+
+            &.games {
+                padding: 10px 5px;
+            }
+
+            &:last-of-type {
+                border-bottom-width: 1px;
+            }
+
+            &.search {
+                input[type=text] {
+                    padding: 10px 5px;
+                    width: 100%;
+                    background-color: transparent;
+                    border-width: 0;
+                    display: block;
+                    color: white;
+
+                    @include input-placeholder {
+                        opacity: 1;
+                    }
+                }
+                
+            }
+
+            input {
+                display: none;
+            }
+
+            &:hover {
+                border-color: hsla(0, 0%, 100%, 0.4);
+                opacity: 1;
+
+                + .menu_item {
+                    border-top-color: hsla(0, 0%, 100%, 0.4);
+                }
+            }
+        }
+
+        &.menu_lvl_1 {
+            input {
+                &:checked ~ .menu_lvl_2 {
+                    display: block;
+                }
+            }
+
+            label {
+                display: block;
+                padding: 10px 5px;
+            }
+        }
+
+        &.menu_lvl_2 {
+            border-top: 1px solid white;
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+            display: none;
+
+            .menu_item {
+                border-color: transparent;
+                border-width: 0;
+                border-bottom-width: 1px;
+                padding: 10px 5px;
+
+                &:hover, &.active {
+                    border-color: hsla(0, 0%, 100%, 0.4);
+                }
+            }
+        }
+    }
+
+    ul {
+        //li{
+        //  &:hover, &.active{
+        //    background-color: rgba(0, 174, 255, 0.7);
+        //  }
+        //}
+        ul {
+            display: none;
+            margin-top: 5px;
+            padding-left: 15px;
+            @include border-radius(0);
+            border-width: 0;
+            border-top-width: 1px;
+            clear: both;
+            padding-bottom: 0;
+        }
+
+        > li {
+            @include pie-clearfix;
+
+            &.active {
+                ul {
+                    display: block;
+                }
+            }
+
+            > span {
+                padding: 5px;
+            }
+            /*&.l{
         &:before{
           background-position: -25px 0;
         }
@@ -253,115 +242,92 @@
           background-position: -125px 0;
         }
       }
-      &.games {
-        align-items: center;
-        display: flex;
-        &:before {
-          display: block;
-          float: left;
-          content: "";
-          background-image: image-url("Logo/sprite.png");
-          width: 25px;
-          height: 25px;
-          margin-right: 5px;
+          */
+            &.games {
+                align-items: center;
+                display: flex;
+            }
+
+            cursor: pointer;
+            @include pie-clearfix;
+            font-size: 16px;
+            border-bottom: 1px solid hsla(0, 0%, 100%, 0.07);
+            /*padding: 10px 5px;*/
+            &:last-of-type {
+                border-bottom-width: 0;
+            }
         }
-      }
-      cursor:pointer;
-      @include pie-clearfix;
-      font-size:16px;
-      border-bottom: 1px solid hsla(0, 0%, 100%, 0.07);
-      padding: 10px 5px;
-      &:last-of-type{
-        border-bottom-width: 0;
-      }
     }
-  }
-}
-.m_c_right{
-  @include pie-clearfix;
-  width: 100%;
-  .product{
-    .p_name{
-      width: 50%;
-    }
-    .p_image{
-      float: right;
-      width: 50%;
-      img {
-        width: 100%;
-      }
-    }
-  }
 }
 
-#slider {
-  margin: 0 auto;
-  min-height: 300px;
-  width: 100%;
-  position: relative;
-  article {
-    background-color: black;
-    img {
-      display: block;
-      width: 960px;
-      margin-left: calc((100% - 943px) / 2);
-    }
-  }
-  &:hover {
-    #slide1:checked ~ #controls label:nth-child(2),
-    #slide2:checked ~ #controls label:nth-child(3),
-    #slide3:checked ~ #controls label:nth-child(4),
-    #slide4:checked ~ #controls label:nth-child(5),
-    #slide5:checked ~ #controls label:nth-child(1) {
-      span {
-        background-position: -50px -26px;
-      }
-      float: right;
-      display: block;
-    }
-    #slide1:checked ~ #controls label:nth-child(5),
-    #slide2:checked ~ #controls label:nth-child(1),
-    #slide3:checked ~ #controls label:nth-child(2),
-    #slide4:checked ~ #controls label:nth-child(3),
-    #slide5:checked ~ #controls label:nth-child(4) {
-      span {
-        background-position: -10px -26px;
-      }
-      float: left;
-      display: block;
-    }
-  }
-}
-#controls{
-  @include pie-clearfix;
-  width: 100%;
-  max-width: 960px;
-  margin:-185px auto 0;
-  label {
-    span {
-      background-image: image-url('imageControl.png');
-      display: block;
-      width: 16px;
-      height: 24px;
-      opacity: 0.3;
-    }
-    padding: 23px 12px;
-    @include border-radius(2px);
-    display: none;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-}
-
-
-.menu_lvl_1{
-  > div {
-    cursor:pointer;
+.m_c_right {
     @include pie-clearfix;
-    font-size:16px;
-    border-bottom: 1px solid hsla(0, 0%, 100%, 0.07);
-    padding: 10px 5px;
-    &:last-of-type{
-      border-bottom-width: 0;
+    width: 100%;
+
+    .product {
+        .p_name {
+            width: 70%;
+            padding-right: 10px;
+        }
+
+        .p_image {
+            float: right;
+            width: 30%;
+
+            img {
+                width: 100%;
+            }
+        }
     }
-  }
+
+    .total_cost {
+        margin-top: 50px;
+    }
+}
+
+
+
+.menu_lvl_1 {
+    > div {
+        cursor: pointer;
+        @include pie-clearfix;
+        font-size: 16px;
+        border-bottom: 1px solid hsla(0, 0%, 100%, 0.07);
+        /*padding: 10px 5px;*/
+        &:last-of-type {
+            border-bottom-width: 0;
+        }
+    }
+}
+
+.footer_block {
+    .footer_content {
+        padding: 0 5px;
+        @include pie-clearfix;
+    }
+}
+
+.social_links {
+    float: right;
+
+    a {
+        display: inline-block;
+        background-image: image-url("2013-04-25_164200.png");
+        width: 47px;
+        height: 47px;
+        background-position: -68px -17px;
+
+        &.fb {
+            background-position: -127px -17px;
+        }
+
+        &.vk {
+            background-position: -68px -17px;
+        }
+
+        &.in {
+            background-image: image-url("instagram.png");
+            background-position: center center;
+        }
+    }
 }

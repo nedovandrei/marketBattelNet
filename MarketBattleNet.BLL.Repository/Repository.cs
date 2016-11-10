@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Data.Entity;
 using MarketBattleNet.DAL.RepositoryInterface;
 
@@ -34,6 +35,11 @@ namespace MarketBattleNet.BLL.Repository
         public IQueryable<T> GetAll()
         {
             return _db.Set<T>();
+        }
+
+        public void AddRange(IEnumerable<T> data)
+        {
+            _db.Set<T>().AddRange(data);            
         }
 
     }

@@ -49,7 +49,23 @@
                 return artResource.findByGameId({ id: id }, function (result) {
                     callback(result);
                 }, function () {
-                    console.log("artService -> findByGameId: error")
+                    console.log("artService -> findByGameId: error");
+                });
+            }
+
+            _artService.getCountByGameId = function(id, callback) {
+                return artResource.getCountByGameId({ id: id }, function (result) {
+                    callback(result);
+                }, function() {
+                    console.log("artService -> getCountByGameId: error");
+                });
+            }           
+
+            _artService.search = function(searchString, callback) {
+                return artResource.search({ searchString: searchString }, function(result) {
+                    callback(result);
+                }, function() {
+                    console.log("artService -> search: error");
                 });
             }
 

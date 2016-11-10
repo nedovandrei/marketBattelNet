@@ -6,11 +6,14 @@
             apiPath: "http://localhost:7378/api/",
             loader: {
                 show: function () {
-                    //kinda like loader
+                    $.loader({
+                        className: "blue-with-image-2",
+                        content: ''
+                    });
                     console.log("loader started");
                 },
                 hide: function () {
-                    //there will once be a hideLoader here
+                    $.loader('close');
                     console.log("loader ended");
                 }
             },
