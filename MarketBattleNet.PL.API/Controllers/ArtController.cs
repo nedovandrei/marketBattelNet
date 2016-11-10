@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace MarketBattleNet.PL.API.Controllers
 {
@@ -22,6 +23,35 @@ namespace MarketBattleNet.PL.API.Controllers
         public HttpResponseMessage GetAll()
         {
             var data = _artService.GetAll();
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
+
+        [HttpPost]
+        [Route("api/art/getSorted")]
+        public HttpResponseMessage GetSorted(ParamsModel parameters)
+        {
+            if (parameters == null) throw new ArgumentNullException(nameof(parameters));
+
+            var data = _artService.GetAll();
+
+            if (parameters.ByDate != null)
+            {
+                data = parameters.ByDate == "asc" ? data.OrderBy(x => x.DateCreated) : data.OrderByDescending(x => x.DateCreated);
+            }
+            if (parameters.ByPrice != null)
+            {
+                data = parameters.ByPrice == "asc" ? data.OrderBy(x => x.Price) : data.OrderByDescending(x => x.Price);
+            }
+            if (parameters.ByType != null)
+            {
+                var tempList = new List<ArtDTO>();
+                foreach (var type in parameters.ByType)
+                {
+                    tempList.AddRange(data.Where(x => x.Type == type));
+                }
+                data = tempList;
+            }
+
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 

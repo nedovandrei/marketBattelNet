@@ -28,3 +28,8 @@ a, ins {
   text-decoration: none; 
   color: inherit;
   } 
+input, button{
+    &:focus{
+    outline: none;
+    }
+}

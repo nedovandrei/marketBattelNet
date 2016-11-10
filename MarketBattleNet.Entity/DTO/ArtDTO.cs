@@ -1,4 +1,6 @@
-﻿namespace MarketBattleNet.BLL.ServiceInterface.DTO
+﻿using System;
+
+namespace MarketBattleNet.BLL.ServiceInterface.DTO
 {
     public class ArtDTO
     {
@@ -14,5 +16,6 @@
         public decimal Price { get; set; }
         public string ThumbnailFileName { get; set; }
         public string LargeFileName { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

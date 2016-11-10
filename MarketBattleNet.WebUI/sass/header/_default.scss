@@ -55,12 +55,12 @@
     }
 
     .products {
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: #232935;
         width: 300px;
         margin-left: -276px;
         z-index: 2;
         position: absolute;
-
+         box-shadow: 0 0 12px black;
         .product {
             cursor: pointer;
         }

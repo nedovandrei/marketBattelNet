@@ -25,6 +25,10 @@
 form{
     .mesh{
         padding: 0 10px 10px 10px;
+        & > div{
+            @include pie-clearfix;
+            margin-bottom: 10px;
+        }
     }
     textarea{
           padding: 5px 10px;
@@ -41,7 +45,7 @@ form{
             color: rgba(255,255,255,0.7);
       }
     input{
-        &[type=text], &[type=submit]{
+        &[type=text], &[type=submit], &[type=password]{
             @include input-placeholder {
                 opacity: 1;
             }

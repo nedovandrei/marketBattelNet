@@ -19,6 +19,7 @@
     "angular-ui-router": "~0.3.1",
     "angular-ui-router-anim-in-out": "~1.0.2",
     "angular": "~1.5.8",
-    "AngularJS-Toaster": "2.0.0"
+    "AngularJS-Toaster": "2.0.0",
+    "bootstrap": "3.3.6"
   }
 }

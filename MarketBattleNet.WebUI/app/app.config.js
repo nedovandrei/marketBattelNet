@@ -10,11 +10,9 @@
                         className: "blue-with-image-2",
                         content: ''
                     });
-                    console.log("loader started");
                 },
                 hide: function () {
                     $.loader('close');
-                    console.log("loader ended");
                 }
             },
             backgroundDefault: "../images/41101825-game-wallpapers.jpg"

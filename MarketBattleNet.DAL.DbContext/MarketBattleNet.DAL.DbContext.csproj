@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201610271950246_AddPriceForArtModel.Designer.cs">
       <DependentUpon>201610271950246_AddPriceForArtModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611102201483_AddDateTimeToArtAndIsCompletedToRequest.cs" />
+    <Compile Include="Migrations\201611102201483_AddDateTimeToArtAndIsCompletedToRequest.Designer.cs">
+      <DependentUpon>201611102201483_AddDateTimeToArtAndIsCompletedToRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610271950246_AddPriceForArtModel.resx">
       <DependentUpon>201610271950246_AddPriceForArtModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611102201483_AddDateTimeToArtAndIsCompletedToRequest.resx">
+      <DependentUpon>201611102201483_AddDateTimeToArtAndIsCompletedToRequest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,17 +1,19 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/AngularJS-Toaster/toaster.min.css" />
+    <link rel="stylesheet" href="bower_components/mimiz-jquery-loader-plugin-200d6e6/jquery.loader.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link rel="stylesheet" href="css/screen.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/demo.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css" />
-    <link rel="stylesheet" type="text/css" href="bower_components/AngularJS-Toaster/toaster.min.css" />
-    <link rel="stylesheet" href="bower_components/mimiz-jquery-loader-plugin-200d6e6/jquery.loader.css" />
     <meta charset="UTF-8">
     <!--Scripts section-->
     <!--main libraries-->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/mimiz-jquery-loader-plugin-200d6e6/jquery.loader.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
@@ -94,12 +96,7 @@
                     <span ng-show="language === 'ro-MD'">Magazin</span>
                 </a>
                 <a class="h_r_block">
-                    <ul class="languages">
 
-                        <li ng-click="changeLanguage('ru-RU')" class="ru">ru</li>
-                        <li ng-click="changeLanguage('ro-MD')" class="ro">ro</li>
-                        <li ng-click="changeLanguage('en-US')" class="en">en</li>
-                    </ul>
                     <div class="h_link shop dropdown">
                         <button ng-click="showDropdown()" class="dropbtn"></button>
                         <span>{{purchasedItemsLocal.length}}</span>
@@ -138,12 +135,35 @@
 
         </div>
     </div>
-    <div class="footer_block">
+    <div class="footer_block" ng-controller="ShoppingCartController">
         <div class="footer_content">
+
             <div class="social_links">
+
                 <a href="https://www.facebook.com/Roguemd/" class="fb"></a>
                 <a href="https://vk.com/roguemd" class="vk"></a>
                 <a href="https://www.instagram.com/rogue.md/" class="in"></a>
+            </div>
+            <div class="dropup">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                    <span ng-show="language === 'ru-RU'">Русский</span>
+                    <span ng-show="language === 'en-US'">English</span>
+                    <span ng-show="language === 'ro-MD'">Română</span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu languages">
+
+
+                    <div class="title">
+                        <span ng-show="language === 'ru-RU'">Языки:</span>
+                        <span ng-show="language === 'en-US'">Languages:</span>
+                        <span ng-show="language === 'ro-MD'">Limbi:</span>
+                    </div>
+                    <li ng-click="changeLanguage('ru-RU')" class="ru"><a href="">Русский</a></li>
+                    <li ng-click="changeLanguage('ro-MD')" class="ro"><a href="">Română</a></li>
+                    <li ng-click="changeLanguage('en-US')" class="en"><a href="">English</a></li>
+
+                </ul>
             </div>
         </div>
     </div>

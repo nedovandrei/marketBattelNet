@@ -75,11 +75,12 @@
 }
 /* line 57, ../sass/header/_default.scss */
 .header_content .products {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #232935;
   width: 300px;
   margin-left: -276px;
   z-index: 2;
   position: absolute;
+  box-shadow: 0 0 12px black;
 }
 /* line 64, ../sass/header/_default.scss */
 .header_content .products .product {
@@ -134,6 +135,11 @@ body, html {
 a, ins {
   text-decoration: none;
   color: inherit;
+}
+
+/* line 32, ../sass/include/_reset.scss */
+input:focus, button:focus {
+  outline: none;
 }
 
 /* line 3, ../sass/block/_defaul.scss */
@@ -290,29 +296,29 @@ a, ins {
 .m_c_left .menu .menu_item.search input[type=text]::-webkit-input-placeholder {
   opacity: 1;
 }
-/* line 143, ../sass/block/_defaul.scss */
+/* line 142, ../sass/block/_defaul.scss */
 .m_c_left .menu .menu_item input {
   display: none;
 }
-/* line 147, ../sass/block/_defaul.scss */
+/* line 146, ../sass/block/_defaul.scss */
 .m_c_left .menu .menu_item:hover {
   border-color: rgba(255, 255, 255, 0.4);
   opacity: 1;
 }
-/* line 151, ../sass/block/_defaul.scss */
+/* line 150, ../sass/block/_defaul.scss */
 .m_c_left .menu .menu_item:hover + .menu_item {
   border-top-color: rgba(255, 255, 255, 0.4);
 }
-/* line 159, ../sass/block/_defaul.scss */
+/* line 158, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_1 input:checked ~ .menu_lvl_2 {
   display: block;
 }
-/* line 164, ../sass/block/_defaul.scss */
+/* line 163, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_1 label {
   display: block;
   padding: 10px 5px;
 }
-/* line 170, ../sass/block/_defaul.scss */
+/* line 169, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_2 {
   border-top: 1px solid white;
   margin-bottom: 10px;
@@ -321,18 +327,18 @@ a, ins {
   z-index: 10;
   display: none;
 }
-/* line 178, ../sass/block/_defaul.scss */
+/* line 177, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_2 .menu_item {
   border-color: transparent;
   border-width: 0;
   border-bottom-width: 1px;
   padding: 10px 5px;
 }
-/* line 184, ../sass/block/_defaul.scss */
+/* line 183, ../sass/block/_defaul.scss */
 .m_c_left .menu.menu_lvl_2 .menu_item:hover, .m_c_left .menu.menu_lvl_2 .menu_item.active {
   border-color: rgba(255, 255, 255, 0.4);
 }
-/* line 197, ../sass/block/_defaul.scss */
+/* line 196, ../sass/block/_defaul.scss */
 .m_c_left ul ul {
   display: none;
   margin-top: 5px;
@@ -345,7 +351,7 @@ a, ins {
   clear: both;
   padding-bottom: 0;
 }
-/* line 208, ../sass/block/_defaul.scss */
+/* line 207, ../sass/block/_defaul.scss */
 .m_c_left ul > li {
   *zoom: 1;
       /*&.l{
@@ -386,15 +392,15 @@ a, ins {
   display: table;
   clear: both;
 }
-/* line 212, ../sass/block/_defaul.scss */
+/* line 211, ../sass/block/_defaul.scss */
 .m_c_left ul > li.active ul {
   display: block;
 }
-/* line 217, ../sass/block/_defaul.scss */
+/* line 216, ../sass/block/_defaul.scss */
 .m_c_left ul > li > span {
   padding: 5px;
 }
-/* line 246, ../sass/block/_defaul.scss */
+/* line 245, ../sass/block/_defaul.scss */
 .m_c_left ul > li.games {
   align-items: center;
   display: flex;
@@ -405,12 +411,12 @@ a, ins {
   display: table;
   clear: both;
 }
-/* line 256, ../sass/block/_defaul.scss */
+/* line 255, ../sass/block/_defaul.scss */
 .m_c_left ul > li:last-of-type {
   border-bottom-width: 0;
 }
 
-/* line 263, ../sass/block/_defaul.scss */
+/* line 262, ../sass/block/_defaul.scss */
 .m_c_right {
   *zoom: 1;
   width: 100%;
@@ -421,26 +427,26 @@ a, ins {
   display: table;
   clear: both;
 }
-/* line 268, ../sass/block/_defaul.scss */
+/* line 267, ../sass/block/_defaul.scss */
 .m_c_right .product .p_name {
   width: 70%;
   padding-right: 10px;
 }
-/* line 273, ../sass/block/_defaul.scss */
+/* line 272, ../sass/block/_defaul.scss */
 .m_c_right .product .p_image {
   float: right;
   width: 30%;
 }
-/* line 277, ../sass/block/_defaul.scss */
+/* line 276, ../sass/block/_defaul.scss */
 .m_c_right .product .p_image img {
   width: 100%;
 }
-/* line 283, ../sass/block/_defaul.scss */
+/* line 282, ../sass/block/_defaul.scss */
 .m_c_right .total_cost {
   margin-top: 50px;
 }
 
-/* line 291, ../sass/block/_defaul.scss */
+/* line 290, ../sass/block/_defaul.scss */
 .menu_lvl_1 > div {
   cursor: pointer;
   *zoom: 1;
@@ -454,14 +460,14 @@ a, ins {
   display: table;
   clear: both;
 }
-/* line 297, ../sass/block/_defaul.scss */
+/* line 296, ../sass/block/_defaul.scss */
 .menu_lvl_1 > div:last-of-type {
   border-bottom-width: 0;
 }
 
-/* line 304, ../sass/block/_defaul.scss */
+/* line 303, ../sass/block/_defaul.scss */
 .footer_block .footer_content {
-  padding: 0 5px;
+  padding: 5px;
   *zoom: 1;
 }
 /* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -470,30 +476,82 @@ a, ins {
   display: table;
   clear: both;
 }
-
-/* line 310, ../sass/block/_defaul.scss */
-.social_links {
+/* line 308, ../sass/block/_defaul.scss */
+.footer_block .dropup {
   float: right;
 }
-/* line 313, ../sass/block/_defaul.scss */
+/* line 314, ../sass/block/_defaul.scss */
+.footer_block .btn {
+  font-size: 18px;
+  color: white;
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 0;
+  line-height: 48px;
+  padding: 0;
+}
+/* line 315, ../sass/block/_defaul.scss */
+.footer_block .btn:focus {
+  outline: none;
+}
+/* line 318, ../sass/block/_defaul.scss */
+.footer_block .btn:before {
+  display: block;
+  content: "";
+  float: left;
+  width: 48px;
+  height: 48px;
+  background-image: url('../images/planet.png?1478801842');
+  margin-right: 5px;
+}
+/* line 336, ../sass/block/_defaul.scss */
+.footer_block .dropdown-menu {
+  margin-bottom: 20px !important;
+  left: calc(100% - 170px);
+  padding: 20px 0;
+  box-shadow: 0 0 12px black;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background-color: #232935 !important;
+  min-width: 170px;
+}
+/* line 337, ../sass/block/_defaul.scss */
+.footer_block .dropdown-menu a {
+  color: white !important;
+}
+/* line 338, ../sass/block/_defaul.scss */
+.footer_block .dropdown-menu a:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+/* line 343, ../sass/block/_defaul.scss */
+.footer_block .dropdown-menu .title {
+  padding: 3px 20px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* line 358, ../sass/block/_defaul.scss */
+.social_links {
+  float: left;
+}
+/* line 360, ../sass/block/_defaul.scss */
 .social_links a {
   display: inline-block;
-  background-image: url('../images/2013-04-25_164200.png?1478197695');
+  background-image: url('../images/2013-04-25_164200.png?1478798641');
   width: 47px;
   height: 47px;
   background-position: -68px -17px;
 }
-/* line 320, ../sass/block/_defaul.scss */
+/* line 367, ../sass/block/_defaul.scss */
 .social_links a.fb {
   background-position: -127px -17px;
 }
-/* line 324, ../sass/block/_defaul.scss */
+/* line 371, ../sass/block/_defaul.scss */
 .social_links a.vk {
   background-position: -68px -17px;
 }
-/* line 328, ../sass/block/_defaul.scss */
+/* line 375, ../sass/block/_defaul.scss */
 .social_links a.in {
-  background-image: url('../images/instagram.png?1478632718');
+  background-image: url('../images/instagram.png?1478798641');
   background-position: center center;
 }
 
@@ -540,7 +598,7 @@ a, ins {
 
 /* line 22, ../sass/include/_slider.scss */
 .slide1 {
-  background-image: url('../images/header_dota2.png?1478715812');
+  background-image: url('../images/header_dota2.png?1478798641');
   background-size: cover;
   animation: fade 8s infinite;
   -webkit-animation: fade 8s infinite;
@@ -548,7 +606,7 @@ a, ins {
 
 /* line 29, ../sass/include/_slider.scss */
 .slide2 {
-  background-image: url('../images/header_hearthstone.png?1478715930');
+  background-image: url('../images/header_hearthstone.png?1478798641');
   background-size: cover;
   animation: fade2 8s infinite;
   -webkit-animation: fade2 8s infinite;
@@ -556,7 +614,7 @@ a, ins {
 
 /* line 35, ../sass/include/_slider.scss */
 .slide3 {
-  background-image: url('../images/header_lol.png?1478715998');
+  background-image: url('../images/header_lol.png?1478798641');
   background-size: cover;
   animation: fade3 8s infinite;
   -webkit-animation: fade3 8s infinite;
@@ -623,7 +681,7 @@ a, ins {
 }
 /* line 11, ../sass/include/_dropDownMenu.scss */
 .dropdown .dropbtn {
-  background-image: url('../images/iconmonstr-shopping-bag-17-24.png?1477676668');
+  background-image: url('../images/iconmonstr-shopping-bag-17-24.png?1478798641');
   width: 24px;
   height: 24px;
   border: none;
@@ -867,7 +925,18 @@ a, ins {
 form .mesh {
   padding: 0 10px 10px 10px;
 }
-/* line 29, ../sass/block/_admin.scss */
+/* line 28, ../sass/block/_admin.scss */
+form .mesh > div {
+  *zoom: 1;
+  margin-bottom: 10px;
+}
+/* line 38, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+form .mesh > div:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 33, ../sass/block/_admin.scss */
 form textarea {
   padding: 5px 10px;
   width: calc((100% - 20px)/ 3);
@@ -879,12 +948,12 @@ form textarea {
   background-color: rgba(0, 0, 0, 0.5);
   color: rgba(255, 255, 255, 0.7);
 }
-/* line 33, ../sass/block/_admin.scss */
+/* line 37, ../sass/block/_admin.scss */
 form textarea:last-of-type {
   margin-right: 0;
 }
-/* line 44, ../sass/block/_admin.scss */
-form input[type=text], form input[type=submit] {
+/* line 48, ../sass/block/_admin.scss */
+form input[type=text], form input[type=submit], form input[type=password] {
   padding: 5px 10px;
   min-height: 40px;
   width: 100%;
@@ -894,26 +963,26 @@ form input[type=text], form input[type=submit] {
   margin-bottom: 10px;
 }
 /* line 61, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
-form input[type=text]:-moz-placeholder, form input[type=submit]:-moz-placeholder {
+form input[type=text]:-moz-placeholder, form input[type=submit]:-moz-placeholder, form input[type=password]:-moz-placeholder {
   opacity: 1;
 }
 /* line 64, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
-form input[type=text]::-moz-placeholder, form input[type=submit]::-moz-placeholder {
+form input[type=text]::-moz-placeholder, form input[type=submit]::-moz-placeholder, form input[type=password]::-moz-placeholder {
   opacity: 1;
 }
 /* line 67, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
-form input[type=text]:-ms-input-placeholder, form input[type=submit]:-ms-input-placeholder {
+form input[type=text]:-ms-input-placeholder, form input[type=submit]:-ms-input-placeholder, form input[type=password]:-ms-input-placeholder {
   opacity: 1;
 }
 /* line 56, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
-form input[type=text]::-webkit-input-placeholder, form input[type=submit]::-webkit-input-placeholder {
+form input[type=text]::-webkit-input-placeholder, form input[type=submit]::-webkit-input-placeholder, form input[type=password]::-webkit-input-placeholder {
   opacity: 1;
 }
-/* line 48, ../sass/block/_admin.scss */
-form input[type=text]:hover, form input[type=text]:focus, form input[type=submit]:hover, form input[type=submit]:focus {
+/* line 52, ../sass/block/_admin.scss */
+form input[type=text]:hover, form input[type=text]:focus, form input[type=submit]:hover, form input[type=submit]:focus, form input[type=password]:hover, form input[type=password]:focus {
   color: white;
 }
-/* line 61, ../sass/block/_admin.scss */
+/* line 65, ../sass/block/_admin.scss */
 form .title {
   padding: 5px 0;
   margin-bottom: 10px;
@@ -923,7 +992,7 @@ form .title {
 /* line 18, ../sass/screen.scss */
 .main_page {
   position: relative;
-  min-height: calc(100% - 51px);
+  min-height: calc(100% - 60px);
 }
 
 /* line 22, ../sass/screen.scss */

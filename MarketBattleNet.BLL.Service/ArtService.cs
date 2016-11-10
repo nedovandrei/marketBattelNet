@@ -1,4 +1,5 @@
-﻿using MarketBattleNet.BLL.ServiceInterface;
+﻿using System;
+using MarketBattleNet.BLL.ServiceInterface;
 using MarketBattleNet.BLL.ServiceInterface.DTO;
 using MarketBattleNet.DAL.Models;
 using MarketBattleNet.DAL.RepositoryInterface;
@@ -37,7 +38,8 @@ namespace MarketBattleNet.BLL.Service
                     Price = request.Price,
                     GameId = request.GameId,
                     ThumbnailFileName = request.ThumbnailFileName,
-                    LargeFileName = request.LargeFileName
+                    LargeFileName = request.LargeFileName,
+                    DateCreated = request.DateCreated
                 });
             }
             return dtoToSend;
@@ -59,7 +61,8 @@ namespace MarketBattleNet.BLL.Service
                 Price = data.Price,
                 GameId = data.GameId,
                 ThumbnailFileName = data.ThumbnailFileName,
-                LargeFileName = data.LargeFileName
+                LargeFileName = data.LargeFileName,
+                DateCreated = data.DateCreated
             };
             return dtoToSend;
         }
@@ -79,7 +82,8 @@ namespace MarketBattleNet.BLL.Service
                 Price = obj.Price,
                 GameId = obj.GameId,
                 ThumbnailFileName = obj.ThumbnailFileName,
-                LargeFileName = obj.LargeFileName
+                LargeFileName = obj.LargeFileName,
+                DateCreated = DateTime.Now
             };
             _repository.Create(data);
             _unitOfWork.SaveChanges();
@@ -100,7 +104,8 @@ namespace MarketBattleNet.BLL.Service
                 Price = obj.Price,
                 GameId = obj.GameId,
                 ThumbnailFileName = obj.ThumbnailFileName,
-                LargeFileName = obj.LargeFileName
+                LargeFileName = obj.LargeFileName,
+                DateCreated = obj.DateCreated
             };
             _repository.Update(data);
             _unitOfWork.SaveChanges();
@@ -122,7 +127,8 @@ namespace MarketBattleNet.BLL.Service
                 Price = dataToDelete.Price,
                 GameId = dataToDelete.GameId,
                 ThumbnailFileName = dataToDelete.ThumbnailFileName,
-                LargeFileName = dataToDelete.LargeFileName
+                LargeFileName = dataToDelete.LargeFileName,
+                DateCreated = dataToDelete.DateCreated
             };
             _repository.Delete(data);
             _unitOfWork.SaveChanges();

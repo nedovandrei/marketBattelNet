@@ -1,4 +1,6 @@
-﻿namespace MarketBattleNet.DAL.Models
+﻿using System;
+
+namespace MarketBattleNet.DAL.Models
 {
     public class ArtModel
     {
@@ -14,5 +16,6 @@
         public decimal Price { get; set; }
         public string ThumbnailFileName { get; set; }
         public string LargeFileName { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

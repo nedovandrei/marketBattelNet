@@ -120,6 +120,7 @@
     <Compile Include="Models\ArtViewModel.cs" />
     <Compile Include="Models\GameViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\ParamsModel.cs" />
     <Compile Include="Models\RequestViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
