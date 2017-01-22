@@ -13,6 +13,14 @@
                 });
             };
 
+            _artService.getAllExt = function(data, callback) {
+                return artResource.getAllExt(data, function(result) {
+                    callback(result);
+                }, function() {
+                    console.log("artService -> getAllExt: error");
+                });
+            }
+
             _artService.findById = function (id, callback) {
                 return artResource.findById({ id: id }, function (result) {
                     callback(result);
@@ -61,13 +69,6 @@
                 });
             }           
 
-            _artService.search = function(searchString, callback) {
-                return artResource.search({ searchString: searchString }, function(result) {
-                    callback(result);
-                }, function() {
-                    console.log("artService -> search: error");
-                });
-            }
 
             //_artService.findByGameId = function (id, callback) {
             //    var artMocks = [

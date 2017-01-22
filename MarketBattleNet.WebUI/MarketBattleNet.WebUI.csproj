@@ -68,10 +68,20 @@
   <ItemGroup>
     <Content Include="app\admin\admin.html" />
     <Content Include="app\admin\AdminController.js" />
+    <Content Include="app\admin\content-manage\admin.content-manage.html" />
+    <Content Include="app\admin\content-manage\AdminContentManageController.js" />
+    <Content Include="app\admin\content-table\admin.content-table.html" />
+    <Content Include="app\admin\content-table\AdminContentTableController.js" />
+    <Content Include="app\admin\request-table\admin.request-table.controller.js" />
     <Content Include="app\app.config.js" />
     <Content Include="app\app.module.js" />
+    <Content Include="app\art\ArtController2.js" />
+    <Content Include="app\NavigationController.js" />
+    <Content Include="app\resource\photo.resource.js" />
+    <Content Include="app\service\photo.service.js" />
+    <Content Include="app\support\support.html" />
+    <Content Include="app\support\SupportController.js" />
     <Content Include="app\art\art.html" />
-    <Content Include="app\art\ArtController.js" />
     <Content Include="app\game\GameController.js" />
     <Content Include="app\login\login.html" />
     <Content Include="app\login\LoginController.js" />
@@ -94,6 +104,14 @@
     <Content Include="app\shop\shop.html" />
     <Content Include="app\shop\ShopController.js" />
     <Content Include="app\game\game.html" />
+    <Content Include="bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bower_components\angular-animate\angular-animate.js" />
     <Content Include="bower_components\angular-animate\angular-animate.min.js" />
     <Content Include="bower_components\angular-animate\index.js" />
@@ -169,6 +187,9 @@
     <Content Include="bower_components\bower-angular-cookies-master\angular-cookies.js" />
     <Content Include="bower_components\bower-angular-cookies-master\angular-cookies.min.js" />
     <Content Include="bower_components\bower-angular-cookies-master\index.js" />
+    <Content Include="bower_components\bower-angular-sanitize-master\angular-sanitize.js" />
+    <Content Include="bower_components\bower-angular-sanitize-master\angular-sanitize.min.js" />
+    <Content Include="bower_components\bower-angular-sanitize-master\index.js" />
     <Content Include="bower_components\jquery\jquery.min.js" />
     <Content Include="bower_components\mimiz-jquery-loader-plugin-200d6e6\demo\jquery.loader.demo.html" />
     <Content Include="bower_components\mimiz-jquery-loader-plugin-200d6e6\GPL-LICENSE.txt" />
@@ -189,27 +210,20 @@
     <Content Include="images\571284.jpg" />
     <Content Include="images\bnet-background-1920-4369eed45c.jpg" />
     <Content Include="images\dota2_load1-960x300.jpg" />
-    <Content Include="images\dota_2_art_2014_logotip_97476_1920x1080.jpg" />
     <Content Include="images\half-life-2-city_159403-1920x1080.jpg" />
     <Content Include="images\halfLife2.jpg" />
     <Content Include="images\Hearthstone-Heroes-of-Warcraft-2497.jpg" />
-    <Content Include="images\hearthstone_heroes_of_warcraft_karty_tekstura_logotip_96968_1920x1080.jpg" />
     <Content Include="images\hs_960.jpg" />
     <Content Include="images\imageControl.png" />
     <Content Include="images\Logo\20080326174822.png" />
-    <Content Include="images\Logo\3353761.png" />
     <Content Include="images\Logo\batman_icon_by_barkerbaggies.png" />
     <Content Include="images\Logo\cmdkj.png" />
     <Content Include="images\Logo\d3.png" />
     <Content Include="images\Logo\eve_trinity_logo_flat.png" />
     <Content Include="images\Logo\gta_v_icon_v1_by_andonovmarko-d8jgaxi.png" />
-    <Content Include="images\Logo\HalfLife.png" />
     <Content Include="images\Logo\Halo_4_Logo_040.png" />
-    <Content Include="images\Logo\Hearthstone-Heroes-of-Warcraft-PC-Windows.png" />
     <Content Include="images\Logo\last-of-us-fireflies-White.jpg" />
-    <Content Include="images\Logo\league_of_legends_dock_icon_by_kaldrax-d53bbj5.png" />
     <Content Include="images\Logo\League_of_Legends_logo.png" />
-    <Content Include="images\Logo\logo.png" />
     <Content Include="images\Logo\mass_effect_3_icon_by_drakenji-d5qy07e.png" />
     <Content Include="images\Logo\Mortal_Kombat_Logo.svg.png" />
     <Content Include="images\Logo\N7-logo-clean_%28white%29.png" />
@@ -220,18 +234,14 @@
     <Content Include="images\Logo\starcraft-2-13.png" />
     <Content Include="images\Logo\Superman_logo.png" />
     <Content Include="images\Logo\The-Witcher-31.png" />
-    <Content Include="images\Logo\The_Elder_Scrolls_V_Skyrim_rizont_logo.png" />
     <Content Include="images\Logo\watch_dogs_logo_1_by_amitkenift9-d7mqxdf.png" />
     <Content Include="images\Logo\world-of-tanks.png" />
-    <Content Include="images\Logo\World_of_warcraft-icon.png" />
     <Content Include="images\Logo\World_of_Warcraft_logo.png" />
     <Content Include="images\lol.jpg" />
     <Content Include="images\me3sehero.jpg" />
-    <Content Include="images\mousemat\dota2\xp4M9EOT80M.jpg" />
-    <Content Include="images\pot\dota2\fRmMd4AryKk.jpg" />
-    <Content Include="images\pot\dota2\Sj52bIF8haw.jpg" />
     <Content Include="images\wow.jpg" />
     <Content Include="index.html" />
+    <Content Include="jquery.orbit.js" />
     <Content Include="packages.config" />
     <Content Include="config.rb" />
     <None Include=".bin\bower.cmd" />
@@ -404,6 +414,16 @@
     <Content Include="bower_components\bootstrap\nuget\MyGet.ps1" />
     <Content Include="bower_components\bootstrap\package.json" />
     <Content Include="bower_components\bootstrap\README.md" />
+    <Content Include="app\admin\request-table\admin.request-table.html" />
+    <Content Include="bower_components\bower-angular-sanitize-master\angular-sanitize.min.js.map" />
+    <Content Include="bower_components\bower-angular-sanitize-master\bower.json" />
+    <Content Include="bower_components\bower-angular-sanitize-master\LICENSE.md" />
+    <Content Include="bower_components\bower-angular-sanitize-master\package.json" />
+    <Content Include="bower_components\bower-angular-sanitize-master\README.md" />
+    <Content Include="compilerconfig.json" />
+    <Content Include="compilerconfig.json.defaults" />
+    <None Include="Properties\PublishProfiles\ftp.pubxml" />
+    <Content Include="README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -418,7 +438,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="images\mousemat\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

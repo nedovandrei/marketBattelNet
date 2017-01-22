@@ -22,7 +22,7 @@
     <script src="bower_components/angular-ui-router-anim-in-out/anim-in-out.js"></script>
     <script src="bower_components/bower-angular-cookies-master/angular-cookies.min.js"></script>
     <script src="bower_components/AngularJS-Toaster/toaster.min.js"></script>
-
+    <script src="bower_components/bower-angular-sanitize-master/angular-sanitize.min.js"></script>
 
     <!--configuration-->
     <script src="app/app.module.js"></script>
@@ -34,6 +34,7 @@
     <script src="app/resource/request.resource.js"></script>
     <script src="app/resource/userProfile.resource.js"></script>
     <script src="app/resource/login.resource.js"></script>
+    <script src="app/resource/photo.resource.js"></script>
 
     <!--service-->
     <script src="app/service/art.service.js"></script>
@@ -44,15 +45,21 @@
     <script src="app/service/shoppingCart.service.js"></script>
     <script src="app/service/toaster.service.js"></script>
     <script src="app/service/login.service.js"></script>
+    <script src="app/service/photo.service.js"></script>
 
     <!--controllers-->
     <script src="app/ShoppingCartController.js"></script>
+    <script src="app/NavigationController.js"></script>
     <script src="app/game/GameController.js"></script>
     <script src="app/shop/ShopController.js"></script>
-    <script src="app/art/ArtController.js"></script>
+    <script src="app/art/ArtController2.js"></script>
     <script src="app/purchase/PurchaseController.js"></script>
     <script src="app/admin/AdminController.js"></script>
     <script src="app/login/LoginController.js"></script>
+    <script src="app/support/SupportController.js"></script>
+    <script src="app/admin/request-table/admin.request-table.controller.js"></script>
+    <script src="app/admin/content-manage/AdminContentManageController.js"></script>
+    <script src="app/admin/content-table/AdminContentTableController.js"></script>
     <script>
 
         /* When the user clicks on the button,
@@ -83,66 +90,122 @@
     <div class="main_page">
         <div class="header_block">
             <div class="header_content" ng-controller="ShoppingCartController">
-                <img src="images/ROGUE.png" class="logo" />
-                <div class="h_links"></div>
-                <a class="h_link games active" ui-sref-active="active" ui-sref="game">
-                    <span ng-show="language === 'ru-RU'">Игры</span>
-                    <span ng-show="language === 'en-US'">Games</span>
-                    <span ng-show="language === 'ro-MD'">Jucarii</span>
+                <a class="" ui-sref-active="active" ui-sref="game">
+                    <img src="images/ROGUE.png" class="logo" />
                 </a>
-                <a class="h_link market" ui-sref-active="active" ui-sref="shop">
-                    <span ng-show="language === 'ru-RU'">Магазин</span>
-                    <span ng-show="language === 'en-US'">Marketplace</span>
-                    <span ng-show="language === 'ro-MD'">Magazin</span>
-                </a>
-                <a class="h_r_block">
-
-                    <div class="h_link shop dropdown">
-                        <button ng-click="showDropdown()" class="dropbtn"></button>
-                        <span>{{purchasedItemsLocal.length}}</span>
-                        <div id="myDropdown" class="products buy dropdown-content">
-                            <div class="dropdown_container">
-                                <div class="product" ng-repeat="item in purchasedItems">
-                                    <div ui-sref="purchase">
-                                        <div class="p_image">
-                                            <img ng-src="images/arts/{{item.ThumbnailFileName}}" alt="" height="70">
+                <div class="h_links">
+                    <!--<a class="h_link games active" ui-sref-active="active" ui-sref="game">
+                        <span ng-show="language === 'ru-RU'">Игры</span>
+                        <span ng-show="language === 'en-US'">Games</span>
+                        <span ng-show="language === 'ro-MD'">Jucarii</span>
+                    </a>
+                    <a class="h_link market" ui-sref-active="active" ui-sref="shop">
+                        <span ng-show="language === 'ru-RU'">Магазин</span>
+                        <span ng-show="language === 'en-US'">Marketplace</span>
+                        <span ng-show="language === 'ro-MD'">Magazin</span>
+                    </a>-->
+                    <div class="h_r_block">
+                        <a class="h_link support" ui-sref-active="active" ui-sref="support">
+                            <span ng-show="language === 'ru-RU'">Помощь</span>
+                            <span ng-show="language === 'en-US'">Support</span>
+                            <span ng-show="language === 'ro-MD'">Ajutor</span>
+                        </a>
+                        <a ui-sref="admin.request-table" class="h_link support" ng-show="adminAuthorized">Вернуться в Админку</a>
+                        <a class="h_link shop dropdown">
+                            <button ng-click="showDropdown()" class="dropbtn"></button>
+                            <span>{{purchasedItemsLocal.length}}</span>
+                            <div id="myDropdown" class="products buy dropdown-content">
+                                <div class="dropdown_container">
+                                    <div class="product" ng-repeat="item in purchasedItems">
+                                        <div ui-sref="purchase">
+                                            <div class="p_image">
+                                                <img ng-src="{{imagesPath}}{{item.ThumbnailFileName}}" alt="" height="70">
+                                            </div>
+                                            <div class="p_name">
+                                                <span ng-show="language === 'ru-RU'">{{item.NameRus}}</span>
+                                                <span ng-show="language === 'en-US'">{{item.NameEng}}</span>
+                                                <span ng-show="language === 'ro-MD'">{{item.NameRom}}</span>
+                                            </div>
                                         </div>
-                                        <div class="p_name">
-                                            <span ng-show="language === 'ru-RU'">{{item.NameRus}}</span>
-                                            <span ng-show="language === 'en-US'">{{item.NameEng}}</span>
-                                            <span ng-show="language === 'ro-MD'">{{item.NameRom}}</span>
-                                        </div>
+                                        <div class="p_disabled" ng-click="removeItem(item)"></div>
                                     </div>
-                                    <div class="p_disabled" ng-click="removeItem(item)"></div>
+                                    <button ui-sref="purchase" class="btn btn-success" style="text-align: center" ng-show="purchasedItems.length > 0">                                       
+                                            <span>
+                                                <span ng-show="language === 'ru-RU'">Оформить Заказ</span>
+                                                <span ng-show="language === 'en-US'">Place an Order</span>
+                                                <span ng-show="language === 'ro-MD'">Plasare de Comanda</span>
+                                            </span>
+                                    </button>
+                                    <div ng-show="purchasedItems.length === 0" class="product empty_field">
+                                        <span ng-show="language === 'ru-RU'">Пустая корзина</span>
+                                        <span ng-show="language === 'en-US'">Empty Cart</span>
+                                        <span ng-show="language === 'ro-MD'">Coșul de cumpărături gol</span>
+                                    </div>
                                 </div>
-                                <div ng-hide="purchasedItems.length > 0" class="product empty_field">
-                                    <span ng-show="language === 'ru-RU'">Пустая корзина</span>
-                                    <span ng-show="language === 'en-US'">Empty Cart</span>
-                                    <span ng-show="language === 'ro-MD'">Coșul de cumpărături gol</span>
-                                </div>
+
                             </div>
 
-                        </div>
-
+                        </a>
                     </div>
-                </a>
+                </div>
+               
             </div>
 
 
         </div>
-
-        <div class="middle_block " data-anim-speed="300" ui-view>
+        <div class="navbar-static" ng-controller="NavigationController">
+            <ul class="breadcrumb">
+                <li ng-repeat="path in navigationArray">
+                    <a ui-sref="{{path.href}}">
+                        <span ng-show="language === 'ru-RU'">{{path.nameRus}} </span>
+                        <span ng-show="language === 'en-US'">{{path.nameEng}} </span>
+                        <span ng-show="language === 'ro-MD'">{{path.nameRom}} </span>
+                    </a>
+                </li>
+                <li ng-show="navigationArray.length === 0">
+                    <span ng-show="language === 'ru-RU'">Загрузка...</span>
+                    <span ng-show="language === 'en-US'">Loading...</span>
+                    <span ng-show="language === 'ro-MD'">Încărcare...</span>
+                </li>
+            </ul>
+        </div>
+        <div class="middle_block" ui-view>
 
         </div>
     </div>
     <div class="footer_block" ng-controller="ShoppingCartController">
         <div class="footer_content">
-
+            <div class="help">
+                <div class="title">
+                    <div ng-show="language === 'ru-RU'">Помощь</div>
+                    <div ng-show="language === 'en-US'">Help</div>
+                    <div ng-show="language === 'ro-MD'">Ajutare</div>
+                </div>
+                <p><a ui-sref="support({ section: 'care'})">Уход</a></p>
+                <p><a ui-sref="support({ section: 'delivery'})">Доставка</a></p>
+                <p><a ui-sref="support({ section: 'return'})">Возврат</a></p>
+                <p><a ui-sref="support({ section: 'payment'})">Способы оплаты</a></p>
+                <p><a ui-sref="support({ section: 'contact'})">Связаться с нами</a></p>
+            </div>
+            <div class="contact">
+                <div class="title">
+                    <div ng-show="language === 'ru-RU'">Контакты</div>
+                    <div ng-show="language === 'en-US'">Contact</div>
+                    <div ng-show="language === 'ro-MD'">Contacte</div>
+                </div>
+                <p class="phone">Тел: 061 022 122</p>
+                <p class="email">Email: roguemd@mail.ru</p>
+            </div>
             <div class="social_links">
-
-                <a href="https://www.facebook.com/Roguemd/" class="fb"></a>
-                <a href="https://vk.com/roguemd" class="vk"></a>
-                <a href="https://www.instagram.com/rogue.md/" class="in"></a>
+                <div class="title">
+                    <div ng-show="language === 'ru-RU'">ROGUE В СОЦИАЛЬНЫХ СЕТЯХ:</div>
+                    <div ng-show="language === 'en-US'">ROGUE IN RETEI SOCIALE</div>
+                    <div ng-show="language === 'ro-MD'">ROGUE SOCIAL NETWORKS</div>
+                </div>
+                
+                <a href="https://www.facebook.com/Roguemd/" target="_blank" class="fb"></a>
+                <a href="https://vk.com/roguemd" target="_blank" class="vk"></a>
+                <a href="https://www.instagram.com/rogue.md/" target="_blank" class="in"></a>
             </div>
             <div class="dropup">
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">

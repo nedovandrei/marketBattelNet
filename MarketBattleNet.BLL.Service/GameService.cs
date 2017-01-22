@@ -26,10 +26,8 @@ namespace MarketBattleNet.BLL.Service
             {
                 dtoToSend.Add(new GameDTO()
                 {
-                    Id = request.Id,
-                    NameRus = request.NameRus,
-                    NameEng = request.NameEng,
-                    NameRom = request.NameRom,
+                    Id = request.Id,                    
+                    NameEng = request.Name,                    
                     BackgroundFileName = request.BackgroundFileName,
                     LogoFileName = request.LogoFileName
                 });
@@ -42,10 +40,8 @@ namespace MarketBattleNet.BLL.Service
             var data = _repository.GetAll().FirstOrDefault(x => x.Id == id);
             var dtoToSend = new GameDTO()
             {
-                Id = data.Id,
-                NameRus = data.NameRus,
-                NameEng = data.NameEng,
-                NameRom = data.NameRom,
+                Id = data.Id,                
+                NameEng = data.Name,                
                 BackgroundFileName = data.BackgroundFileName,
                 LogoFileName = data.LogoFileName
                 
@@ -58,9 +54,8 @@ namespace MarketBattleNet.BLL.Service
             var data = new GameModel()
             {
                 Id = obj.Id,
-                NameRus = obj.NameRus,
-                NameEng = obj.NameEng,
-                NameRom = obj.NameRom,
+                
+                Name = obj.NameEng,                
                 BackgroundFileName = obj.BackgroundFileName,
                 LogoFileName = obj.LogoFileName
                 
@@ -74,7 +69,7 @@ namespace MarketBattleNet.BLL.Service
             var data = new GameModel()
             {
                 Id = obj.Id,
-                NameRus = obj.NameRus,
+                Name = obj.NameEng,
                 BackgroundFileName = obj.BackgroundFileName,
                 LogoFileName = obj.LogoFileName
                 
@@ -85,17 +80,9 @@ namespace MarketBattleNet.BLL.Service
 
         public void Delete(int id)
         {
-            var dataToDelete = FindById(id);
-            var data = new GameModel()
-            {
-                Id = dataToDelete.Id,
-                NameRus = dataToDelete.NameRus,
-                NameEng = dataToDelete.NameEng,
-                NameRom = dataToDelete.NameRom,
-                BackgroundFileName = dataToDelete.BackgroundFileName,
-                LogoFileName = dataToDelete.LogoFileName
-            };
-            _repository.Delete(data);
+            var dataToDelete = _repository.GetAll().FirstOrDefault(x => x.Id == id);
+            
+            _repository.Delete(dataToDelete);
             _unitOfWork.SaveChanges();
         }
     }

@@ -1,10 +1,8 @@
-.header_block {
-    border-bottom: 1px solid hsla(0, 0%, 100%, 0.07);
-}
+
 .h_r_block{
     float:right;
     @include pie-clearfix;
-    margin-top: 15px;
+  
 }
 .header_content {
     padding: 12px 5px 0;
@@ -68,5 +66,34 @@
 
     div[ui-sref=purchase] {
         width: calc(100% - 35px);
+    }
+}
+.navbar-static{
+    background-color: rgba(0, 0, 0, 0.7);
+     border-top: 1px solid hsla(0, 0%, 100%, 0.07);
+    .breadcrumb{
+        width: 960px;
+        margin: 0 auto;
+    background-color: transparent;
+   padding: 15px 20px;
+    margin-bottom: 0;
+    li{
+       
+        &:first-of-type{
+            &:before{
+                background-image: image-url("iconmonstr-home-7-16.png");
+            }
+        }
+        &:before{
+            margin-left: 5px;
+            background-image: image-url("iconmonstr-arrow-29-16.png");
+            width: 16px;
+            height: 16px;
+            content: "";
+            display: inline-block;
+            vertical-align: bottom;
+        }
+        
+    }
     }
 }

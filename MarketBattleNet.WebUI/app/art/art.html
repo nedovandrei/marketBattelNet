@@ -3,30 +3,165 @@
         <div class="products ">
             <div class="product pot" ui-sref="art">
                 <div class="p_image">
-                    <img ng-src="images/arts/{{art.LargeFileName}}" alt="">
+                    <img class="active" ng-src="{{imagesPath}}{{photoInScope}}" alt="">
+                    <div ng-click="changePhotoInScope(art.LargeFileName)" ng-hide="art.LargeFileName2 === null || art.LargeFileName2 === ''" class="photo">
+                        <img height="50" ng-src="{{imagesPath}}{{art.LargeFileName}}" />
+                    </div>
+                    <div ng-click="changePhotoInScope(art.LargeFileName2)" ng-hide="art.LargeFileName2 === null || art.LargeFileName2 === ''" class="photo">
+                        <img height="50" ng-src="{{imagesPath}}{{art.LargeFileName2}}" />
+                    </div>
+                    <div ng-click="changePhotoInScope(art.LargeFileName3)" ng-hide="art.LargeFileName3 === null || art.LargeFileName3 === ''" class="photo">
+                        <img height="50" ng-src="{{imagesPath}}{{art.LargeFileName3}}" />
+                    </div>
+                    <div ng-click="changePhotoInScope(art.LargeFileName4)" ng-hide="art.LargeFileName4 === null || art.LargeFileName4 === ''" class="photo">
+                        <img height="50" ng-src="{{imagesPath}}{{art.LargeFileName4}}" />
+                    </div>
                 </div>
+                
                 <div class="p_name">
                     <span ng-show="language === 'ru-RU'">{{art.NameRus}}</span>
                     <span ng-show="language === 'en-US'">{{art.NameEng}}</span>
                     <span ng-show="language === 'ro-MD'">{{art.NameRom}}</span>
-                    <div class="p_cost">{{art.Price}}$</div>
-                    <div class="p_description">
-                        <span ng-show="language === 'ru-RU'">{{art.DescriptionRus}}</span>
-                        <span ng-show="language === 'en-US'">{{art.DescriptionEng}}</span>
-                        <span ng-show="language === 'ro-MD'">{{art.DescriptionRom}}</span>
-                    </div>  
+                    <div class="p_cost">{{art.Price}} MDL</div>                    
+                    <div class="dropdown" ng-show="art.Type === 'tshirt'">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                            <span ng-show="art.TShirtSize === 'S'">S</span>
+                            <span ng-show="art.TShirtSize === 'M'">M</span>
+                            <span ng-show="art.TShirtSize === 'L'">L</span>
+                            <span ng-show="art.TShirtSize === 'XL'">XL</span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu ">
+                            <li ng-class="{active: art.TShirtSize === 'S'}" ng-click="changeTShirtSize('S')">
+                                <a href="">
+                                    <span>S</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: art.TShirtSize === 'M'}" ng-click="changeTShirtSize('M')">
+                                <a href="">
+                                    <span>M</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: art.TShirtSize === 'L'}" ng-click="changeTShirtSize('L')">
+                                <a href="">
+                                    <span>L</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: art.TShirtSize === 'XL'}" ng-click="changeTShirtSize('XL')">
+                                <a href="">
+                                    <span>XL</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                            <span ng-show="art.TShirtSex === 'M' && language === 'ru-RU'">Мужская</span>
+                            <span ng-show="art.TShirtSex === 'M' && language === 'en-US'">Men's</span>
+                            <span ng-show="art.TShirtSex === 'M' && language === 'ro-MD'">Pentru bărbați</span>
+                            <span ng-show="art.TShirtSex === 'F' && language === 'ru-RU'">Женская</span> 
+                            <span ng-show="art.TShirtSex === 'F' && language === 'en-US'">Women's</span> 
+                            <span ng-show="art.TShirtSex === 'F' && language === 'ro-MD'">Pentru femei</span> 
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu ">
+                            <li ng-class="{active: art.TShirtSex === 'M'}" ng-click="changeTShirtSex('M')" >
+                                <a href="">
+                                    <span ng-show="language === 'ru-RU'">Мужская</span>
+                                    <span ng-show="language === 'en-US'">Men's</span>
+                                    <span ng-show="language === 'ro-MD'">Pentru bărbați</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: art.TShirtSex === 'F'}" ng-click="changeTShirtSex('F')" >
+                                <a href="">
+                                    <span ng-show="language === 'ru-RU'">Женская</span>
+                                    <span ng-show="language === 'en-US'">Women's</span>
+                                    <span ng-show="language === 'ro-MD'">Pentru femei</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                            <span ng-show="art.Colour === 'white' && language === 'ru-RU'">Белый</span>
+                            <span ng-show="art.Colour === 'white' && language === 'en-US'">Whtie</span>
+                            <span ng-show="art.Colour === 'white' && language === 'ro-MD'">Alb</span>
+                            <span ng-show="art.Colour === 'black' && language === 'ru-RU'">Чёрный</span>
+                            <span ng-show="art.Colour === 'black' && language === 'en-US'">Black</span>
+                            <span ng-show="art.Colour === 'black' && language === 'ro-MD'">Negru</span>
+                            <span ng-show="art.Colour === 'green' && language === 'ru-RU'">Зелёный</span>
+                            <span ng-show="art.Colour === 'green' && language === 'en-US'">Green</span>
+                            <span ng-show="art.Colour === 'green' && language === 'ro-MD'">Verde</span>
+                            <span ng-show="art.Colour === 'red' && language === 'ru-RU'">Красный</span>
+                            <span ng-show="art.Colour === 'red' && language === 'en-US'">Red</span>
+                            <span ng-show="art.Colour === 'red' && language === 'ro-MD'">Roșu</span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu ">
+                            <li ng-class="{active: art.Colour === 'white'}" ng-click="changeColour('white')">
+                                <a href="">
+                                    <span ng-show="language === 'ru-RU'">Белый</span>
+                                    <span ng-show="language === 'en-US'">White</span>
+                                    <span ng-show="language === 'ro-MD'">Alb</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: art.Colour === 'black'}" ng-click="changeColour('black')">
+                                <a href="">
+                                    <span ng-show="language === 'ru-RU'">Чёрный</span>
+                                    <span ng-show="language === 'en-US'">Black</span>
+                                    <span ng-show="language === 'ro-MD'">Negru</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: art.Colour === 'green'}" ng-click="changeColour('green')">
+                                <a href="">
+                                    <span ng-show="language === 'ru-RU'">Зелёный</span>
+                                    <span ng-show="language === 'en-US'">Green</span>
+                                    <span ng-show="language === 'ro-MD'">Verde</span>
+                                </a>
+                            </li>
+                            <li ng-class="{active: art.Colour === 'red'}" ng-click="changeColour('red')">
+                                <a href="">
+                                    <span ng-show="language === 'ru-RU'">Красный</span>
+                                    <span ng-show="language === 'en-US'">Red</span>
+                                    <span ng-show="language === 'ro-MD'">Roșu</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                     
+                    <!--<div ng-show="art.Type === 'tshirts'" class="btn-group" role="group" aria-label="sex">
+                        <button type="button" ng-class="{active: art.TShirtSex === 'M'}" ng-click="changeTShirtSex('M')" class="p_buy">
+                            <span ng-show="language === 'ru-RU'">Мужская</span>
+                            <span ng-show="language === 'en-US'">Men's</span>
+                            <span ng-show="language === 'ro-MD'">Pentru bărbați</span>
+                        </button>
+                        <button type="button" ng-class="{active: art.TShirtSex === 'F'}" ng-click="changeTShirtSex('F')" class="p_buy">
+                            <span ng-show="language === 'ru-RU'">Женская</span>
+                            <span ng-show="language === 'en-US'">Women's</span>
+                            <span ng-show="language === 'ro-MD'">Pentru femei</span>
+                        </button>                        
+                    </div> 
+                    <br/>
+                    <div ng-show="art.Type === 'tshirts'" class="btn-group" role="group" aria-label="size">
+                        <button type="button" ng-class="{active: art.TShirtSize === 'S'}" ng-click="changeTShirtSize('S')" class="p_buy">S</button>
+                        <button type="button" ng-class="{active: art.TShirtSize === 'M'}" ng-click="changeTShirtSize('M')" class="p_buy">M</button>
+                        <button type="button" ng-class="{active: art.TShirtSize === 'L'}" ng-click="changeTShirtSize('L')" class="p_buy">L</button>
+                        <button type="button" ng-class="{active: art.TShirtSize === 'XL'}" ng-click="changeTShirtSize('XL')" class="p_buy">XL</button>
+                    </div>-->
                     <div class="p_buttons">
                         <button ng-disabled="isInCart" class="p_buy" ng-click="putIntoCart()">
                             <div ng-show="language === 'ru-RU'">
-                                <span ng-hide="isInCart">Купить Сейчас</span>
+                                <span ng-hide="isInCart">В корзину</span>
                                 <span ng-show="isInCart">Уже в Корзине</span>    
                             </div>
                             <div ng-show="language === 'en-US'">
-                                <span ng-hide="isInCart">Buy Now</span>
+                                <span ng-hide="isInCart">Into Cart</span>
                                 <span ng-show="isInCart">Already in the Cart</span>
                             </div>
                             <div ng-show="language === 'ro-MD'">
-                                <span ng-hide="isInCart">Cumpăr Acum</span>
+                                <span ng-hide="isInCart">Adaugă în coș</span>
                                 <span ng-show="isInCart">Cumpărat</span>
                             </div>                      
                         </button>
@@ -36,8 +171,12 @@
                             <span ng-show="language === 'ro-MD'">În urmă</span>
                         </button>
                     </div> 
+                    <div class="p_description">
+                        <span ng-show="language === 'ru-RU'" ng-bind-html="art.DescriptionRus"></span>
+                        <span ng-show="language === 'en-US'" ng-bind-html="art.DescriptionEng"></span>
+                        <span ng-show="language === 'ro-MD'" ng-bind-html="art.DescriptionRom"></span>
+                    </div>
                 </div>
-               
             </div>
         </div>
     </div>

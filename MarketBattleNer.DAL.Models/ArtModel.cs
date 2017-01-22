@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MarketBattleNet.DAL.Models
 {
     public class ArtModel
     {
+        [Key]
         public int Id { get; set; }
         public int GameId { get; set; }
         public string Type { get; set; }
@@ -16,6 +18,9 @@ namespace MarketBattleNet.DAL.Models
         public decimal Price { get; set; }
         public string ThumbnailFileName { get; set; }
         public string LargeFileName { get; set; }
+        public string LargeFileName2 { get; set; }
+        public string LargeFileName3 { get; set; }
+        public string LargeFileName4 { get; set; }
         public DateTime DateCreated { get; set; }
     }
 }

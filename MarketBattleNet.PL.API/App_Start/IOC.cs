@@ -27,6 +27,8 @@ namespace MarketBattleNet.PL.API.App_Start
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             builder.Register<DbContext>(c => new MarketBattleNetDbContext());
 
+            builder.RegisterType<CustomRequestRepository>().As<ICustomRequestRepository>().InstancePerRequest();
+
             builder.RegisterType<ArtService>().As<IArtService>().InstancePerRequest();
             builder.RegisterType<RequestService>().As<IRequestService>().InstancePerRequest();
             builder.RegisterType<GameService>().As<IGameService>().InstancePerRequest();

@@ -50,10 +50,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Repository.cs" />
+    <Compile Include="CustomRequestRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MarketBattleNer.DAL.Models\MarketBattleNet.DAL.Models.csproj">
+      <Project>{1D508B85-E8A8-4D3C-830A-8C0A253276D0}</Project>
+      <Name>MarketBattleNet.DAL.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MarketBattleNet.DAL.DbContext\MarketBattleNet.DAL.DbContext.csproj">
       <Project>{B9730A26-D50A-4D1A-B7E8-B708F3F9DF9D}</Project>
       <Name>MarketBattleNet.DAL.DbContext</Name>

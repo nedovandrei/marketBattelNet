@@ -52,7 +52,8 @@ namespace MarketBattleNet.PL.API.Controllers
             {
                 FullName = model.FullName,
                 Address = model.Address,
-                PhoneNumber = model.PhoneNumber
+                PhoneNumber = model.PhoneNumber,
+                City = model.City
             };
             _userProfileService.Add(modelDTO);
             var data = _userProfileService.FindByPhoneNumber(model.PhoneNumber);
@@ -71,7 +72,8 @@ namespace MarketBattleNet.PL.API.Controllers
                 Id = model.Id,
                 FullName = model.FullName,
                 Address = model.Address,
-                PhoneNumber = model.PhoneNumber
+                PhoneNumber = model.PhoneNumber,
+                City = model.City
             };
             _userProfileService.Update(modelDTO);
             return Request.CreateResponse(HttpStatusCode.OK);

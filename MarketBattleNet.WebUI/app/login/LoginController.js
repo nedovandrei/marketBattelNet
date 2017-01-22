@@ -11,12 +11,13 @@
 
             $scope.login = function() {
                 loginService.login($scope.loginObject, function (result) {
-                    $rootScope.adminAuthorized = true;
+                    
                     var message = {
                         title: "",
                         message: ""
                     };
-                    if (result) {                        
+                    if (result) {
+                        $rootScope.adminAuthorized = true;
                         if ($rootScope.language === 'ru-RU') {
                             message.title = "Чтобы заблокировать доступ к секции администрации, обновите страницу";
                         } else if ($rootScope.language === 'en-US') {
@@ -26,7 +27,7 @@
                         }
                         toasterService.showInfoToaster(message.title, message.message, 10000, 2);
 
-                        $state.go("admin");
+                        $state.go("admin.request-table");
                     } else {                        
                         if ($rootScope.language === 'ru-RU') {
                             message.title = "Ошибка!";

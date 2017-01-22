@@ -5,7 +5,9 @@ namespace MarketBattleNet.DAL.DbContext
 {
     public class MarketBattleNetDbContext : System.Data.Entity.DbContext
     {
-        public MarketBattleNetDbContext() : base("MarketBattleNetDataBase") { }
+        public MarketBattleNetDbContext() : base("MarketBattleNetDataBase")
+        {
+        }
 
         public DbSet<RequestModel> Requests { get; set; }
         public DbSet<UserProfileModel> UserProfiles { get; set; }

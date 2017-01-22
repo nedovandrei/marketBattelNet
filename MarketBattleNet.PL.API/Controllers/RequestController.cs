@@ -12,16 +12,22 @@ namespace MarketBattleNet.PL.API.Controllers
     public class RequestController : ApiController
     {
         private readonly IRequestService _requestService;
+        private readonly IArtService _artService;
+        private readonly IUserProfileService _userProfileService;
 
-        public RequestController(IRequestService requestService)
+        public RequestController(IRequestService requestService, IArtService artService, IUserProfileService userProfileService)
         {
             _requestService = requestService;
+            _artService = artService;
+            _userProfileService = userProfileService;
         }
 
         [HttpGet]
         public HttpResponseMessage GetAll()
         {
             var data = _requestService.GetAll();
+
+            
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 
@@ -47,7 +53,11 @@ namespace MarketBattleNet.PL.API.Controllers
             var modelDTO = new RequestDTO()
             {
                 ArtId = model.ArtId,
-                UserId = model.UserId
+                UserId = model.UserId,
+                Colour = model.Colour,
+                TShirtSex = model.TShirtSex,
+                TShirtSize = model.TShirtSize,
+                IsCompleted = model.IsCompleted
             };
             _requestService.Add(modelDTO);
             return Request.CreateResponse(HttpStatusCode.Created);
@@ -60,7 +70,11 @@ namespace MarketBattleNet.PL.API.Controllers
             {
                 Id = model.Id,
                 UserId = model.UserId,
-                ArtId = model.ArtId
+                ArtId = model.ArtId,
+                Colour = model.Colour,
+                TShirtSex = model.TShirtSex,
+                TShirtSize = model.TShirtSize,
+                IsCompleted = model.IsCompleted
             };
             _requestService.Update(modelDTO);
             return Request.CreateResponse(HttpStatusCode.OK);
@@ -80,11 +94,28 @@ namespace MarketBattleNet.PL.API.Controllers
             var dtoList = modelList.Select(item => new RequestDTO()
             {
                 UserId = item.UserId,
-                ArtId = item.ArtId
+                ArtId = item.ArtId,
+                Colour = item.Colour,
+                TShirtSex = item.TShirtSex,
+                TShirtSize = item.TShirtSize,
+                IsCompleted = item.IsCompleted
             }).ToList();
 
             _requestService.AddRange(dtoList);
             return Request.CreateResponse(HttpStatusCode.Created);
+        }
+
+        [HttpPost]
+        [Route("api/request/CompleteRequest/{id}")]
+        public HttpResponseMessage CompleteRequest(int id)
+        {
+            var data = _requestService.FindById(id);
+
+            data.IsCompleted = true;
+
+            _requestService.Update(data);
+
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

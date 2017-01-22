@@ -27,22 +27,18 @@ namespace MarketBattleNet.PL.API.Controllers
         }
 
         [HttpPost]
-        [Route("api/art/getSorted")]
+        [Route("api/art/getAllExt")]
         public HttpResponseMessage GetSorted(ParamsModel parameters)
         {
             if (parameters == null) throw new ArgumentNullException(nameof(parameters));
 
             var data = _artService.GetAll();
 
-            if (parameters.ByDate != null)
+            if (parameters.GameId != null)
             {
-                data = parameters.ByDate == "asc" ? data.OrderBy(x => x.DateCreated) : data.OrderByDescending(x => x.DateCreated);
+                data = data.Where(x => x.GameId == parameters.GameId);
             }
-            if (parameters.ByPrice != null)
-            {
-                data = parameters.ByPrice == "asc" ? data.OrderBy(x => x.Price) : data.OrderByDescending(x => x.Price);
-            }
-            if (parameters.ByType != null)
+            if (parameters.ByType?.Count > 0)
             {
                 var tempList = new List<ArtDTO>();
                 foreach (var type in parameters.ByType)
@@ -51,6 +47,26 @@ namespace MarketBattleNet.PL.API.Controllers
                 }
                 data = tempList;
             }
+            if (parameters.ByDate != null)
+            {
+                data = parameters.ByDate == "asc" ? data.OrderBy(x => x.DateCreated) : data.OrderByDescending(x => x.DateCreated);
+            }
+            else if (parameters.ByPrice != null)
+            {
+                data = parameters.ByPrice == "asc" ? data.OrderBy(x => x.Price) : data.OrderByDescending(x => x.Price);
+            }
+            if (parameters.SearchString != null)
+            {
+                const StringComparison comp = StringComparison.OrdinalIgnoreCase;
+                data = data.Where(x =>
+                x.NameRom.Contains(parameters.SearchString, comp) ||
+                x.NameEng.Contains(parameters.SearchString, comp) ||
+                x.NameRus.Contains(parameters.SearchString, comp) ||
+                x.DescriptionEng.Contains(parameters.SearchString, comp) ||
+                x.DescriptionRom.Contains(parameters.SearchString, comp) ||
+                x.DescriptionRus.Contains(parameters.SearchString, comp));
+            }
+            
 
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
@@ -90,7 +106,10 @@ namespace MarketBattleNet.PL.API.Controllers
                 DescriptionRom = model.DescriptionRom,
                 Price = model.Price,
                 ThumbnailFileName = model.ThumbnailFileName,
-                LargeFileName = model.LargeFileName
+                LargeFileName = model.LargeFileName,
+                LargeFileName2 = model.LargeFileName2,
+                LargeFileName3 = model.LargeFileName3,
+                LargeFileName4 = model.LargeFileName4
             };
             _artService.Add(modelDTO);
             return Request.CreateResponse(HttpStatusCode.Created);
@@ -117,7 +136,10 @@ namespace MarketBattleNet.PL.API.Controllers
                 DescriptionRom = model.DescriptionRom,
                 Price = model.Price,
                 ThumbnailFileName = model.ThumbnailFileName,
-                LargeFileName = model.LargeFileName
+                LargeFileName = model.LargeFileName,
+                LargeFileName2 = model.LargeFileName2,
+                LargeFileName3 = model.LargeFileName3,
+                LargeFileName4 = model.LargeFileName4
             };
             _artService.Update(modelDTO);
             return Request.CreateResponse(HttpStatusCode.OK);

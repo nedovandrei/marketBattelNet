@@ -13,7 +13,7 @@ namespace MarketBattleNet.BLL.Repository
         public Repository(DbContext db)
         {
             _db = db;
-            this.ObjectSet = db.Set<T>();
+            ObjectSet = db.Set<T>();
         }
 
         public void Create(T data)
@@ -33,7 +33,7 @@ namespace MarketBattleNet.BLL.Repository
         }
 
         public IQueryable<T> GetAll()
-        {
+        {            
             return _db.Set<T>();
         }
 

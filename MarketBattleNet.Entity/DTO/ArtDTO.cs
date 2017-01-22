@@ -16,6 +16,9 @@ namespace MarketBattleNet.BLL.ServiceInterface.DTO
         public decimal Price { get; set; }
         public string ThumbnailFileName { get; set; }
         public string LargeFileName { get; set; }
+        public string LargeFileName2 { get; set; }
+        public string LargeFileName3 { get; set; }
+        public string LargeFileName4 { get; set; }
         public DateTime DateCreated { get; set; }
     }
 }

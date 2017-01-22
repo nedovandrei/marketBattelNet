@@ -2,15 +2,22 @@
     "use strict";
 
     angular.module("app")
-        .controller("GameController", ["$scope", "gameService", "appSettings", function ($scope, gameService, appSettings) {
+        .controller("GameController", ["$scope", "gameService", "appSettings", "artService", "$location", function ($scope, gameService, appSettings, artService, $location) {
             $scope.gameList = [];
+            $scope.artList = [];
+            $scope.imagesPath = appSettings.imagesPath;
+
+            $scope.currentUrl = $location.path();
 
             function init() {
                 changeBackground();
                 appSettings.loader.show();
                 gameService.getAll(function (result) {
                     $scope.gameList = result;
-                    appSettings.loader.hide();
+                    artService.getAll(function(result) {
+                        $scope.artList = result;
+                        appSettings.loader.hide();
+                    });
                 });
             }
 

@@ -52,6 +52,13 @@
                     console.log("requestService -> addRange: error");
                 });
             }
+            _requestService.completeRequest = function(id, callback) {
+                return requestResource.completeRequest(id, function() {
+                    callback();
+                }, function() {
+                    console.log("requestService -> completeRequest: error");
+                });
+            }
 
             return _requestService;
         }]);

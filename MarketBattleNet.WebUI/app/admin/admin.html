@@ -1,52 +1,15 @@
-<div class="middle_content">
-    <form class="admin game">
-        <div class="main_title">
-            <div class="title">Add game</div>
-        </div>
-        <div class="mesh">
-            <div class="description">
-                <div class="title">Description</div>
-                <input type="text" class="ru" placeholder="ru">
-                <input type="text" class="ro" placeholder="ro">
-                <input type="text" class="en" placeholder="en">
-            </div>
-            <div class="image_small">
-                <div class="title">Image small</div>
-                <input class="medium" type="file" />
-            </div>
-            <div class="image_large">
-                <div class="title">Image large</div>
-                <input ng-change="showFile()" class="large" name="files[]" type="file" id="files" />
-                <ul id="list"></ul>
-            </div>
-        </div>
-</form>
-    <form class="admin art">
-    <div class="main_title">
-        <div class="title">Add art</div>
+﻿
+
+
+
+<div class="middle_content admin">
+    <ul class="nav nav-tabs">
+        <li ui-sref-active="active" ui-sref="admin.request-table"><a data-toggle="tab" >Заявки</a></li>
+        <li ui-sref-active="active" ui-sref="admin.content-table"><a data-toggle="tab" >Управление</a></li>
+        <li ui-sref-active="active" ui-sref="admin.content-manage"><a data-toggle="tab" >Загрузить</a></li>
+    </ul>
+    <div ui-view>
+
     </div>
-        <div class="mesh">
-        <div class="short_description">
-            <div class="title">Short description</div>
-            <textarea class="ru" placeholder="ru"></textarea>
-            <textarea class="ro" placeholder="ro"></textarea>
-            <textarea class="en" placeholder="en"></textarea>
-        </div>
-        <div class="description">
-            <div class="title">Description</div>
-            <textarea class="ru" placeholder="ru"></textarea>
-            <textarea class="ro" placeholder="ro"></textarea>
-            <textarea class="en" placeholder="en"></textarea>
-        </div>
-        <div class="image_small">
-            <div class="title">Image small</div>
-            <input class="medium" type="file"/>
-        </div>
-        <div class="image_large">
-            <div class="title">Image large</div>
-            <input ng-change="showFile()" class="large" name="files[]" type="file" id="files"/>
-            <ul id="list"></ul>
-        </div>
-        </div>
-    </form>
+    
 </div>

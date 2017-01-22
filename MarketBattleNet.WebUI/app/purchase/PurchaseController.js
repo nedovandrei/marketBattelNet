@@ -12,6 +12,8 @@
             "$location",
             "appSettings",
             function (shoppingCartService, requestService, userProfileService, toasterService, $scope, $rootScope, $location, appSettings) {
+                $scope.imagesPath = appSettings.imagesPath;
+
                 $scope.purchases = [];
                 $scope.currentUrl = $location.path();
                 $scope.totalPrice = 0.00;
@@ -23,7 +25,7 @@
 
                 function changeBackground(fileName) {
                     if (fileName) {
-                        $(".m_page").css("background-image", "url('../images/" + fileName + "')");
+                        $(".m_page").css("background-image", "url('" + appSettings.imagesPath + fileName + "')");
                     } else {
                         $(".m_page").css("background-image", "url('../images/" + appSettings.backgroundDefault + "')");
                     }
@@ -77,7 +79,10 @@
                         for (var i = 0; i < $scope.purchases.length; i++) {
                             var request = {
                                 UserId: addedUser.Id,
-                                ArtId: $scope.purchases[i].Id
+                                ArtId: $scope.purchases[i].Id,
+                                TShirtSize: $scope.purchases[i].TShirtSize,
+                                TShirtSex: $scope.purchases[i].TShirtSex,
+                                Colour: $scope.purchases[i].Colour
                             };
                             requestArr.push(request);
                         }

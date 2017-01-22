@@ -2,10 +2,12 @@
     'use strict';
 
     angular.module("app")
-        .controller("ShoppingCartController", ["shoppingCartService", "cookieService", "$scope", "$rootScope", function (shoppingCartService, cookieService, $scope, $rootScope) {
+        .controller("ShoppingCartController", ["shoppingCartService", "cookieService", "$scope", "$rootScope", "appSettings", function (shoppingCartService, cookieService, $scope, $rootScope, appSettings) {
 
             //public members
-            $scope.purchasedItemsLocal = [];           
+            $scope.purchasedItemsLocal = [];
+
+            $scope.imagesPath = appSettings.imagesPath;
 
             $rootScope.$watch("purchasedItems", function () {
                 shoppingCartService.getAllPurchasedItems(function (result) {

@@ -39,6 +39,9 @@ namespace MarketBattleNet.BLL.Service
                     GameId = request.GameId,
                     ThumbnailFileName = request.ThumbnailFileName,
                     LargeFileName = request.LargeFileName,
+                    LargeFileName2 = request.LargeFileName2,
+                    LargeFileName3 = request.LargeFileName3,
+                    LargeFileName4 = request.LargeFileName4,
                     DateCreated = request.DateCreated
                 });
             }
@@ -62,6 +65,9 @@ namespace MarketBattleNet.BLL.Service
                 GameId = data.GameId,
                 ThumbnailFileName = data.ThumbnailFileName,
                 LargeFileName = data.LargeFileName,
+                LargeFileName2 = data.LargeFileName2,
+                LargeFileName3 = data.LargeFileName3,
+                LargeFileName4 = data.LargeFileName4,
                 DateCreated = data.DateCreated
             };
             return dtoToSend;
@@ -83,6 +89,9 @@ namespace MarketBattleNet.BLL.Service
                 GameId = obj.GameId,
                 ThumbnailFileName = obj.ThumbnailFileName,
                 LargeFileName = obj.LargeFileName,
+                LargeFileName2 = obj.LargeFileName2,
+                LargeFileName3 = obj.LargeFileName3,
+                LargeFileName4 = obj.LargeFileName4,
                 DateCreated = DateTime.Now
             };
             _repository.Create(data);
@@ -105,6 +114,9 @@ namespace MarketBattleNet.BLL.Service
                 GameId = obj.GameId,
                 ThumbnailFileName = obj.ThumbnailFileName,
                 LargeFileName = obj.LargeFileName,
+                LargeFileName2 = obj.LargeFileName2,
+                LargeFileName3 = obj.LargeFileName3,
+                LargeFileName4 = obj.LargeFileName4,
                 DateCreated = obj.DateCreated
             };
             _repository.Update(data);
@@ -113,24 +125,8 @@ namespace MarketBattleNet.BLL.Service
 
         public void Delete(int id)
         {
-            var dataToDelete = FindById(id);
-            var data = new ArtModel()
-            {
-                Id = dataToDelete.Id,
-                Type = dataToDelete.Type,
-                NameRus = dataToDelete.NameRus,
-                NameEng = dataToDelete.NameEng,
-                NameRom = dataToDelete.NameRom,
-                DescriptionRus = dataToDelete.DescriptionRus,
-                DescriptionEng = dataToDelete.DescriptionEng,
-                DescriptionRom = dataToDelete.DescriptionRom,
-                Price = dataToDelete.Price,
-                GameId = dataToDelete.GameId,
-                ThumbnailFileName = dataToDelete.ThumbnailFileName,
-                LargeFileName = dataToDelete.LargeFileName,
-                DateCreated = dataToDelete.DateCreated
-            };
-            _repository.Delete(data);
+            var dataToDelete = _repository.GetAll().FirstOrDefault(x => x.Id == id);            
+            _repository.Delete(dataToDelete);
             _unitOfWork.SaveChanges();
         }
     }

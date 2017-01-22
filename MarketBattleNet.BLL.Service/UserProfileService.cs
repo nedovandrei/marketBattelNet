@@ -29,7 +29,8 @@ namespace MarketBattleNet.BLL.Service
                     Id = userProfile.Id,
                     FullName = userProfile.FullName,
                     Address = userProfile.Address,
-                    PhoneNumber = userProfile.PhoneNumber                    
+                    PhoneNumber = userProfile.PhoneNumber,
+                    City = userProfile.City              
                 });
             }
             return dtoToSend;
@@ -43,7 +44,8 @@ namespace MarketBattleNet.BLL.Service
                 Id = data.Id,
                 FullName = data.FullName,
                 Address = data.Address,
-                PhoneNumber = data.PhoneNumber
+                PhoneNumber = data.PhoneNumber,
+                City = data.City
             };
             return dtoToSend;
         }
@@ -56,7 +58,8 @@ namespace MarketBattleNet.BLL.Service
                 Id = data.Id,
                 FullName = data.FullName,
                 Address = data.Address,
-                PhoneNumber = data.PhoneNumber
+                PhoneNumber = data.PhoneNumber,
+                City = data.City
             };
             return dtoToSend;
         }
@@ -68,7 +71,8 @@ namespace MarketBattleNet.BLL.Service
                 Id = obj.Id,
                 FullName = obj.FullName,
                 Address = obj.Address,
-                PhoneNumber = obj.PhoneNumber
+                PhoneNumber = obj.PhoneNumber,
+                City = obj.City
             };
             _repository.Create(data);
             _unitOfWork.SaveChanges();
@@ -81,7 +85,8 @@ namespace MarketBattleNet.BLL.Service
                 Id = obj.Id,
                 FullName = obj.FullName,
                 Address = obj.Address,
-                PhoneNumber = obj.PhoneNumber
+                PhoneNumber = obj.PhoneNumber,
+                City = obj.City
             };
             _repository.Update(data);
             _unitOfWork.SaveChanges();
@@ -95,7 +100,8 @@ namespace MarketBattleNet.BLL.Service
                 Id = dataToDelete.Id,
                 FullName = dataToDelete.FullName,
                 Address = dataToDelete.Address,
-                PhoneNumber = dataToDelete.PhoneNumber
+                PhoneNumber = dataToDelete.PhoneNumber,
+                City = dataToDelete.City
             };
             _repository.Delete(data);
             _unitOfWork.SaveChanges();

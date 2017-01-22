@@ -8,18 +8,36 @@
 <div class="middle_content m_c_items">
     <div class="m_c_left m_c_item">
         <ul class="menu menu_lvl_1">
-            <li class="menu_item games" ng-repeat="game in gameList" ui-sref="shop({gameId: {{game.Id}}})"><img width="30" style="padding-right:5px" ng-src="images/Logo/{{game.LogoFileName}}" />{{game.NameEng}} <span class="counter">({{game.ArtCount}})</span></li>
+            <li class="menu_item games" ng-repeat="game in gameList" ui-sref="shop({gameId: {{game.Id}}})"><img width="30" style="padding-right:5px" ng-src="{{imagesPath}}{{game.LogoFileName}}" />{{game.NameEng}} <span class="counter">({{game.ArtCount}})</span></li>
         </ul>
     </div>
     <div class="m_c_right m_c_item">
         <div class="products">           
-            <div class="product games" ng-repeat="game in gameList" ui-sref="shop({gameId: {{game.Id}}})">
+            <!--<div class="product games" ng-repeat="game in gameList" ui-sref="shop({gameId: {{game.Id}}})">
                 <div class="p_image">
-                    <img ng-src="images/Logo/{{game.LogoFileName}}" alt="">
+                    <img ng-src="{{imagesPath}}{{game.LogoFileName}}" alt="">
                 </div>
                 <div class="p_name">{{game.NameEng}}</div>
-            </div>
+            </div>-->
+            <div class="products ">
 
+
+                <a class="product" ng-repeat="art in artList" ui-sref="art({artId: {{art.Id}}, fromUrl: '{{currentUrl}}'})">
+
+                    <div class="p_image">
+                        <img ng-src="{{imagesPath}}{{art.ThumbnailFileName}}" height="150" alt="">
+                    </div>
+                    <div class="p_name">
+                        <div class="p_n_language" ng-show="language === 'ru-RU'">{{art.NameRus}}</div>
+                        <div class="p_n_language" ng-show="language === 'en-US'">{{art.NameEng}}</div>
+                        <div class="p_n_language" ng-show="language === 'ro-MD'">{{art.NameRom}}</div>
+                        <div class="p_cost ">{{art.Price}} MDL</div>
+                    </div>
+
+                </a>
+
+
+            </div>        
         </div>
     </div>
 </div>

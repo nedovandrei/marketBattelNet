@@ -5,9 +5,9 @@
         
         <section class="menu menu_lvl_1">
             <div class="menu_item search">
-                <input type="text" ng-model="searchString" ng-change="search()" placeholder="Поиск..." ng-show="language === 'ru-RU'" />
-                <input type="text" ng-model="searchString" ng-change="search()" placeholder="Search..." ng-show="language === 'en-US'" />
-                <input type="text" ng-model="searchString" ng-change="search()" placeholder="Cautare..." ng-show="language === 'ro-MD'" />
+                <input type="text" ng-model="sortObject.SearchString" ng-change="applySortChanges()" placeholder="Поиск..." ng-show="language === 'ru-RU'" />
+                <input type="text" ng-model="sortObject.SearchString" ng-change="applySortChanges()" placeholder="Search..." ng-show="language === 'en-US'" />
+                <input type="text" ng-model="sortObject.SearchString" ng-change="applySortChanges()" placeholder="Cautare..." ng-show="language === 'ro-MD'" />
             </div>
                 <div class="menu_item">
                     <input id="ac-1" name="accordion-1" type="checkbox" />
@@ -17,13 +17,13 @@
                         <span ng-show="language === 'ro-MD'">Sortează după Dată</span>
                     </label>
                     <ul class="ac-small menu menu_lvl_2">
-                        <input type="text" ng-model="sortObject.date" class="checkbox_sort" id="asc" />
-                        <li class="menu_item" ng-click="sortObject.date = 'asc'">
+                       
+                        <li class="menu_item" ng-class="{active: sortPropertyName === 'DateCreated' && sortReverse === false}" ng-click="setSortProperties('DateCreated', false)">
                             <span ng-show="language === 'ru-RU'">По возрастанию</span>
                             <span ng-show="language === 'en-US'">Ascending</span>
                             <span ng-show="language === 'ro-MD'">Ascendent</span>
                         </li>
-                        <li class="menu_item" ng-click="sortObject.date = 'desc'">
+                        <li class="menu_item" ng-class="{active: sortPropertyName === 'DateCreated' && sortReverse === true}" ng-click="setSortProperties('DateCreated', true)">
                             <span ng-show="language === 'ru-RU'">По убыванию</span>
                             <span ng-show="language === 'en-US'">Descending</span>
                             <span ng-show="language === 'ro-MD'">Descendent</span>
@@ -38,13 +38,14 @@
                         <span ng-show="language === 'ro-MD'">Sortează după Preț</span>
                     </label>
                     <ul class="ac-medium menu menu_lvl_2">
-                        <input type="text" ng-model="sortObject.price" class="checkbox_sort" id="asc" />
-                        <li class="menu_item" ng-click="sortObject.price = 'asc'">
+                        <li class="menu_item" ng-class="{active: sortPropertyName === 'Price' && sortReverse === false}" ng-click="setSortProperties('Price', false)">
+                            <input type="radio" ng-model="sortObject.ByPrice" ng-value="asc">
                             <span ng-show="language === 'ru-RU'">По возрастанию</span>
                             <span ng-show="language === 'en-US'">Ascending</span>
                             <span ng-show="language === 'ro-MD'">Ascendent</span>
                         </li>
-                        <li class="menu_item">
+                        <li class="menu_item" ng-class="{active: sortPropertyName === 'Price' && sortReverse === true}" ng-click="setSortProperties('Price', true)">
+                            <input type="radio" ng-model="sortObject.ByPrice" ng-value="desc">
                             <span ng-show="language === 'ru-RU'">По убыванию</span>
                             <span ng-show="language === 'en-US'">Descending</span>
                             <span ng-show="language === 'ro-MD'">Descendent</span>
@@ -59,69 +60,44 @@
                         <span ng-show="language === 'ro-MD'">Sortează după Produs</span>
                     </label>
                     <ul class="ac-large menu menu_lvl_2">
-                        <li class="menu_item">
+                        <li class="menu_item" ng-class="{active: typeSort.tshirts}" ng-click="byTypeSort('tshirts')">
                             <span ng-show="language === 'ru-RU'">Майки</span>
                             <span ng-show="language === 'en-US'">T-Shirts</span>
                             <span ng-show="language === 'ro-MD'">Camasi</span>
                         </li>
-                        <li class="menu_item">
-                            Кружки
+                        <li class="menu_item" ng-class="{active: typeSort.cup}" ng-click="byTypeSort('cup')">                            
                             <span ng-show="language === 'ru-RU'">Кружки</span>
                             <span ng-show="language === 'en-US'">Cups</span>
                             <span ng-show="language === 'ro-MD'">Cupe</span>
                         </li>
-                        <li class="menu_item">Коврики</li>
+                        <li class="menu_item" ng-class="{active: typeSort.mousepad}" ng-click="byTypeSort('mousepad')">
+                            <span ng-show="language === 'ru-RU'">Коврики</span>
+                            <span ng-show="language === 'en-US'">Mousepads</span>
+                            <span ng-show="language === 'ro-MD'">Covoare</span>
+                        </li>
                     </ul>
                 </div>
 </section>
     </div>
     <div class="m_c_right m_c_item">
-        <!--<div class="page_droduct page_droduct_top">
-            <div class="button_back" ng-click="paginationBack()">
-                <span ng-show="language === 'ru-RU'">Предыдущая Страница</span>
-                <span ng-show="language === 'en-US'">Previous Page</span>
-                <span ng-show="language === 'ro-MD'">Pagina Anterioară</span>
-            </div>
-            <div ng-class="{pagination_active: (paginationIndex + 1) === index}" class="pagination" ng-repeat="index in paginationArr" ng-click="paginationJumpTo(index)">{{index}}</div>
-
-            <div class="button_next" ng-click="paginationForward()">
-                <span ng-show="language === 'ru-RU'">Следующая Cтраница</span>
-                <span ng-show="language === 'en-US'">Next Page</span>
-                <span ng-show="language === 'ro-MD'">Pagina Următoare</span>
-            </div>
-        </div>-->
         <div class="products ">
 
 
-            <a class="product" ng-repeat="art in artList" ui-sref="art({artId: {{art.Id}}, fromUrl: '{{currentUrl}}'})">
+            <a class="product" ng-repeat="art in artList | orderBy:sortPropertyName:sortReverse" ui-sref="art({artId: {{art.Id}}, fromUrl: '{{currentUrl}}'})">
                 
                     <div class="p_image">
-                        <img ng-src="images/arts/{{art.ThumbnailFileName}}" height="150" alt="">
+                        <img ng-src="{{imagesPath}}{{art.ThumbnailFileName}}" height="150" alt="">
                     </div>
                     <div class="p_name">
                         <div class="p_n_language" ng-show="language === 'ru-RU'">{{art.NameRus}}</div>
                         <div class="p_n_language" ng-show="language === 'en-US'">{{art.NameEng}}</div>
                         <div class="p_n_language" ng-show="language === 'ro-MD'">{{art.NameRom}}</div>
-                        <div class="p_cost ">{{art.Price}}$</div>
+                        <div class="p_cost ">{{art.Price}} MDL</div>
                     </div>
                 
             </a>
 
 
-        </div>
-        <!--<div class="page_droduct page_droduct_bottom">
-            <div class="button_back" ng-click="paginationBack()">
-                <span ng-show="language === 'ru-RU'">Предыдущая Страница</span>
-                <span ng-show="language === 'en-US'">Previous Page</span>
-                <span ng-show="language === 'ro-MD'">Pagina Anterioară</span>
-            </div>
-            <div ng-class="{pagination_active: (paginationIndex + 1) === index}" class="pagination" ng-repeat="index in paginationArr" ng-click="paginationJumpTo(index)">{{index}}</div>
-
-            <div class="button_next" ng-click="paginationForward()">
-                <span ng-show="language === 'ru-RU'">Следующая Cтраница</span>
-                <span ng-show="language === 'en-US'">Next Page</span>
-                <span ng-show="language === 'ro-MD'">Pagina Următoare</span>
-            </div>
-        </div>-->
+        </div>        
     </div>
 </div>

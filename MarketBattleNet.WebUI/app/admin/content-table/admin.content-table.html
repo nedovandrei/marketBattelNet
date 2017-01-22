@@ -1,0 +1,24 @@
+﻿<div class="games request-content">
+    <div class="title">Игры</div>
+    <div id="game" ng-repeat="game in gameList">
+        <div class="img"><img width="30" ng-src="{{imagesPath}}{{game.LogoFileName}}"/>
+        </div>
+        <div class="name">Название: {{game.NameEng}}</div>
+        <div>
+            <button ng-click="deleteGame(game.Id)">Удалить</button>
+        </div>
+    </div>
+</div>
+<div class="arts request-content">
+    <div class="title">Товары</div>
+    <div id="art" ng-repeat="art in artList">
+        <div class="img"><img width="30" ng-src="{{imagesPath}}{{art.ThumbnailFileName}}"/>
+        </div>
+        <div class="name">Название: {{art.NameRus}}</div>
+        <div class="price">Цена: {{art.Price}} MDL</div>
+        <div>
+            <button ng-click="deleteArt(art.Id)">Удалить</button>
+            <button ng-click="editArt(art.Id)">Редактировать</button>
+        </div>
+    </div>
+</div>

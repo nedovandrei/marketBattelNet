@@ -9,7 +9,8 @@
                 'add': { method: "POST" },
                 'update': { method: "UPDATE" },
                 'delete': { method: "DELETE" },
-                'addRange': { method: "POST" , url: appSettings.apiPath + "request/AddRange" }
+                'addRange': { method: "POST", url: appSettings.apiPath + "request/AddRange" },
+                'completeRequest': { method: "POST", url: appSettings.apiPath + "request/CompleteRequest/:id"}
             });
         });
 })();

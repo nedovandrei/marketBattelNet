@@ -1,70 +1,183 @@
-.admin{
+.admin {
+   
     
-      
+    .request-content{
+        width: calc(50% - 10px);
+        float: left;
+        &:nth-of-type(2n + 1){
+            margin-right: 20px;
+        }
+        & > *{
+            margin-bottom: 10px;
+            clear: both;
+        }
+       
+    }
+     .name, .price{
+            width: calc(100% - 60px);
+            float: left;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .img{
+            float: left;
+            margin-right: 10px;
+            img{
+                width: 50px!important;
+                height: 50px!important;
+            }
+        }
+     .title {
+        padding: 5px 0;
+        margin-bottom: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+    .product {
+         button{
+        span{
+            padding-bottom: 0;
+        }
+    }
+        &:last-of-type{
+            border-top-width:0;
+            padding-top:0;
+        }
+        
+        border-top: 1px solid rgba(255,255,255,0.3);
+        padding:10px 0;
+        span{
+            display:block;
+            padding-bottom:4px;
+            &:last-of-type{
+                padding-bottom:0;
+            }
+        }
+        
+       
+        
+        
+        & > div {
+            width: calc(50% - 2px);
+            display: inline-block;
+            vertical-align:top;
+        }
 
-      .description, .description + *{
-          clear:both;
-      }
-  }
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    .user_info{
+        span{
+            text-align:center;
+        }
+    }
+    .art_info {
+       
+        & > * {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .art_name{
+            width:calc(100% - 29px);
+        }
+        
+    }
 
-
-.login{
-    max-width: 430px;
-      margin:0 auto;
+    .description, .description + * {
+        clear: both;
+    }
 }
-.user{
+
+
+.login {
+    max-width: 430px;
+    margin: 0 auto;
+}
+
+.user {
     clear: both;
     max-width: 600px;
-      margin:50px auto 0;
+    margin: 50px auto 0;
     /*.full_name, .phone{
         width: calc(50% - 3px);
         display: inline-block;
     }*/
-
 }
-form{
-    .mesh{
+
+form {
+    .mesh {
         padding: 0 10px 10px 10px;
-        & > div{
+
+        & > div {
             @include pie-clearfix;
             margin-bottom: 10px;
         }
     }
-    textarea{
-          padding: 5px 10px;
-          width: calc((100% - 20px)/ 3);
-          margin-right: 10px;
-          &:last-of-type{
-              margin-right: 0;
-          }
-          max-width: calc(100% / 3);
-          min-height: 100px;
-          float: left;
-          border: 1px solid rgba(255,255,255,0.3);
-            background-color: rgba(0,0,0,0.5);
-            color: rgba(255,255,255,0.7);
-      }
-    input{
-        &[type=text], &[type=submit], &[type=password]{
+
+    textarea {
+        padding: 5px 10px;
+        width: calc((100% - 20px)/ 3);
+        margin-right: 10px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        max-width: calc(100% / 3);
+        min-height: 100px;
+        float: left;
+        border: 1px solid rgba(255,255,255,0.3);
+        background-color: rgba(0,0,0,0.5);
+        color: rgba(255,255,255,0.7);
+    }
+    .title {
+        padding: 5px 0;
+        margin-bottom: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+    input {
+        &[type=text], &[type=submit], &[type=password], &[type=file] {
             @include input-placeholder {
                 opacity: 1;
             }
-            &:hover, &:focus{
-                 color: rgba(255,255,255,1);
+
+            &:hover, &:focus {
+                color: rgba(255,255,255,1);
             }
+
             padding: 5px 10px;
-            min-height:40px;
+            min-height: 40px;
             width: 100%;
             border: 1px solid rgba(255,255,255,0.3);
             background-color: rgba(0,0,0,0.5);
             color: rgba(255,255,255,0.7);
             margin-bottom: 10px;
+        }
+    }
+
+   
+}
+
+.nav-tabs {
+    li {
+        width: calc(100%/3);
+        float: left;
+
+        &.active, &:hover {
+            a {
+                cursor: pointer;
+                opacity: 1;
+                border-bottom-color: white !important;
+                color: white !important;
+                 background-color: rgba(51,122,183, 0.4)!important;
             }
-        
-      }
-     .title{
-        padding: 5px 0;
-        margin-bottom: 10px;
-        border-bottom: 1px solid rgba(255,255,255,0.3);  
+        }
+    }
+
+    a {
+        opacity: 0.8;
+        background-color: rgba(0,0,0,0.5) !important;
+        border: 1px solid rgba(255,255,255,0.3) !important;
     }
 }
