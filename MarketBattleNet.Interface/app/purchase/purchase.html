@@ -1,0 +1,91 @@
+﻿
+<div class="middle_content m_c_items">
+    <div class="m_c_right m_c_item">
+        <div class="products buy">
+            <div class="product pot" ui-sref="art({artId: {{item.Id}}, fromUrl: '{{currentUrl}}'})" ng-repeat="item in purchases">
+                <div class="p_image">
+                    <img ng-src="{{imagesPath}}{{item.ThumbnailFileName}}" height="150" alt="">
+                </div>
+                <div class="p_name">
+                    <span ng-show="language === 'ru-RU'">{{item.NameRus}} - {{item.TShirtSize}} - {{item.TShirtSex}} - {{item.Colour}} - {{item.Price}} MDL</span>
+                    <span ng-show="language === 'en-US'">{{item.NameEng}} - {{item.TShirtSize}} - {{item.TShirtSex}} - {{item.Colour}} - {{item.Price}} MDL</span>
+                    <span ng-show="language === 'ro-MD'">{{item.NameRom}} <span ng-show="item.TShirtSex">- {{item.TShirtSex}} </span><span ng-show="item.TShirtSize">- {{item.TShirtSize}}</span> - {{item.Colour}} - {{item.Price}} MDL</span>
+                </div>
+                <div class="p_disabled" ng-click="removeItem(item)"></div>
+            </div>
+        </div>
+        <div ng-hide="purchases.length > 0">
+            <span ng-show="language === 'ru-RU'">Пусто, перейдите в <a ui-sref="shop">магазин</a> и закажите что Вам понравится!</span>
+            <span ng-show="language === 'en-US'">Empty here, go to <a ui-sref="shop">marketplace</a> and order anything you like!</span>
+            <span ng-show="language === 'ro-MD'">Gol aici, сontinuați la <a ui-sref="shop">magazin</a> și alege ceea ce îți place!</span>
+        </div>
+        <div class="total_cost">
+            <span ng-show="language === 'ru-RU'">
+                Итого: {{totalPrice | number: 2}} MDL
+            </span>
+            <span ng-show="language === 'en-US'">
+                Total: {{totalPrice | number: 2}} MDL
+            </span>
+            <span ng-show="language === 'ro-MD'">
+                Total: {{totalPrice | number: 2}} MDL
+            </span>
+        </div>
+    </div>
+    <form class="user" ng-submit="submitRequest()" ng-show="purchases.length > 0">
+        <div class="title">
+            <span ng-show="language === 'ru-RU'">Заявка</span>
+            <span ng-show="language === 'en-US'">Request</span>
+            <span ng-show="language === 'ro-MD'">Aplicare</span>
+        </div>
+        <div class="full_name">
+            <input required ng-show="language === 'ru-RU'" type="text" name="comment" ng-model="userData.FullName" placeholder="Ф.И.О.">
+            <input required ng-show="language === 'en-US'" type="text" name="comment" ng-model="userData.FullName" placeholder="Full Name">
+            <input required ng-show="language === 'ro-MD'" type="text" name="comment" ng-model="userData.FullName" placeholder="Numele complet">
+        </div>
+        <div class="phone">
+            <input required ng-show="language === 'ru-RU'" type="text" name="comment" ng-model="userData.PhoneNumber" placeholder="Контактный Номер Телефона">
+            <input required ng-show="language === 'en-US'" type="text" name="comment" ng-model="userData.PhoneNumber" placeholder="Contact Phone Number">
+            <input required ng-show="language === 'ro-MD'" type="text" name="comment" ng-model="userData.PhoneNumber" placeholder="Numar de Telefon de Contact">
+        </div>
+        <div class="adress">
+            <select ng-show="language === 'ru-RU'" class="form-control" ng-model="userData.City">
+                <option value="">Город:</option>
+                <option value="Riscani">Рышканы</option>
+                <option value="Balti">Бельцы</option>
+                <option value="Tiraspol">Тирасполь</option>
+                <option value="Chisinau">Кишинёв</option>
+                <option value="Comrat">Комрат</option>
+                <option value="Glodeni">Глодяны</option>
+                <option value="Soroca">Сороки</option>
+            </select>
+            <select ng-show="language === 'en-US'" class="form-control" ng-model="userData.City">
+                <option value="">City:</option>
+                <option value="Riscani">Riscani</option>
+                <option value="Balti">Balti</option>
+                <option value="Tiraspol">Tiraspol</option>
+                <option value="Chisinau">Chisinau</option>
+                <option value="Comrat">Comrat</option>
+                <option value="Glodeni">Glodeni</option>
+                <option value="Soroca">Soroca</option>
+            </select>
+            <select ng-show="language === 'ro-MD'" class="form-control" ng-model="userData.City">
+                <option value="">Oraș:</option>
+                <option value="Riscani">Rîșcani</option>
+                <option value="Balti">Bălti</option>
+                <option value="Tiraspol">Tiraspol</option>
+                <option value="Chisinau">Chișinău</option>
+                <option value="Comrat">Comrat</option>
+                <option value="Glodeni">Glodeni</option>
+                <option value="Soroca">Soroca</option>
+            </select>
+        </div>
+        <div class="adress">
+            <input required ng-show="language === 'ru-RU'" type="text" name="comment" ng-model="userData.Address" placeholder="Адрес Доставки">
+            <input required ng-show="language === 'en-US'" type="text" name="comment" ng-model="userData.Address" placeholder="Delivery Adress">
+            <input required ng-show="language === 'ro-MD'" type="text" name="comment" ng-model="userData.Address" placeholder="Adresă de Livrare">
+        </div>
+        <input type="submit" ng-show="language === 'ru-RU'" value="Отправить">
+        <input type="submit" ng-show="language === 'en-US'" value="Submit">
+        <input type="submit" ng-show="language === 'ro-MD'" value="A Inregistra">
+    </form>
+</div>

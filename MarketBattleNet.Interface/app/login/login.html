@@ -1,0 +1,17 @@
+﻿<div class="middle_content">
+    <form class="login" ng-submit="login()">
+        <div class="name">
+            <input type="text" required name="comment" ng-model="loginObject.UserName" ng-show="language === 'ru-RU'" placeholder="Имя Пользователя...">
+            <input type="text" required name="comment" ng-model="loginObject.UserName" ng-show="language === 'en-US'" placeholder="User Name...">
+            <input type="text" required name="comment" ng-model="loginObject.UserName" ng-show="language === 'ro-MD'" placeholder="Nume de Utilizator...">
+        </div>
+        <div class="password">
+            <input type="password" required name="comment" ng-model="loginObject.Password" ng-show="language === 'ru-RU'" placeholder="Пароль...">
+            <input type="password" required name="comment" ng-model="loginObject.Password" ng-show="language === 'en-US'" placeholder="Password...">
+            <input type="password" required name="comment" ng-model="loginObject.Password" ng-show="language === 'ro-MD'" placeholder="Parola...">
+        </div>
+        <input type="submit" ng-show="language === 'ru-RU'" value="Отправить">
+        <input type="submit" ng-show="language === 'en-US'" value="Submit">
+        <input type="submit" ng-show="language === 'ro-MD'" value="Trimite">
+    </form>
+</div>

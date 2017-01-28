@@ -1,0 +1,111 @@
+﻿
+<form class=" game">
+    <div class="main_title">
+        <div class="title">Добавить Игру</div>
+    </div>
+    <div class="mesh">
+        <div class="description">
+            <div class="title">Название игры</div>
+            <input type="text" class="ru" ng-model="gameModel.NameEng" placeholder="Название">
+        </div>
+        <div class="image_small">
+            <div class="title">Логотип игры</div>
+            <input type="file" id="gameLogo" class="medium form-control" name="gameLogo" 
+                   onchange="angular.element(this).scope().getFileDetails(this)" />            
+            <div ng-show="gameLogo.fileName !== ''">
+                <img height="100" ng-src="{{imagesPath}}{{gameLogo.fileName}}"/>
+            </div>
+        </div>
+        <div class="image_large">
+            <div class="title">Фон экрана игры</div>
+            <input type="file" id="gameBackground" name="gameBackground" class="large form-control"
+                   onchange="angular.element(this).scope().getFileDetails(this)" />            
+            <div ng-show="gameBackground.fileName !== ''">
+                <img height="100" ng-src="{{imagesPath}}{{gameBackground.fileName}}" />
+            </div>
+        </div>
+        
+        <button ng-click="submitGame()">Добавить Игру</button>
+    </div>
+</form>
+<form class=" art">
+    <div class="main_title">
+        <div class="title">Добавить Товар</div>
+    </div>
+    <div class="mesh">
+        <div>
+            <div>
+                <div class="title">Тип Товара</div>
+                <select class="form-control" ng-model="artModel.Type">
+                    <option value="cup">Чашка</option>
+                    <option value="tshirts">Майка</option>
+                    <option value="mousepad">Коврик для Мышки</option>
+                    <!--добавить еще по усмотрению. хз что еще будет -->
+                </select>
+            </div>
+            <div>
+                <div class="title">Игра</div>
+                <select class="form-control" ng-model="artModel.GameId">
+                    <option ng-repeat="game in gamesList" value="{{game.Id}}">{{game.NameEng}}</option>
+                </select>
+            </div>
+        </div>        
+        <div class="short_description">
+            <div class="title">Краткое описание</div>
+            <input type="text" class="ru" ng-model="artModel.NameRus" placeholder="Описание на русском..." />
+            <input type="text" class="ro" ng-model="artModel.NameRom" placeholder="Описание на румынском..." />
+            <input type="text" class="en" ng-model="artModel.NameEng" placeholder="Описание на английском..." />
+        </div>
+        <div class="description">
+            <div class="title">Полное описание</div>
+            <textarea class="ru" ng-model="artModel.DescriptionRus" placeholder="Описание на русском..."></textarea>
+            <textarea class="ro" ng-model="artModel.DescriptionRom" placeholder="Описание на румынском..."></textarea>
+            <textarea class="en" ng-model="artModel.DescriptionEng" placeholder="Описание на английском..."></textarea>
+        </div>
+        <div>
+            <div class="title">Цена</div>
+            <input type="text" placeholder="Введите цену в леях..." ng-model="artModel.Price"/>
+        </div>
+        <div class="image_small">
+            <div class="title">Маленькая картинка</div>
+            <input type="file" id="artSmallPhoto" name="artSmallPhoto" class="medium form-control"
+                   onchange="angular.element(this).scope().getFileDetails(this)"/>
+            <div ng-show="artSmallPhoto.fileName !== ''">
+                <img height="50" ng-src="{{imagesPath}}{{artSmallPhoto.fileName}}" />
+            </div>
+        </div>
+        <div class="image_large">
+            <div class="title">фотография 1</div>
+            <input type="file" id="artBigPhoto1" name="artBigPhoto1" class="large form-control"
+                   onchange="angular.element(this).scope().getFileDetails(this)"/>
+            <div ng-show="artBigPhoto1.fileName !== ''">
+                <img height="50" ng-src="{{imagesPath}}{{artBigPhoto1.fileName}}" />
+            </div>
+        </div>
+        <div class="image_large">
+            <div class="title">фотография 2</div>
+            <input type="file" id="artBigPhoto2" name="artBigPhoto2" class="large form-control"
+                   onchange="angular.element(this).scope().getFileDetails(this)" />
+            <div ng-show="artBigPhoto2.fileName !== ''">
+                <img height="50" ng-src="{{imagesPath}}{{artBigPhoto2.fileName}}" />
+            </div>
+        </div>
+        <div class="image_large">
+            <div class="title">фотография 3</div>
+            <input type="file" id="artBigPhoto3" name="artBigPhoto3" class="large form-control"
+                   onchange="angular.element(this).scope().getFileDetails(this)" />
+            <div ng-show="artBigPhoto3.fileName !== ''">
+                <img height="50" ng-src="{{imagesPath}}{{artBigPhoto3.fileName}}" />
+            </div>
+        </div>
+        <div class="image_large">
+            <div class="title">фотография 4</div>
+            <input type="file" id="artBigPhoto4" name="artBigPhoto4" class="large form-control"
+                   onchange="angular.element(this).scope().getFileDetails(this)" />
+            <div ng-show="artBigPhoto4.fileName !== ''">
+                <img height="50" ng-src="{{imagesPath}}{{artBigPhoto4.fileName}}" />
+            </div>
+        </div>
+        <button ng-click="submitArt()">Добавить Товар</button>
+    </div>
+</form>

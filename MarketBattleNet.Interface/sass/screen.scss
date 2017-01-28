@@ -1,0 +1,32 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass";
+@import "include/variable";
+@import "header/default";
+@import "include/reset";
+@import "block/defaul";
+@import "include/animation";
+@import "include/slider";
+@import "include/dropDownMenu";
+@import "include/products";
+@import "block/_admin";
+@import "include/_extend";
+
+.main_page {
+    position: relative;
+    min-height: calc(100% - 60px);
+}
+.middle_content, .header_content, .footer_content {
+        position: relative;
+        width: 960px;
+        margin: 0 auto;
+    }
+
+    .header_block {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+

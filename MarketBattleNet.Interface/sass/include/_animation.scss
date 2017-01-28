@@ -1,0 +1,9 @@
+@import "variable";
+
+@keyframes toggle {
+  0% {  opacity: 0;  }
+  #{$displayTime * 0.1} {opacity:1 ;}
+  #{$displayTime * 0.9} {opacity:1;}
+  #{$displayTime} {opacity:0;}
+  100% {opacity:0;}
+}

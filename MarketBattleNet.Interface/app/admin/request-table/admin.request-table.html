@@ -1,0 +1,30 @@
+﻿<form class=" requests">
+    <div class="products">
+        <div class="product" ng-repeat="request in requestList | orderBy: request.UserProfileModel.Name : request.IsCompleted" ng-class="{request_completed: request.IsCompleted == true}">
+            <div class="art_info">
+                <div class="img">
+                    <img ng-src="{{imagesPath}}{{request.ArtModel.LargeFileName}}" />
+                </div>
+                <div class="name">Название: {{request.ArtModel.NameRus}}</div>
+                <div class="name">Пол: {{request.TShirtSex}}</div>
+                <div class="name">Размер: {{request.TShirtSize}}</div>
+                <div class="name">Цвет: {{request.Colour}} <span style="display: inline-block;border: 1px solid ;width: 10px; padding: 10px; background: {{request.Colour}};"></span></div>
+                <div class="price">Цена: {{request.ArtModel.Price}} MDL</div>
+
+            </div>
+            <div class="user_info">
+                <span>{{request.UserProfileModel.FullName}}</span>
+                <span>{{request.UserProfileModel.PhoneNumber}}</span>
+                <span>{{request.UserProfileModel.City}}</span>
+                <span>{{request.UserProfileModel.Address}}</span>
+
+            </div>
+            <button ng-click="deleteRequest(request.Id)"><span>Удалить</span></button>
+            <button ng-click="completeRequest(request.Id)" ng-disabled="request.IsCompleted == true">
+                <span ng-show="request.IsCompleted">Выполнено</span>
+                <span ng-hide="request.IsCompleted">Завершить</span>
+            </button>
+
+        </div>
+    </div>
+</form>
