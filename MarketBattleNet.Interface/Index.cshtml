@@ -1,26 +1,26 @@
 ﻿@*@Styles.Render("~/Content/css")
-@Scripts.Render("~/bundles/modernizr")*@
+    @Scripts.Render("~/bundles/modernizr")*@
 @inherits System.Web.Mvc.WebViewPage
 <!DOCTYPE html>
 <html lang="en">
-<head>    
+<head>
     <link rel="stylesheet" type="text/css" href="bower_components/AngularJS-Toaster/toaster.min.css" />
     <link rel="stylesheet" href="bower_components/mimiz-jquery-loader-plugin-200d6e6/jquery.loader.css" />
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
+
     <link rel="stylesheet" href="css/screen.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
     <meta charset="UTF-8">
     <!--Scripts section-->
     <!--main libraries-->
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/mimiz-jquery-loader-plugin-200d6e6/jquery.loader.js"></script>
+    <script src="js/slick.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.min.js"></script>   
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/bower-angular-cookies-master/angular-cookies.min.js"></script>
     <script src="bower_components/AngularJS-Toaster/toaster.min.js"></script>
     <script src="bower_components/bower-angular-sanitize-master/angular-sanitize.min.js"></script>
@@ -84,6 +84,10 @@
             }
         }
     </script>
+
+
+
+
     <title>Market</title>
 </head>
 <body class="m_page" ng-app="app">
@@ -235,4 +239,5 @@
     <toaster-container toaster-options="{ 'toaster-id': 2, 'position-class': 'toast-top-right', 'close-button': {'toast-error': true, 'toast-warning': true, 'toast-success': false}}"></toaster-container>
     <toaster-container toaster-options="{ 'toaster-id': 3, 'position-class': 'toast-top-full-width'}"></toaster-container>
 </body>
+
 </html>

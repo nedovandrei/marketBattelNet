@@ -13,7 +13,9 @@
     -moz-transition: background-image ease-out 0.25s;
     width: 100%;
 }
-
+.counter{
+    color: white;
+}
 .middle_content {
     @include pie-clearfix;
     padding: 25px 5px;
@@ -52,9 +54,7 @@
 .m_c_left {
     width: 25%;
 
-    .counter {
-        color: rgba(120, 120, 120, 0.75);
-    }
+    
 
     & + .m_c_right {
         width: 75%;
@@ -129,9 +129,7 @@
             &.games {
                 &:hover{
                      background-color: #337ab7;
-                     .counter{
-                         color: white;
-                     }
+                    
                 }
                   background-color: rgba(51,122,183, 0.4);
                 padding: 10px 5px;
@@ -150,9 +148,7 @@
                     display: block;
                     color: white;
 
-                    @include input-placeholder {
-                        opacity: 1;
-                    }
+                   
                 }
             }
 
@@ -188,6 +184,7 @@
             }
            
         }
+
 
         &.menu_lvl_2 {
             border-top: 1px solid hsla(0, 0%, 100%, 0.07);
@@ -299,28 +296,13 @@
 
             float: right;
             width: 30%;
-            .photo{
-                cursor: pointer;
-                margin-top:5px;
-                margin-right: 5px;
-                width: calc((100% - 5px*3)/4);
-                float:left;
-                &:nth-of-type(4n){
-                     margin-right: 0;
-                }
-            }
-            img {
-                &:not(.active){
-                        background-color: rgba(0, 0, 0, 0.7);
-                }
-                width: 100%;
-                cursor: pointer;
-            }
+           
+           
         }
     }
 
     .total_cost {
-         text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+      
         font-size: 24px;
         color: #337ab7;
         margin: 40px 0;
@@ -329,205 +311,8 @@
 
 
 
-.menu_lvl_1 {
-    > div {
-        cursor: pointer;
-        @include pie-clearfix;
-        font-size: 16px;
-        border-bottom: 1px solid hsla(0, 0%, 100%, 0.07);
-        /*padding: 10px 5px;*/
-        &:last-of-type {
-            border-bottom-width: 0;
-        }
-    }
-}
 
-.footer_block {
-    padding: 10px 0;
-    font-size: 16px;
-    .help{
-        & > *{
-            padding-left: 26px;
-        }
-       position: relative;
-        &:before{
-           background-image: image-url("question.png");
-           content: "";
-           position: absolute;
-            
-            width: 16px;
-            height: 16px;
-            margin-right: 10px;
-        }
-    }
-    .title{
-        font-weight: bold;
-    }
-    p, .title{
-        margin-bottom: 1em;
-    }
-    p{
-        &:hover{
-            color: #337AB7;
-        }
-    }
-    .footer_content {
-        padding: 5px;
-        @include pie-clearfix;
-        & > *{
-            width: 25%;
-            float: left;
-            &.social_links{
-                 width: 30%;
-                float: left;
-            }
-            &.dropup{
-                width: 20%;
-            }
-        }
-    }
-   
-    
 
-    .btn {
-       
-        &:focus{
-            outline: none;
-        }
-         &:before {
-            display: block;
-            content: "";
-            float: left;
-            width: 16px;
-            height: 16px;
-            background-image: image-url("planet.png");
-            margin-right: 5px;
-        }
-         float: right;
-         font-size: 18px;
-        color: white;
-        background-color: transparent;
-        border-width: 0;
-        border-radius: 0;
-        line-height: 16px;
-        padding: 0;
-    }
-
-    .dropdown-menu {
-        a{
-            &:hover{
-                    background: rgba(255,255,255,.05)!important;
-            }
-            color: white!important;
-        }
-        .title{
-            padding: 3px 20px;
-            margin-bottom:10px;
-            color: rgba(255,255,255,.3);
-        }
-        margin-bottom: 20px!important;
-        left: calc(100% - 170px);
-        padding: 20px 0;
-        box-shadow: 0 0 12px black;
-        border: 1px solid rgba(255, 255, 255, 0.07);
-        background-color: #232935 !important;
-        min-width: 170px;
-    }
-}
-
-.social_links {
-   
-    a {
-        display: inline-block;
-        width: 32px;
-        height: 32px;
-       
-
-        &.fb {
-            background-image: image-url("facebook.png");
-        }
-
-        &.vk {
-             background-image: image-url("vk.png");
-        }
-
-        &.in {
-            background-image: image-url("instagram.png");
-            
-        }
-    }
-}
-.accordion {
-    h5{
-        font-size: 25px;
-        font-weight: bold;
-    }
-    line-height: 1.5;
-  margin: 0;
-  margin-bottom: 1.5rem;
-  padding: 0;
-  list-style: none;
-}
-
-.accordion_item:last-of-type {
-  border-bottom: none;
-}
-/**
-* Ёлемент label который запускает открыть/закрыть.
-*/
-.accordion_trigger {
-  display: block;
- background-color: rgba(0, 0, 0, 0.7);
-  color: #ddd;
-  font-weight: normal;
-  cursor: pointer;
-  padding: 1.2em;
-}
- 
-/* мен€ем цвет фона у активного переключател€ */
- 
-.accordion_toggle:checked ~ .accordion_trigger {
- background-color: rgba(0, 0, 0, 0.9);
-}
- 
-/**
- * эти элементы radio/checkbox всегда должны быть скрыты.
- */
-.accordion_toggle {
-  position: absolute;
-  display: none;
-}
-/**
-* скрытое содержание аккордеона.
-*/
-.accordion_target {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
- 
-}
-/**
-* когда переключатель checked на radio/checkbox, показать содержимое аккордеона.
-*/    
-.accordion_toggle:checked ~ .accordion_target {
-  position: static;
-  overflow: visible;
-  clip: auto;
-  margin: auto;
-  padding: 1.2rem;
-  width: auto;
-  height: auto;
-/* задержка по€влени€  функци€ анимации */
-  -webkit-animation:fadeIn ease-in 0.5s; 
-  -moz-animation:fadeIn ease-in 0.5s;
-  animation:fadeIn ease-in 0.5s; 
-}
-/* анимаци€ при по€влении блоков с содержанием */
 @-moz-keyframes fadeIn {
     from { opacity: 0; }
 to { opacity: 1 }
@@ -542,24 +327,3 @@ to { opacity: 1 }
 }
 
 
-    .dropdown-menu{
-        a{
-            &:hover{
-                background-color: rgba(51,122,183, 0.4)!important;
-            }
-             
-            color: white!important;
-            
-        }
-        padding: 0!important;
-        background-color: rgb(0, 0, 0)!important;
-    }
-
-
-
-    .btn-success{
-        width: 100%;
-        border-width: 0!important;
-        background-color: #337ab7 !important;
-        @include border-radius(0);
-    }

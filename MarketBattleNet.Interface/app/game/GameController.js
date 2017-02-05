@@ -19,6 +19,13 @@
                         appSettings.loader.hide();
                     });
                 });
+                $(".center").slick({
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    infinite: true,
+                    arrows: false
+                });
+              
             }
 
 

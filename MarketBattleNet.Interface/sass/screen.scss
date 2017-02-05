@@ -8,25 +8,21 @@
 @import "header/default";
 @import "include/reset";
 @import "block/defaul";
-@import "include/animation";
 @import "include/slider";
 @import "include/dropDownMenu";
 @import "include/products";
-@import "block/_admin";
-@import "include/_extend";
+@import "block/admin";
+@import "include/extend";
+@import "components/footer";
+@import "components/accordion";
+@import "components/menu";
+@import "components/page";
+@import "components/_slick";
 
-.main_page {
-    position: relative;
-    min-height: calc(100% - 60px);
-}
-.middle_content, .header_content, .footer_content {
-        position: relative;
-        width: 960px;
-        margin: 0 auto;
-    }
 
-    .header_block {
-        background-color: rgba(0, 0, 0, 0.7);
-    }
+
+
+
+
 
 

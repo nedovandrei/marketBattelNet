@@ -1,0 +1,13 @@
+.main_page {
+    position: relative;
+    min-height: calc(100% - 60px);
+}
+.middle_content, .header_content, .footer_content {
+        position: relative;
+        width: 960px;
+        margin: 0 auto;
+    }
+
+    .header_block {
+        background-color: rgba(0, 0, 0, 0.7);
+    }

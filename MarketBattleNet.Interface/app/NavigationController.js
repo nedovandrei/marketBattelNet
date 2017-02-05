@@ -51,7 +51,7 @@
                             }
                         ];
                     } else if ($scope.state.current.name === "shop" && $scope.params.gameId !== "") {
-                        appSettings.loader.show();
+                        //appSettings.loader.show();
                         gameService.findById($scope.params.gameId, function (result) {
                             $scope.navigationArray = [
                                 //{
@@ -74,10 +74,10 @@
                                     href: "shop/" + result.Id
                                 }
                             ];
-                            appSettings.loader.hide();
+                            //appSettings.loader.hide();
                         });
                     } else if ($scope.state.current.name === "art") {
-                        appSettings.loader.show();
+                        //appSettings.loader.show();
                         artService.findById($scope.params.artId, function (result) {
                             gameService.findById(result.GameId, function (innerResult) {
                                 $scope.navigationArray = [
@@ -107,7 +107,7 @@
                                         href: "art({artId:" + result.Id + "})"
                                     }
                                 ];
-                                appSettings.loader.hide();
+                                //appSettings.loader.hide();
                             });
                         });
                     } else if ($scope.state.current.name === "login") {

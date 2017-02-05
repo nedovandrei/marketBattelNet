@@ -3,19 +3,24 @@
         <div class="products ">
             <div class="product pot" ui-sref="art">
                 <div class="p_image">
-                    <img class="active" ng-src="{{imagesPath}}{{photoInScope}}" alt="">
+                    <section class="art slider">
+                        <div ng-repeat="photo in photoArray">
+                            <img data-lazy="{{imagesPath}}{{photo}}" alt="">
+                        </div>
+                    </section>
+                    <!--<img class="active" ng-src="{{imagesPath}}{{photoInScope}}" alt="">
                     <div ng-click="changePhotoInScope(art.LargeFileName)" ng-hide="art.LargeFileName2 === null || art.LargeFileName2 === ''" class="photo">
-                        <img height="50" ng-src="{{imagesPath}}{{art.LargeFileName}}" />
+                        <img height="50" ng-src="{{imagesPath}}{{art.LargeFileName}}"/>
                     </div>
                     <div ng-click="changePhotoInScope(art.LargeFileName2)" ng-hide="art.LargeFileName2 === null || art.LargeFileName2 === ''" class="photo">
-                        <img height="50" ng-src="{{imagesPath}}{{art.LargeFileName2}}" />
+                        <img height="50" ng-src="{{imagesPath}}{{art.LargeFileName2}}"/>
                     </div>
                     <div ng-click="changePhotoInScope(art.LargeFileName3)" ng-hide="art.LargeFileName3 === null || art.LargeFileName3 === ''" class="photo">
-                        <img height="50" ng-src="{{imagesPath}}{{art.LargeFileName3}}" />
+                        <img height="50" ng-src="{{imagesPath}}{{art.LargeFileName3}}"/>
                     </div>
                     <div ng-click="changePhotoInScope(art.LargeFileName4)" ng-hide="art.LargeFileName4 === null || art.LargeFileName4 === ''" class="photo">
-                        <img height="50" ng-src="{{imagesPath}}{{art.LargeFileName4}}" />
-                    </div>
+                        <img height="50" ng-src="{{imagesPath}}{{art.LargeFileName4}}"/>
+                    </div>-->
                 </div>
                 
                 <div class="p_name">

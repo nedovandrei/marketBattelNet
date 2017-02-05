@@ -1,7 +1,9 @@
+.p_cost{
+     color: #337ab7;
+    
+}
 .products{
   @include pie-clearfix;
-  
-  
   .product{
       .dropdown{
           margin-top: 40px;
@@ -42,7 +44,7 @@
    
     .p_cost{
        
-        text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+      
         font-size: 30px;
       margin-top: 20px;
       font-weight: bold;

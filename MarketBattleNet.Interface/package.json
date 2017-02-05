@@ -1,0 +1,30 @@
+{
+  "name": "front-end",
+  "version": "0.0.1",
+  "description": "Front-End code (HTML/CSS/JS)",
+  "main": "index.js",
+  "devDependencies": {
+    "caniuse-db": "^1.0.30000613",
+    "colorguard": "^1.2.0",
+    "css-mqpacker": "^5.0.1",
+    "doiuse": "^2.5.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-minify": "0.0.14",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "immutable-css": "^1.1.2",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-discard-comments": "^2.0.4",
+    "postcss-reporter": "^2.0.0",
+    "postcss-scss": "^0.4.0",
+    "precss": "^1.4.0",
+    "stylelint": "^7.6.0",
+    "stylelint-config-standard": "^15.0.0"
+  },
+  "optionalDependencies": {
+    "browser-sync": "^2.18.5"
+  }
+}

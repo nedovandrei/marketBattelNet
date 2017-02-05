@@ -138,9 +138,7 @@ form {
     }
     input {
         &[type=text], &[type=submit], &[type=password], &[type=file] {
-            @include input-placeholder {
-                opacity: 1;
-            }
+           
 
             &:hover, &:focus {
                 color: rgba(255,255,255,1);

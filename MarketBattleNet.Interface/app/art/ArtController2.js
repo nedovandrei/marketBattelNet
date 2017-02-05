@@ -16,11 +16,13 @@
                 $scope.art = {
                     TShirtSex: "M",
                     TShirtSize: "M"
-                };                
+                };
 
                 $scope.isInCart = false;
 
                 $scope.photoInScope = "";
+
+                $scope.photoArray = [];
 
                 $scope.back = function () {
                     if (!!$stateParams.fromUrl) {
@@ -29,29 +31,29 @@
                         $location.path("#/shop");
                     }
 
-                }                
+                }
 
                 $scope.putIntoCart = function () {
                     shoppingCartService.addToCart($scope.art);
                     isInCartCheck();
                 }
 
-                $scope.changeTShirtSize = function(size) {
+                $scope.changeTShirtSize = function (size) {
                     $scope.art.TShirtSize = size;
                     console.log("tshirtSize: " + size);
                 }
 
-                $scope.changeTShirtSex = function(sex) {
+                $scope.changeTShirtSex = function (sex) {
                     $scope.art.TShirtSex = sex;
                     console.log("tshirtSex: " + sex);
                 }
 
-                $scope.changeColour = function(colour) {
+                $scope.changeColour = function (colour) {
                     $scope.art.Colour = colour;
                     console.log("tshirtColour: " + colour);
                 }
 
-                $scope.changePhotoInScope = function(fileName) {
+                $scope.changePhotoInScope = function (fileName) {
                     $scope.photoInScope = fileName;
                 }
 
@@ -65,19 +67,40 @@
 
                 function loadArt() {
                     if (!!$stateParams.artId) {
+                        appSettings.loader.show();
                         artService.findById($stateParams.artId, function (result) {
                             $scope.art = result;
                             $scope.art.TShirtSex = "M";
                             $scope.art.TShirtSize = "M";
-                            $scope.art.Colour = "black";
-                            console.log($scope.art);
+                            $scope.art.Colour = "black";                            
                             isInCartCheck();
                             $scope.photoInScope = $scope.art.LargeFileName;
                             gameService.findById($scope.art.GameId, function (result) {
                                 changeBackground(result.BackgroundFileName);
+
+                                var photoSliderPromise = new Promise(function(resolve) {
+                                    for (var i in $scope.art) {                                        
+                                        if (i.includes("LargeFileName")) {
+                                            if ($scope.art[i] !== null && $scope.art[i] !== "") {
+                                                $scope.photoArray.push($scope.art[i]);
+                                            }
+                                        }
+                                    }
+                                    resolve();
+                                });                               
+
+                                photoSliderPromise.then(function() {
+                                    $(".art")
+                                        .slick({
+                                            adaptiveHeight: true,
+                                            infinite: true,
+                                            lazyLoad: 'ondemand'
+                                        });
+                                    appSettings.loader.hide();
+                                });
                             });
                         });
-                    }                
+                    }
                 }
 
                 function isInCartCheck() {
@@ -93,9 +116,14 @@
                     }
                 }
 
-                function init() {                    
+                function init() {
                     console.log("ArtController initialized");
                     loadArt();
+                    //$(".art").slick({
+
+                    //    infinite: true,
+                    //    centerMode: true
+                    //});
                 }
 
                 init();
